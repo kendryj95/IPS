@@ -30,7 +30,7 @@ class NotificacionesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','admin','agregarNotificacion'),
+				'actions'=>array('index','view','admin','agregarNotificacion','relational'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -208,5 +208,14 @@ class NotificacionesController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionRelational(){
+	    // partially rendering "_relational" view
+	    $this->renderPartial('_relational', array(
+	        'id' => Yii::app()->getRequest()->getParam('id'),
+	        //'gridDataProvider' => $this->getGridDataProvider(),
+	        //'gridColumns' => $this->getGridColumns()
+	    ));
 	}
 }
