@@ -64,20 +64,41 @@ class SiteController extends Controller
 	public function actionContact()
 	{
 		$model=new ContactForm;
-		if(isset($_POST['ContactForm']))
+		Yii::import('application.extensions.phpmailer.JPhpMailer');
+
+        if(isset($_POST['ContactForm']))
 		{
 			$model->attributes=$_POST['ContactForm'];
 			if($model->validate())
 			{
 				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
 				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
-				$headers="From: $name <{$model->email}>\r\n".
+				/*$headers="From: $name <{$model->email}>\r\n".
 					"Reply-To: {$model->email}\r\n".
 					"MIME-Version: 1.0\r\n".
-					"Content-Type: text/plain; charset=UTF-8";
+					"Content-Type: text/plain; charset=UTF-8";*/
 
-				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+                $mail = new JPhpMailer();
+                $mail->IsSMTP();
+                $mail->SMTPAuth = true;
+                $mail->SMTPSecure = "ssl";
+                $mail->Host = "mail.insigniamobile.com.ve"; // insignia.com.ve
+                $mail->Port = 465; // 995 ó 993
+                $mail->Username = "notificaciones@insigniamobile.com.ve"; // mi correo
+                $mail->Password = "qwe123"; // mi contraseña
+
+                $mail->From = $model->email; // administrador
+                $mail->FromName = $name;
+                $mail->Subject = $subject;
+                $mail->AltBody = "";
+                $mail->MsgHTML("<h1>".$model->body."</h1>");
+                $mail->AddAddress(Yii::app()->params['adminEmail']);
+                $mail->IsHTML(true);
+                $mail->Send();
+
+               # mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
+
+				Yii::app()->user->setFlash('contact','<div class="alert alert-success"><b>Gracias por contactarnos!</b> Su mensaje será respondido lo más pronto posible.</div>');
 				$this->refresh();
 			}
 		}

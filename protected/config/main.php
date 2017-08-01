@@ -41,6 +41,7 @@ Yii::setPathOfAlias('booster', dirname(__FILE__).'/../extensions/booster');
 Yii::setPathOfAlias('shoppingCart', dirname(__FILE__).'/../extensions/shoppingCart');
 Yii::setPathOfAlias('highcharts', dirname(__FILE__).'/../extensions/highcharts/highcharts');
 Yii::setPathOfAlias('editable', dirname(__FILE__).'/../extensions/x-editable');
+Yii::setPathOfAlias('jphpmailer', dirname(__FILE__).'/../extensions/phpmailer');
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
@@ -56,7 +57,7 @@ return array(
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
-		'application.components.*'
+		'application.components.*',
 	),
 
 	'modules'=>array(
@@ -90,7 +91,7 @@ return array(
     	),
 
 		// uncomment the following to enable URLs in path-format
-		'urlManager' => array(
+		/*'urlManager' => array(
             'urlFormat' => 'path',
             'showScriptName' => false,
             'rules' => array(
@@ -99,7 +100,7 @@ return array(
                     'class' => 'application.components.CustomUrlRule',
                 ),
             ),
-        ),
+        ),*/
 
 		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
@@ -158,6 +159,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'kendry.ortiz@insignia.com.ve',
 	),
 );
