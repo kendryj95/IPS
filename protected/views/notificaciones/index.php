@@ -20,9 +20,9 @@ $this->breadcrumbs=array(
 ));*/ ?>
 
 <?php
-echo "<pre>";
+/*echo "<pre>";
 print_r($_GET);
-echo "</pre>";
+echo "</pre>";*/
 ?>
 
 <?php /*$this->widget('zii.widgets.grid.CGridView', array(
@@ -57,7 +57,7 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
         'htmlOptions' => array('class' => 'trOverFlow col-xs-12 col-sm-12 col-md-12 col-lg-12'),
         'filter'=> $model,
         'columns'=> array( 
-			array(
+			/*array(
 				'class'=>'booster.widgets.TbRelationalColumn',
 				'name' => 'id_compra',
 				'url' => $this->createUrl('notificaciones/relational'),
@@ -65,14 +65,15 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 				'afterAjaxUpdate' => 'js:function(tr,rowid,data){
 					bootbox.alert("I have afterAjax events too! This will only happen once for row with id: "+rowid);
 				}'
-			), 
+			), */
         	array(
 	            'name' => 'id_compra',
 	            'header' => 'Ticket',
 	            'type' => 'raw',
 	            'htmlOptions' => array('style' => 'text-align: center;'),
 	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
-				'value'=>'CHtml::link("$data->id_compra", array("controller/action", "id_compra"=>$data->id_compra))'
+				//'value'=>'CHtml::link("$data->id_compra", array("controller/action", "id_compra"=>$data->id_compra))'
+				'value'=>'CHtml::link("$data->id_compra", "#modal", array("data-toggle" => "modal"))'
 				/*'value'=>"CHtml::ajaxLink(
 							'Test request',         
 							array('ajax/reqTest01Loading'),
@@ -154,3 +155,39 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 	}
 
 </script>
+
+<?php $this->beginWidget(
+    'booster.widgets.TbModal',
+    array('id' => 'modal')
+); ?>
+ 
+    <div class="modal-header" style="background-color: gainsboro;">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h4>¡GRACIAS POR SU COMPRA!</h4>
+    </div>
+ 
+    <div class="modal-body">
+        <p>One fine body...</p>
+    </div>
+ 
+    <div class="modal-footer">
+        <?php /*$this->widget(
+            'booster.widgets.TbButton',
+            array(
+                'context' => 'primary',
+                'label' => 'Save changes',
+                'url' => '#',
+                'htmlOptions' => array('data-dismiss' => 'modal'),
+            )
+        );*/ ?>
+        <?php $this->widget(
+            'booster.widgets.TbButton',
+            array(
+                'label' => 'Close',
+                'url' => '#',
+                'htmlOptions' => array('data-dismiss' => 'modal'),
+            )
+        ); ?>
+    </div>
+ 
+<?php $this->endWidget(); ?>
