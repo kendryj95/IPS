@@ -212,10 +212,13 @@ class NotificacionesController extends Controller
 
 	public function actionRelational(){
 	    // partially rendering "_relational" view
-	    $this->renderPartial('_relational', array(
+	    /*$this->renderPartial('_relational', array(
 	        'id' => Yii::app()->getRequest()->getParam('id'),
 	        //'gridDataProvider' => $this->getGridDataProvider(),
 	        //'gridColumns' => $this->getGridColumns()
-	    ));
+	    ));*/
+	    if (isset($_POST['id_compra'])) {
+	    	
+	    }
 	}
 }

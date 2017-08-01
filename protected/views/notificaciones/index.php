@@ -74,6 +74,20 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
 				//'value'=>'CHtml::link("$data->id_compra", array("controller/action", "id_compra"=>$data->id_compra))'
 				'value'=>'CHtml::link("$data->id_compra", "#modal", array("data-toggle" => "modal"))'
+
+
+				/*'value'=>'CHtml::ajaxLink("$data->id_compra", Yii::app()->createUrl("notificaciones/relational"),
+							array( // ajaxOptions
+								"type" => "POST",
+								"beforeSend" => "function(request) { alert(\'sdsdssds\');  }",
+								"success" => "function(data) { console.log(data);  }",
+								"data" => array("id_compra"=>$data->id_compra)
+							),
+							array( //htmlOptions
+								"href" => "#modal",
+								"data-toggle" => "modal"
+							))',*/
+
 				/*'value'=>"CHtml::ajaxLink(
 							'Test request',         
 							array('ajax/reqTest01Loading'),
