@@ -205,3 +205,63 @@ legend.login-border {
     padding:0 5px;
     border-bottom:none;
 }
+
+.modalHeaderStyle {
+    background: gainsboro;
+    border-bottom: solid #C30B13;
+}
+
+.btnModal {
+    background: #C30B13;
+    border: #C30B13;
+    border-radius: 0px;
+    color: #FFF;
+}
+
+.btnModal:hover {
+    background: #C30B13;
+    opacity: .8;
+}
+
+#table-detalle {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+#table-detalle > td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#table-detalle .title {
+    border: none;
+    background: none;
+}
+
+#table-detalle .title:hover{
+    background: #f3f3f3;
+}
+
+#table-detalle .content {
+    background: none;
+    background: #fff;
+}
+
+.centrar {
+    height: 62px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 350px;
+    overflow-y: auto;
+}

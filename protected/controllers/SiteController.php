@@ -218,4 +218,50 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	public function actionDetallesPD(){
+
+		$json = array();
+
+		$id = isset($_POST['id']) ? $_POST['id'] : '';
+
+		$productos_promo = ProductosDigitales::model()->findallbyattr('pd.id_producto',$id);
+
+		/*echo "<pre>";
+		print_r($productos_promo);
+		echo "</pre>";
+		exit;*/
+
+		$sql = "SELECT 
+				    GROUP_CONCAT(p.id_producto
+				        SEPARATOR ',') AS id_producto,
+				    p.desc_producto,
+				    p.cliente,
+					c.Des_cliente
+				FROM
+				    sms.producto p INNER JOIN sms.cliente c ON p.cliente = c.Id_cliente
+				WHERE
+				    p.id_producto IN ($id)";
+
+		$detail = Yii::app()->db_sms->createCommand($sql)->query()->read();
+
+		if ($detail) {
+			$json['fallo'] = array('msg' => 'NO');
+			$json['detalle'] = array(
+					'nombre_cliente' => $detail['Des_cliente'],
+					'nombre_producto' => $productos_promo[0]['nombre_producto'],
+					'categoria' => $productos_promo[0]['deporte'],
+					'subcategoria' => $productos_promo[0]['abrev_deporte'],
+					'tipo_contenido' => ucfirst($productos_promo[0]['tipo_contenido'])." (".$productos_promo[0]['abrev_tipo'].")",
+					'precio' => '$ '. number_format((float)$productos_promo[0]['precio'], 2, '.', ''),
+
+				);
+		} else {
+			$json['fallo'] = array(
+				'msg' => 'SI'
+				);
+		}
+
+		echo json_encode($json);
+	}
 }

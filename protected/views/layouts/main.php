@@ -52,9 +52,18 @@ ini_set('display_errors', true);*/
 <body>
 <div class="container-fluid">
 	<?php	
-
+		Yii::import('application.extensions.shoppingCart.ECartPositionBehaviour');
 		//$dd = $this->widget('booster.widgets.TbBadge', array('context' => 'danger', 'label' => '2'));
-		 
+		 $badget = Yii::app()->shoppingCart->getCount() > 0 ? $this->widget(
+			 'booster.widgets.TbBadge',
+			 array(
+				 'context' => 'danger',
+				 // 'default', 'success', 'info', 'warning', 'danger'
+				 'label' => Yii::app()->shoppingCart->getCount()
+			 )
+			 ,true
+			 ) : '';
+
 		$this->widget('booster.widgets.TbNavbar',
 	    array(
 	        'type' => 'inverse',
@@ -72,7 +81,7 @@ ini_set('display_errors', true);*/
 	                'htmlOptions' => array('class' => 'menu_superior'),
 	                'items' =>  array(
 				                    array('icon' => 'glyphicon glyphicon-home','url' => array('/site/index'), 'itemOptions'=>array('id' => 'boton_home')),
-				                    array('label' => 'Carrito', 'icon' => 'glyphicon glyphicon-shopping-cart','url' => array('/cart/index')),
+				                    array('label' => 'Carrito '.$badget, 'encodeLabel' => false, 'icon' => 'glyphicon glyphicon-shopping-cart','url' => array('/cart/index')),
 				                    array('label' => 'Nosotros', 'url' => array('/site/page', 'view'=>'about')),
 				                    array('label' => 'Contáctanos', 'url' => array('/site/contact')),
 				                    array('label' => 'Acceder', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
@@ -83,7 +92,7 @@ ini_set('display_errors', true);*/
 				                        'visible'=>!Yii::app()->user->isGuest,
 				                        'items' => array(
 				                        	array('label' => 'Perfil', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-cog', 'url' => array('/usuarioips/update', 'id' => Yii::app()->user->id)),
-				                        	array('label' => 'Notificaciones'/*.$badge*/, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),'---',
+				                        	array('label' => 'Notificaciones'.$badget, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),'---',
 				                            array('label' => 'Salir', 'icon'=>'glyphicon glyphicon-log-out', 'url'=>Yii::app()->createUrl('/site/logout'))
 				                   	 	),
 				                	),
