@@ -15,7 +15,7 @@
             </div>
             <br><br>
             <div>
-                
+               <div class="table-responsive">     
                 <table id="table-cart" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
@@ -57,6 +57,7 @@
                         </tr>
                     </tfoot>
                 </table>
+                </div>
                 <br>
                 <div class="col col-xs-6 col-md-4 col-lg-6">
                     <?php 

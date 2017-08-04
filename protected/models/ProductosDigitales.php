@@ -138,6 +138,7 @@ class ProductosDigitales extends CActiveRecord implements IECartPosition
 
 	public function findallbyattr($tipo = null, $valor = null){
 		
+		$productos = array();
 		$condition = "";
 
 		if($tipo != null){

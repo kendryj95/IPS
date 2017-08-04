@@ -264,4 +264,60 @@ class SiteController extends Controller
 
 		echo json_encode($json);
 	}
+
+	public function actionBusqueda(){
+
+		define('PRODUCTO',1);
+		define('PAIS',3);
+		define('CLIENTE',2);
+		define('CATEGORIA',4);
+
+		$search = isset($_POST['text_search']) ? $_POST['text_search'] : '';
+
+		if ($search != "") {
+
+			$tipo = $_POST['tipo_search'];
+
+			switch ($tipo) {
+				case PRODUCTO:
+					$productos_promo = ProductosDigitales::model()->findallbyattr('p.desc_producto',"'".$search."'");
+					break;
+				case PAIS:
+					$sql = "SELECT 
+							    idcategorias_contenido AS id_cat
+							FROM
+							    insignia_payments_solutions.categorias_contenido WHERE pais LIKE '".$search."%'";
+
+					$id_cat = Yii::app()->db_sms->createCommand($sql)->query()->read();
+
+					$productos_promo = ProductosDigitales::model()->findallbyattr('pd.id_categoria',$id_cat['id_cat']);
+					break;
+				case CLIENTE:
+					$sql = "SELECT 
+					    GROUP_CONCAT(p.id_producto
+					        SEPARATOR ',') AS id_producto,
+					    p.desc_producto,
+					    p.cliente,
+						c.Des_cliente
+					FROM
+					    sms.producto p INNER JOIN sms.cliente c ON p.cliente = c.Id_cliente
+					WHERE
+					    c.Des_cliente LIKE '%".$search."%'";
+
+					$id_productos = Yii::app()->db_sms->createCommand($sql)->query()->read();
+
+					$productos_promo = ProductosDigitales::model()->findallbyattr('pd.id_producto',$id_productos['id_producto']);
+					
+					break;
+				case CATEGORIA:
+					$productos_promo = ProductosDigitales::model()->findallbyattr('cc.abreviatura',"'".$search."'");
+					break;
+			}
+
+			$this->render('search',array('productos_promo' => $productos_promo));
+
+		} else {
+			$this->redirect(Yii::app()->user->returnUrl);
+		}
+	}
 }

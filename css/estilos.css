@@ -261,7 +261,52 @@ legend.login-border {
 .modal-dialog{
     overflow-y: initial !important
 }
-.modal-body{
+.modal-body-detalles{
     height: 350px;
     overflow-y: auto;
+}
+
+.caption {
+    display: flex;
+    flex-direction: column;
+}
+
+.labelPrecio {
+    /*background: #f2dede;
+    border: 1px solid #C30B13;*/
+    border-radius: 0px;
+    color: #a94442;
+    transition: 0.3s;
+}
+
+.labelPrecio:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.4);
+}
+
+.btnHome {
+    background: grey;
+    border: #2B6CA8;
+    border-radius: 0px;
+    color: #FFF;
+}
+
+.btnHome:hover {
+    background: gainsboro;
+    /*opacity: .8;*/
+    color: black;
+}
+
+.btnComprar {
+    background: #82E39E;
+    border: #236937;
+    border-radius: 0px;
+    color: black;
+}
+
+.btnComprar:hover {
+    background: #82E39E;
+    opacity: .8;
+    color: black;
 }

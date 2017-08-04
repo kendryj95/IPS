@@ -53,29 +53,45 @@ $this->widget('booster.widgets.TbCarousel', array(
 			<div class="col-sm-4 col-md-2">
 				<div class="thumbnail">
 					<div class="caption">
+					<p style="text-align: right; font-size: 20px;"><span class="label labelPrecio"><strong>$ <?= number_format((float)$info_producto['precio'], 2, '.', ''); ?></strong></span></p>
 						<p><strong><?php echo "Producto: ".$info_producto['nombre_producto']; ?></strong></p>
 						<p><?php echo "<strong>Contenido en formato: </strong>".ucfirst($info_producto['tipo_contenido'])." (".$info_producto['abrev_tipo'].")"; ?></p>
-						<p style="text-align: right; font-size: 20px;"><span class="label label-danger"><strong>$ <?= number_format((float)$info_producto['precio'], 2, '.', ''); ?></strong></span></p>
+						
 
-						<p>
+						<!--<p> -->
 							<?php 
-								echo "<br>".CHtml::link('Comprar', Yii::app()->createUrl('/cart/addToCart', array('id_producto' => $info_producto['idproductos_digitales'])), array('class' => 'btn btn-sm btn-success'))." ";
+
+								$this->widget('booster.widgets.TbButton',
+								    array(
+								        'label' => 'Comprar',
+								        'context' => 'success',
+								        'size' => 'small',
+								        'icon' => 'fa fa-money',
+								        'buttonType' => 'link',
+								        'url' => Yii::app()->createUrl('/cart/addToCart', array('id_producto' => $info_producto['idproductos_digitales'])),
+								        'htmlOptions' => array('class' => 'btnModal')
+								        
+								    )
+								);
+								echo "&nbsp;";	
 								$this->widget('booster.widgets.TbButton',
 								    array(
 								        'label' => 'Detalles',
 								        'context' => 'info',
 								        'size' => 'small',
+								        'icon' => 'fa fa-eye',
 								        'htmlOptions' => array(
 								            'data-toggle' => 'modal',
 								            'data-target' => '#myModal',
-								            'class' => 'detailPD',
+								            'class' => 'detailPD btnHome',
 								            'data-idPD' => $info_producto['id_producto_sms'],
+								     
 								        ),
 								    )
 								); 
 							?>
 							
-						</p>
+						<!--</p>-->
 					</div>
 				</div>
 			</div>
@@ -91,7 +107,7 @@ $this->widget('booster.widgets.TbCarousel', array(
         <h4>Detalles del Producto</h4>
     </div>
  
-    <div class="modal-body" style="background: #EDECED;">
+    <div class="modal-body modal-body-detalles" style="background: #EDECED;">
 		<table id="table-detalle" class="table table-striped"> 
 			<tr>
 				<td align="center" class="title" style="padding-left: 5px">
