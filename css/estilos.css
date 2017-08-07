@@ -279,6 +279,18 @@ legend.login-border {
     transition: 0.3s;
 }
 
+.palabras {
+    display: block;
+    word-break: break-all;
+      
+     /* word-break: break-all;
+ 
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;*/
+}
+
 .labelPrecio:hover {
     cursor: pointer;
     transition: 0.3s;
@@ -309,4 +321,17 @@ legend.login-border {
     background: #82E39E;
     opacity: .8;
     color: black;
+}
+
+.btn-actions {
+    border-radius: 100%; 
+    width: 24px; 
+    height: 24px; 
+    padding: 5px; 
+    margin-left: 5px;
+}
+
+.form-actions {
+    width: 94%;
+    display: inline-block;
 }

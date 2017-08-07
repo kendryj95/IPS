@@ -54,7 +54,7 @@ $this->widget('booster.widgets.TbCarousel', array(
 				<div class="thumbnail">
 					<div class="caption">
 					<p style="text-align: right; font-size: 20px;"><span class="label labelPrecio"><strong>$ <?= number_format((float)$info_producto['precio'], 2, '.', ''); ?></strong></span></p>
-						<p><strong><?php echo "Producto: ".$info_producto['nombre_producto']; ?></strong></p>
+						<div class="palabras"><p><strong><?php echo "Producto: ".$info_producto['nombre_producto']; ?></strong></p></div>
 						<p><?php echo "<strong>Contenido en formato: </strong>".ucfirst($info_producto['tipo_contenido'])." (".$info_producto['abrev_tipo'].")"; ?></p>
 						
 
