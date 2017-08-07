@@ -35,6 +35,5 @@
 ehthumbs.db
 Thumbs.db
 
-assets/*
 protected/runtime/*
 yii/*
