@@ -207,6 +207,7 @@ legend.login-border {
 }
 
 .modalHeaderStyle {
+<<<<<<< HEAD
     background: gainsboro;
     border-bottom: solid #C30B13;
 }
@@ -310,3 +311,8 @@ legend.login-border {
     opacity: .8;
     color: black;
 }
+=======
+    background-color: gainsboro; 
+    border-bottom: solid #C30B13;
+}
+>>>>>>> master_cs

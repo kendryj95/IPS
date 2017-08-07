@@ -30,7 +30,7 @@ class NotificacionesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','admin','agregarNotificacion'),
+				'actions'=>array('index','view','admin','agregarNotificacion','entregarContenido'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -208,5 +208,18 @@ class NotificacionesController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionEntregarContenido(){
+	    $id_compra = "";
+
+	    if (isset($_GET['id_compra'])) {
+	    	$id_compra = $_GET['id_compra'];
+	    }
+
+	    $notificacion_compras = Notificaciones::model()->detalle_compra($id_compra);
+
+	    header('Content-Type: application/json; charset="UTF-8"');
+        echo CJSON::encode(array('id_compra' => "<strong>".$id_compra."</strong>", 'notificacion_compras' => $notificacion_compras));
 	}
 }

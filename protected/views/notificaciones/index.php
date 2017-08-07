@@ -20,9 +20,9 @@ $this->breadcrumbs=array(
 ));*/ ?>
 
 <?php
-echo "<pre>";
+/*echo "<pre>";
 print_r($_GET);
-echo "</pre>";
+echo "</pre>";*/
 ?>
 
 <?php /*$this->widget('zii.widgets.grid.CGridView', array(
@@ -57,37 +57,23 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
         'htmlOptions' => array('class' => 'trOverFlow col-xs-12 col-sm-12 col-md-12 col-lg-12'),
         'filter'=> $model,
         'columns'=> array( 
-			array(
-				'class'=>'booster.widgets.TbRelationalColumn',
-				'name' => 'id_compra',
-				'url' => $this->createUrl('notificaciones/relational'),
-				'value'=> '"test-subgrid"',
-				'afterAjaxUpdate' => 'js:function(tr,rowid,data){
-					bootbox.alert("I have afterAjax events too! This will only happen once for row with id: "+rowid);
-				}'
-			), 
+        	/*array(
+	            'name' => 'id_compra',
+	            'header' => 'Ticket',
+	            'type' => 'raw',
+	            'htmlOptions' => array('style' => 'text-align: center;'),
+	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
+	            'value'=>'CHtml::link("$data->id_compra", "#", array("class" => "idCompra_reg", "id_registro" => "$data->id_compra", "data-toggle" => "modal", ))'
+
+        	), */
         	array(
 	            'name' => 'id_compra',
 	            'header' => 'Ticket',
 	            'type' => 'raw',
 	            'htmlOptions' => array('style' => 'text-align: center;'),
 	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
-				'value'=>'CHtml::link("$data->id_compra", array("controller/action", "id_compra"=>$data->id_compra))'
-				/*'value'=>"CHtml::ajaxLink(
-							'Test request',         
-							array('ajax/reqTest01Loading'),
-							array(
-								'update'=>'#req_res_loading',
-								'beforeSend' => 'function() {           
-									$('#maindiv').addClass('loading');
-								}',
-								'complete' => 'function() {
-									$('#maindiv').removeClass('loading');
-								}',        
-							)
-						)"*/
-        	), 
 
+        	),
         	array(
 	            'name' => 'asunto',
 	            'header' => 'Asunto',
@@ -115,13 +101,117 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
             	'htmlOptions' => array('style' => 'text-align: center;'),
 	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
             ),
+
+            /*array(
+            	'name' => 'estatus',
+            	'header' => 'Estatus',
+            	'htmlOptions' => array('style' => 'text-align: center;'),
+	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
+            ),*/
+
+            array(
+	            'class' => 'CButtonColumn',
+	            'header' => 'Acciones',
+	            'template' => '{ver}',
+	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
+	            'htmlOptions' => array('style' => 'text-align: center;'),
+	            'buttons' => array('ver' => array('label' => ' ',
+							            		   'url' => 'Yii::app()->createUrl("/notificaciones/entregarContenido", array("id_compra"=>$data->id_compra))',
+							            		   'options' => array('class'=>'glyphicon glyphicon-eye-open', 'data-toggle'=>'tooltip', 'data-placement'=>'top', 'title'=>'Ver', 'style'=>'color:black;', 'data-toggle' => 'modal', 'data-tooltip'=>'tooltip', 'data-target' => '#modal'),
+							            		   'click' => 'function(){
+								                                    $.ajax({
+								                                        beforeSend: function(){
+								                                           $("#modal").addClass("loading");
+								                                        },
+								                                        complete: function(){
+								                                           $("#modal").removeClass("loading");
+								                                        },
+								                                        type: "POST",
+								                                        url: $(this).attr("href"),
+								                                        success: function(data) { 
+								                                            
+															                $("#modal .modal-header").html("<a class=\"close\" data-dismiss=\"modal\">&times;</a><h4>COMPRA #"+data.id_compra+"</h4>");
+															                var compras = data.notificacion_compras;
+
+															                if(compras.length > 0){
+															                	$("#modal .modal-body").html(JSON.stringify(compras));
+															                }
+															                else{
+															                	$("#modal .modal-body").html("Disculpe, esta compra presenta errores.");
+															                }
+
+															                $("#modal").modal("show");
+								                                        },
+								                                        error: function() { 
+								                                            alert("ERROR - entregarContenido");
+								                                        }
+								                                    });
+					                                }'
+						                         ),
+	            ),
+	        ),
         ),
     ));
 
 ?>
+
+<?php $this->beginWidget(
+    'booster.widgets.TbModal',
+    array('id' => 'modal')
+); ?>
+ 
+    <div class="modal-header modalHeaderStyle">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h4>¡GRACIAS POR SU COMPRA!</h4>
+    </div>
+ 
+    <div class="modal-body">
+        <p>One fine body...</p>
+    </div>
+ 
+    <div class="modal-footer">
+        <?php /*$this->widget(
+            'booster.widgets.TbButton',
+            array(
+                'context' => 'primary',
+                'label' => 'Save changes',
+                'url' => '#',
+                'htmlOptions' => array('data-dismiss' => 'modal'),
+            )
+        );*/ ?>
+        <?php $this->widget(
+            'booster.widgets.TbButton',
+            array(
+                'label' => 'Close',
+                'url' => '#',
+                'htmlOptions' => array('data-dismiss' => 'modal'),
+            )
+        ); ?>
+    </div>
+ 
+<?php $this->endWidget(); ?>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		registrarNotificacion();
+
+		$(".idCompra_reg").click(function (e) {
+			var id_compra = $(this).attr('id_registro');
+			entregarContenido(id_compra);
+			//e.stopPropagation();
+		    //e.preventDefault();
+		    //return false;
+		});
+
+		//$('#notificaciones-grid .pagination li').on('change', 'a', function(e){
+		//$('#notificaciones-grid .pagination li a').live('click', function (e) {
+
+		    //I want do something here
+		    //e.stopPropagation();
+		    //e.preventDefault();
+		    //return false;
+		//});
+
 	});
 
 	function registrarNotificacion(){
@@ -151,6 +241,36 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 	            }
 	        });
 	    }
+	}
+
+	function entregarContenido(id_compra){
+		//alert("sasdsd");
+		//console.log(document.getElementById("modal"));
+		
+		$.ajax({
+            url:"<?php echo Yii::app()->createUrl('/notificaciones/entregarContenido'); ?>",
+            type:"POST",    
+            data:{id_compra: id_compra},
+            
+            beforeSend: function(){
+               
+            },
+
+            complete: function(){ },
+
+            success: function(data){
+                console.log(data);
+                $('#modal .modal-header').html('<a class="close" data-dismiss="modal">&times;</a><h4>COMPRA #'+id_compra+'</h4>');
+                $('#modal .modal-body').html(data.id_compra);
+				
+				//$('#modal').modal("show");
+            },
+            error: function(){
+                console.log("ERROR - entregarContenido");
+            }
+        });
+
+        $('#modal').modal("show");
 	}
 
 </script>

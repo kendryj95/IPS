@@ -106,6 +106,40 @@ class Notificaciones extends CActiveRecord
 		));
 	}
 
+	public function detalle_compra($id_compra){
+		
+		$detalle_compra = array();
+
+		$sql = "SELECT  p.estado_compra, p.estado_pago, p.payer_info_email, p.id_compra, p.id_producto_insignia, p.sms_sc, p.consumidor_email, p.consumidor_telefono, pd.id_producto AS all_id_productos, cc.descripcion AS categoria, cc.deporte, cc.abreviatura, cc.pais, tc.descripcion AS tipo, tc.abreviatura, pd.contenido_texto, pd.nombre_archivo, pd.contenido_archivo, pd.tipo_contenido, s.sc, s.desp_op
+				FROM
+					pagos p,
+					productos_digitales pd,
+					categorias_contenido cc,
+					tipo_contenido tc,
+				    sms.smsin s
+				WHERE
+				    p.id_compra = '".$id_compra."'
+				AND s.id_producto = pd.id_producto
+				AND pd.id_categoria = cc.idcategorias_contenido
+				AND pd.tipo = tc.id_tipo_de_contenido
+				AND p.sms_id = s.id_sms
+				AND p.fecha_pago = s.data_arrive GROUP BY s.id_producto";
+
+		$compra = Yii::app()->db->createCommand($sql)->queryAll();
+
+		foreach($compra as $data){
+			if (($data['contenido_archivo'] != "") || ($data['contenido_archivo'] != null)) {
+				$data['contenido_archivo'] = base64_encode($data['contenido_archivo']);
+			}
+		    $detalle_compra[] = $data;
+		}
+		/*echo "<pre>";
+		print_r($detalle_compra);
+		echo "</pre>";
+		exit;*/
+		return $detalle_compra;
+	}
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
