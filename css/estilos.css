@@ -205,3 +205,8 @@ legend.login-border {
     padding:0 5px;
     border-bottom:none;
 }
+
+.modalHeaderStyle {
+    background-color: gainsboro; 
+    border-bottom: solid #C30B13;
+}
