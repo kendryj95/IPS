@@ -33,6 +33,7 @@ ini_set('display_errors', true);*/
 	<meta name="theme-color" content="#ffffff">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/simple-sidebar.css">
 	<script src="http://72.14.188.47/ips/lib/dist/checkout.js"></script>
+	<script src="https://use.fontawesome.com/e694455cac.js"></script>
 	<!--<script src='https://insigniamobile.net.ve/testVersion/insignia_payments_solutions_IPS/webservice_ips/dist/checkout.js'></script>-->
 
 	<?php  
@@ -49,16 +50,57 @@ ini_set('display_errors', true);*/
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$('#tipo_search').change(function(){
+
+				var tipo = $(this).val();
+
+				const producto = '1';
+				const cliente = '2';
+				const pais = '3';
+				const categoria = '4';
+
+				switch(tipo){
+					case producto:
+						$('#text_search').attr('placeholder','Nombre del producto');
+						break;
+					case cliente:
+						$('#text_search').attr('placeholder','Nombre del cliente');
+						break;
+					case pais:
+						$('#text_search').attr('placeholder','Pais del deporte');
+						break;
+					case categoria:
+						$('#text_search').attr('placeholder','Nombre de la categoria');
+						break;
+				}
+			});
+		
+	});
+
+</script>
+
 <body>
 <div class="container-fluid">
 	<?php	
-
+		Yii::import('application.extensions.shoppingCart.ECartPositionBehaviour');
 		//$dd = $this->widget('booster.widgets.TbBadge', array('context' => 'danger', 'label' => '2'));
-		 
+		 $badget = Yii::app()->shoppingCart->getCount() > 0 ? $this->widget(
+			 'booster.widgets.TbBadge',
+			 array(
+				 'context' => 'danger',
+				 // 'default', 'success', 'info', 'warning', 'danger'
+				 'label' => Yii::app()->shoppingCart->getCount()
+			 )
+			 ,true
+			 ) : '';
+
 		$this->widget('booster.widgets.TbNavbar',
 	    array(
 	        'type' => 'inverse',
-	        'brand' => CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png')."  ".Yii::app()->name.' <span class="none" aria-hidden="true"></span> ',//.CHtml::image(Yii::app()->getBaseUrl().'/images/logo_imc_red.png'),
+	        'brand' => '<div style="display: flex; justify-content: center; align-content: center">'.CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png').Yii::app()->name.'</div>',//.CHtml::image(Yii::app()->getBaseUrl().'/images/logo_imc_red.png'),
 	        //'brand' => Yii::app()->name.' <span class="none" aria-hidden="true"></span> '.CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png'),//.CHtml::image(Yii::app()->getBaseUrl().'/images/logo_imc_red.png'),
 	        'brandUrl' => array('/site/index'),
 	        'brandOptions' => array("class"=>"boton_menu"),
@@ -72,7 +114,7 @@ ini_set('display_errors', true);*/
 	                'htmlOptions' => array('class' => 'menu_superior'),
 	                'items' =>  array(
 				                    array('icon' => 'glyphicon glyphicon-home','url' => array('/site/index'), 'itemOptions'=>array('id' => 'boton_home')),
-				                    array('label' => 'Carrito', 'icon' => 'glyphicon glyphicon-shopping-cart','url' => array('/cart/index')),
+				                    array('label' => 'Carrito '.$badget, 'encodeLabel' => false, 'icon' => 'glyphicon glyphicon-shopping-cart','url' => array('/cart/index')),
 				                    array('label' => 'Nosotros', 'url' => array('/site/page', 'view'=>'about')),
 				                    array('label' => 'Contáctanos', 'url' => array('/site/contact')),
 				                    array('label' => 'Acceder', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
@@ -83,21 +125,64 @@ ini_set('display_errors', true);*/
 				                        'visible'=>!Yii::app()->user->isGuest,
 				                        'items' => array(
 				                        	array('label' => 'Perfil', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-cog', 'url' => array('/usuarioips/update', 'id' => Yii::app()->user->id)),
-				                        	array('label' => 'Notificaciones'/*.$badge*/, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),'---',
+				                        	array('label' => 'Notificaciones'.$badget, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),'---',
 				                            array('label' => 'Salir', 'icon'=>'glyphicon glyphicon-log-out', 'url'=>Yii::app()->createUrl('/site/logout'))
 				                   	 	),
 				                	),
-				                	array('label' => 'Registrarse', 'url' => array('/site/signUp'), 'visible' => Yii::app()->user->isGuest)
+				                	array('label' => 'Registrarse', 'url' => array('/site/signUp'), 'visible' => Yii::app()->user->isGuest),
+				                	array('label' => 'Buscar', 'url' => 'javascript:void(0)', 'itemOptions' => array('data-toggle' => 'modal', 'data-target' => '.bs-example-modal-sm')),
+
 	    				),
 	        		),
+	            /*'<form class="navbar-form navbar-left" method="post" action="index.php?r=site/busqueda">
+	        		<div class="form-group">
+	                    <input type="text" class="form-control input-sm" name="text_search" id="text_search" placeholder="Nombre del producto">
+	        		</div>
+					<select name="tipo_search" id="tipo_search" class="form-control input-sm">
+						<option value="1">Producto</option>
+						<option value="2">Cliente</option>
+						<option value="3">País</option>
+						<option value="4">Categoría</option>
+					</select>
+					<button type="submit" class="btn btn-primary btn-sm">Buscar</button>
+
+	             </form>',*/
 	    		)
 	        )
 		);
 	?>
 </div>
+
 <div class="container-fluid contenedor_principal">
 	<?php echo $content; ?>
 	<div class="clear"></div>
+</div>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header modalHeaderStyle">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h4>Buscar</h4>
+    </div>
+ 
+    <div class="modal-body" style="background: #EDECED;">
+		<div class="text-center"><form class="form-inline" method="post" action="index.php?r=site/busqueda">
+	        		<div class="form-group">
+	                    <input type="text" class="form-control" name="text_search" id="text_search" placeholder="Nombre del producto">
+	        		</div>
+					<select name="tipo_search" id="tipo_search" class="form-control">
+						<option value="1">Producto</option>
+						<option value="2">Cliente</option>
+						<option value="3">País</option>
+						<option value="4">Categoría</option>
+					</select>
+					<button type="submit" class="btn btn-primary btnModal">Buscar</button>
+
+	             </form></div>
+    </div>
+    </div>
+  </div>
 </div>
 
 <div id="footer">

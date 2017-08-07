@@ -168,6 +168,7 @@ class CartController extends Controller
 			Yii::app()->shoppingCart->remove($producto->getId());
 		}else{
 			Yii::app()->shoppingCart->clear();
+			$this->redirect(Yii::app()->user->returnUrl);
 		}
 	}
 }
