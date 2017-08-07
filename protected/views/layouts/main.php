@@ -113,40 +113,26 @@ ini_set('display_errors', true);*/
 	                'type'  => 'navbar',
 	                'htmlOptions' => array('class' => 'menu_superior'),
 	                'items' =>  array(
-				                    array('icon' => 'glyphicon glyphicon-home','url' => array('/site/index'), 'itemOptions'=>array('id' => 'boton_home')),
-				                    array('label' => 'Carrito '.$badget, 'encodeLabel' => false, 'icon' => 'glyphicon glyphicon-shopping-cart','url' => array('/cart/index')),
-				                    array('label' => 'Nosotros', 'url' => array('/site/page', 'view'=>'about')),
-				                    array('label' => 'Contáctanos', 'url' => array('/site/contact')),
-				                    array('label' => 'Acceder', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
-				                    array(
-				                        'label' => Yii::app()->user->name,
-				                        'url' => '#',
-				                        'icon' => 'glyphicon glyphicon-user',
-				                        'visible'=>!Yii::app()->user->isGuest,
-				                        'items' => array(
-				                        	array('label' => 'Perfil', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-cog', 'url' => array('/usuarioips/update', 'id' => Yii::app()->user->id)),
-				                        	array('label' => 'Notificaciones'.$badget, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),'---',
-				                            array('label' => 'Salir', 'icon'=>'glyphicon glyphicon-log-out', 'url'=>Yii::app()->createUrl('/site/logout'))
-				                   	 	),
-				                	),
-				                	array('label' => 'Registrarse', 'url' => array('/site/signUp'), 'visible' => Yii::app()->user->isGuest),
-				                	array('label' => 'Buscar', 'url' => 'javascript:void(0)', 'itemOptions' => array('data-toggle' => 'modal', 'data-target' => '.bs-example-modal-sm')),
-
-	    				),
+		                    array('icon' => 'glyphicon glyphicon-home','url' => array('/site/index'), 'itemOptions'=>array('id' => 'boton_home')),
+		                    array('label' => 'Carrito '.$badget, 'encodeLabel' => false, 'icon' => 'glyphicon glyphicon-shopping-cart','url' => array('/cart/index')),
+		                    array('label' => 'Nosotros', 'url' => array('/site/page', 'view'=>'about')),
+		                    array('label' => 'Contáctanos', 'url' => array('/site/contact')),
+		                    array('label' => 'Buscar', 'url' => 'javascript:void(0)', 'itemOptions' => array('data-toggle' => 'modal', 'data-target' => '.bs-example-modal-sm')),
+		                    array('label' => 'Acceder', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
+		                    array(
+		                        'label' => Yii::app()->user->name,
+		                        'url' => '#',
+		                        'icon' => 'glyphicon glyphicon-user',
+		                        'visible'=>!Yii::app()->user->isGuest,
+		                        'items' => array(
+		                        	array('label' => 'Perfil', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-cog', 'url' => array('/usuarioips/update', 'id' => Yii::app()->user->id)),
+		                        	array('label' => 'Notificaciones'.$badget, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),'---',
+		                            array('label' => 'Salir', 'icon'=>'glyphicon glyphicon-log-out', 'url'=>Yii::app()->createUrl('/site/logout'))
+		                   	 	),
+		                	),
+		                	array('label' => 'Registrarse', 'url' => array('/site/signUp'), 'visible' => Yii::app()->user->isGuest),
+						),
 	        		),
-	            /*'<form class="navbar-form navbar-left" method="post" action="index.php?r=site/busqueda">
-	        		<div class="form-group">
-	                    <input type="text" class="form-control input-sm" name="text_search" id="text_search" placeholder="Nombre del producto">
-	        		</div>
-					<select name="tipo_search" id="tipo_search" class="form-control input-sm">
-						<option value="1">Producto</option>
-						<option value="2">Cliente</option>
-						<option value="3">País</option>
-						<option value="4">Categoría</option>
-					</select>
-					<button type="submit" class="btn btn-primary btn-sm">Buscar</button>
-
-	             </form>',*/
 	    		)
 	        )
 		);
@@ -160,17 +146,18 @@ ini_set('display_errors', true);*/
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header modalHeaderStyle">
-        <a class="close" data-dismiss="modal">&times;</a>
-        <h4>Buscar</h4>
-    </div>
- 
-    <div class="modal-body" style="background: #EDECED;">
-		<div class="text-center"><form class="form-inline" method="post" action="index.php?r=site/busqueda">
-	        		<div class="form-group">
-	                    <input type="text" class="form-control" name="text_search" id="text_search" placeholder="Nombre del producto">
-	        		</div>
+	<div class="modal-content">
+		<div class="modal-header modalHeaderStyle">
+			<a class="close" data-dismiss="modal">&times;</a>
+			<h4>Buscar</h4>
+		</div>
+	 
+	    <div class="modal-body" style="background: #EDECED;">
+			<div class="text-center">
+				<form class="form-inline" method="post" action="index.php?r=site/busqueda">
+		    		<div class="form-group">
+		                <input type="text" class="form-control" name="text_search" id="text_search" placeholder="Nombre del producto">
+		    		</div>
 					<select name="tipo_search" id="tipo_search" class="form-control">
 						<option value="1">Producto</option>
 						<option value="2">Cliente</option>
@@ -178,9 +165,9 @@ ini_set('display_errors', true);*/
 						<option value="4">Categoría</option>
 					</select>
 					<button type="submit" class="btn btn-primary btnModal">Buscar</button>
-
-	             </form></div>
-    </div>
+		        </form>
+	        </div>
+	    </div>
     </div>
   </div>
 </div>
