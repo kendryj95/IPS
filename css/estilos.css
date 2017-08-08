@@ -206,23 +206,102 @@ legend.login-border {
     border-bottom:none;
 }
 
-.modalHeaderStyle {
-<<<<<<< HEAD
+.modal-headerIPS {
     background: gainsboro;
     border-bottom: solid #C30B13;
 }
 
-.btnModal {
-    background: #C30B13;
-    border: #C30B13;
-    border-radius: 0px;
-    color: #FFF;
+/*****************************************************************************************************************************/
+.btn-primaryIPS{
+    color:#fff;
+    background-color: #C30B13;
+    border-color: #A42E2E
 }
 
-.btnModal:hover {
-    background: #C30B13;
-    opacity: .8;
+.btn-primaryIPS.focus, .btn-primaryIPS:focus{
+    color: #fff;
+    background-color: #902828;
+    border-color: #401212
 }
+
+.btn-primaryIPS:hover{
+    color: #fff;
+    background-color: #902828;
+    border-color: #732020
+}
+
+.btn-primaryIPS.active, .btn-primaryIPS:active,.open>.dropdown-toggle .btn-primaryIPS{
+    color:#fff;
+    background-color: #902828;
+    border-color: #732020
+}
+
+.btn-primaryIPS.active.focus, .btn-primaryIPS.active:focus, .btn-primaryIPS.active:hover, .btn-primaryIPS:active.focus, .btn-primaryIPS:active:focus, .btn-primaryIPS:active:hover,.open>.dropdown-toggle .btn-primaryIPS.focus,.open>.dropdown-toggle .btn-primaryIPS:focus,.open>.dropdown-toggle .btn-primaryIPS:hover{
+    color:#fff;
+    background-color: #732020;
+    border-color: #401212
+}
+
+.btn-primaryIPS.active, .btn-primaryIPS:active,.open>.dropdown-toggle .btn-primaryIPS{
+    background-image:none
+}
+
+.btn-primaryIPS.disabled.focus, .btn-primaryIPS.disabled:focus, .btn-primaryIPS.disabled:hover, .btn-primaryIPS[disabled].focus, .btn-primaryIPS[disabled]:focus, .btn-primaryIPS[disabled]:hover,fieldset[disabled]  .btn-primaryIPS.focus,fieldset[disabled]  .btn-primaryIPS:focus,fieldset[disabled]  .btn-primaryIPS:hover{
+    background-color: #C30B13;
+    border-color: #A42E2E
+}
+
+.btn-primaryIPS.badge{
+    color: #C30B13;
+    background-color: #fff
+}
+
+/**********************************************************************************************************************************/
+.btn-defaultIPS{
+    color: #fff;
+    background-color: grey;
+    border-color: grey
+}
+
+.btn-defaultIPS.focus, .btn-defaultIPS:focus{
+    color: #000000;
+    background-color: gainsboro;
+    border-color: grey
+}
+
+.btn-defaultIPS:hover{
+    color: #000000;
+    background-color: gainsboro;
+    border-color: #000000
+}
+
+.btn-defaultIPS.active, .btn-defaultIPS:active,.open>.dropdown-toggle .btn-defaultIPS{
+    color: #000000;
+    background-color: gainsboro;
+    border-color: #000000
+}
+
+.btn-defaultIPS.active.focus, .btn-defaultIPS.active:focus, .btn-defaultIPS.active:hover, .btn-defaultIPS:active.focus, .btn-defaultIPS:active:focus, .btn-defaultIPS:active:hover,.open>.dropdown-toggle .btn-defaultIPS.focus,.open>.dropdown-toggle .btn-defaultIPS:focus,.open>.dropdown-toggle .btn-defaultIPS:hover{
+    color: #fff;
+    background-color: #000000;
+    border-color: grey
+}
+
+.btn-defaultIPS.active, .btn-defaultIPS:active,.open>.dropdown-toggle .btn-defaultIPS{
+    background-image:none
+}
+
+.btn-defaultIPS.disabled.focus, .btn-defaultIPS.disabled:focus, .btn-defaultIPS.disabled:hover, .btn-defaultIPS[disabled].focus, .btn-defaultIPS[disabled]:focus, .btn-defaultIPS[disabled]:hover,fieldset[disabled]  .btn-defaultIPS.focus,fieldset[disabled]  .btn-defaultIPS:focus,fieldset[disabled]  .btn-defaultIPS:hover{
+    background-color: grey;
+    border-color: grey
+}
+
+.btn-defaultIPS.badge{
+    color: gainsboro;
+    background-color: #fff
+}
+
+/****************************************************************************************************************************************************************************************************************/
 
 #table-detalle {
     border-collapse: separate;
@@ -272,47 +351,13 @@ legend.login-border {
     flex-direction: column;
 }
 
-.labelPrecio {
-    /*background: #f2dede;
-    border: 1px solid #C30B13;*/
+.label-primaryIPS {
     border-radius: 0px;
-    color: #a94442;
+    color: #C30B13;
     transition: 0.3s;
 }
 
-.labelPrecio:hover {
-    cursor: pointer;
+.label-primaryIPS:hover {
     transition: 0.3s;
     transform: scale(1.4);
 }
-
-.btnHome {
-    background: grey;
-    border: #2B6CA8;
-    border-radius: 0px;
-    color: #FFF;
-}
-
-.btnHome:hover {
-    background: gainsboro;
-    /*opacity: .8;*/
-    color: black;
-}
-
-.btnComprar {
-    background: #82E39E;
-    border: #236937;
-    border-radius: 0px;
-    color: black;
-}
-
-.btnComprar:hover {
-    background: #82E39E;
-    opacity: .8;
-    color: black;
-}
-=======
-    background-color: gainsboro; 
-    border-bottom: solid #C30B13;
-}
->>>>>>> master_cs

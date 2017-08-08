@@ -53,7 +53,7 @@ $this->widget('booster.widgets.TbCarousel', array(
 			<div class="col-sm-4 col-md-2">
 				<div class="thumbnail">
 					<div class="caption">
-					<p style="text-align: right; font-size: 20px;"><span class="label labelPrecio"><strong>$ <?= number_format((float)$info_producto['precio'], 2, '.', ''); ?></strong></span></p>
+					<p style="text-align: right; font-size: 20px;"><span class="label label-primaryIPS"><strong>$ <?= number_format((float)$info_producto['precio'], 2, '.', ''); ?></strong></span></p>
 						<p><strong><?php echo "Producto: ".$info_producto['nombre_producto']; ?></strong></p>
 						<p><?php echo "<strong>Contenido en formato: </strong>".ucfirst($info_producto['tipo_contenido'])." (".$info_producto['abrev_tipo'].")"; ?></p>
 						
@@ -69,7 +69,7 @@ $this->widget('booster.widgets.TbCarousel', array(
 								        'icon' => 'fa fa-money',
 								        'buttonType' => 'link',
 								        'url' => Yii::app()->createUrl('/cart/addToCart', array('id_producto' => $info_producto['idproductos_digitales'])),
-								        'htmlOptions' => array('class' => 'btnModal')
+								        'htmlOptions' => array('class' => 'btn-primaryIPS')
 								        
 								    )
 								);
@@ -83,7 +83,7 @@ $this->widget('booster.widgets.TbCarousel', array(
 								        'htmlOptions' => array(
 								            'data-toggle' => 'modal',
 								            'data-target' => '#myModal',
-								            'class' => 'detailPD btnHome',
+								            'class' => 'detailPD btn-defaultIPS',
 								            'data-idPD' => $info_producto['id_producto_sms'],
 								     
 								        ),
@@ -102,7 +102,7 @@ $this->widget('booster.widgets.TbCarousel', array(
 
 <?php $this->beginWidget('booster.widgets.TbModal',array('id' => 'myModal')); ?> 
     
-    <div class="modal-header modalHeaderStyle">
+    <div class="modal-header modal-headerIPS">
         <a class="close" data-dismiss="modal">&times;</a>
         <h4>Detalles del Producto</h4>
     </div>
@@ -154,7 +154,7 @@ $this->widget('booster.widgets.TbCarousel', array(
 	            array(
 	                'label' => 'Cerrar',
 	                'url' => '#',
-	                'htmlOptions' => array('data-dismiss' => 'modal', 'class' => 'btn btn-primary btnModal'),
+	                'htmlOptions' => array('data-dismiss' => 'modal', 'class' => 'btn btn-primaryIPS'),
 	            )
         	);
         ?>

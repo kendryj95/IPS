@@ -147,7 +147,7 @@ ini_set('display_errors', true);*/
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog" role="document">
 	<div class="modal-content">
-		<div class="modal-header modalHeaderStyle">
+		<div class="modal-header modal-headerIPS">
 			<a class="close" data-dismiss="modal">&times;</a>
 			<h4>Buscar</h4>
 		</div>
@@ -164,7 +164,7 @@ ini_set('display_errors', true);*/
 						<option value="3">País</option>
 						<option value="4">Categoría</option>
 					</select>
-					<button type="submit" class="btn btn-primary btnModal">Buscar</button>
+					<button type="submit" class="btn btn-primaryIPS">Buscar</button>
 		        </form>
 	        </div>
 	    </div>

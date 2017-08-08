@@ -160,7 +160,7 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
     array('id' => 'modal')
 ); ?>
  
-    <div class="modal-header modalHeaderStyle">
+    <div class="modal-header modal-headerIPS">
         <a class="close" data-dismiss="modal">&times;</a>
         <h4>¡GRACIAS POR SU COMPRA!</h4>
     </div>
