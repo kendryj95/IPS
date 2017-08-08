@@ -64,7 +64,7 @@ $this->widget('booster.widgets.TbCarousel', array(
 								$this->widget('booster.widgets.TbButton',
 								    array(
 								        'label' => 'Comprar',
-								        'context' => 'success',
+								        //'context' => 'success',
 								        'size' => 'small',
 								        'icon' => 'fa fa-money',
 								        'buttonType' => 'link',
@@ -77,12 +77,12 @@ $this->widget('booster.widgets.TbCarousel', array(
 								$this->widget('booster.widgets.TbButton',
 								    array(
 								        'label' => 'Detalles',
-								        'context' => 'info',
+								        //'context' => 'info',
 								        'size' => 'small',
 								        'icon' => 'fa fa-eye',
 								        'htmlOptions' => array(
 								            'data-toggle' => 'modal',
-								            'data-target' => '#myModal',
+								            'data-target' => '#modal-detalle',
 								            'class' => 'detailPD btn-defaultIPS',
 								            'data-idPD' => $info_producto['id_producto_sms'],
 								     
@@ -100,7 +100,7 @@ $this->widget('booster.widgets.TbCarousel', array(
 </div>
 <br>
 
-<?php $this->beginWidget('booster.widgets.TbModal',array('id' => 'myModal')); ?> 
+<?php $this->beginWidget('booster.widgets.TbModal',array('id' => 'modal-detalle')); ?> 
     
     <div class="modal-header modal-headerIPS">
         <a class="close" data-dismiss="modal">&times;</a>
