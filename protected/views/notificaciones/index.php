@@ -117,30 +117,30 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 	            'htmlOptions' => array('style' => 'text-align: center;'),
 	            'buttons' => array('ver' => array('label' => ' ',
 							            		   'url' => 'Yii::app()->createUrl("/notificaciones/entregarContenido", array("id_compra"=>$data->id_compra))',
-							            		   'options' => array('class'=>'glyphicon glyphicon-eye-open', 'data-toggle'=>'tooltip', 'data-placement'=>'top', 'title'=>'Ver', 'style'=>'color:black;', 'data-toggle' => 'modal', 'data-tooltip'=>'tooltip', 'data-target' => '#modal'),
+							            		   'options' => array('class'=>'glyphicon glyphicon-eye-open', 'data-toggle'=>'tooltip', 'data-placement'=>'top', 'title'=>'Ver', 'style'=>'color:black;', 'data-toggle' => 'modal', 'data-tooltip'=>'tooltip', 'data-target' => '#modal-detalleCompra'),
 							            		   'click' => 'function(){
 								                                    $.ajax({
 								                                        beforeSend: function(){
-								                                           $("#modal").addClass("loading");
+								                                           $("#modal-detalleCompra").addClass("loading");
 								                                        },
 								                                        complete: function(){
-								                                           $("#modal").removeClass("loading");
+								                                           $("#modal-detalleCompra").removeClass("loading");
 								                                        },
 								                                        type: "POST",
 								                                        url: $(this).attr("href"),
 								                                        success: function(data) { 
 								                                            
-															                $("#modal .modal-header").html("<a class=\"close\" data-dismiss=\"modal\">&times;</a><h4>COMPRA #"+data.id_compra+"</h4>");
+															                $("#modal-detalleCompra .modal-header").html("<a class=\"close\" data-dismiss=\"modal\">&times;</a><h4>COMPRA #"+data.id_compra+"</h4>");
 															                var compras = data.notificacion_compras;
 
 															                if(compras.length > 0){
-															                	$("#modal .modal-body").html(JSON.stringify(compras));
+															                	$("#modal-detalleCompra .modal-body").html(JSON.stringify(compras));
 															                }
 															                else{
-															                	$("#modal .modal-body").html("Disculpe, esta compra presenta errores.");
+															                	$("#modal-detalleCompra .modal-body").html("Disculpe, esta compra presenta errores.");
 															                }
 
-															                $("#modal").modal("show");
+															                $("#modal-detalleCompra").modal("show");
 								                                        },
 								                                        error: function() { 
 								                                            alert("ERROR - entregarContenido");
@@ -260,17 +260,17 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 
             success: function(data){
                 console.log(data);
-                $('#modal .modal-header').html('<a class="close" data-dismiss="modal">&times;</a><h4>COMPRA #'+id_compra+'</h4>');
-                $('#modal .modal-body').html(data.id_compra);
+                $('#modal-detalleCompra .modal-header').html('<a class="close" data-dismiss="modal">&times;</a><h4>COMPRA #'+id_compra+'</h4>');
+                $('#modal-detalleCompra .modal-body').html(data.id_compra);
 				
-				//$('#modal').modal("show");
+				//$('#modal-detalleCompra').modal("show");
             },
             error: function(){
                 console.log("ERROR - entregarContenido");
             }
         });
 
-        $('#modal').modal("show");
+        $('#modal-detalleCompra').modal("show");
 	}
 
 </script>

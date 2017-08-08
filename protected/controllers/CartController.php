@@ -166,6 +166,7 @@ class CartController extends Controller
 
 			$producto = ProductosDigitales::model()->findByPk($id_producto);
 			Yii::app()->shoppingCart->remove($producto->getId());
+			$this->actionIndex();
 		}else{
 			Yii::app()->shoppingCart->clear();
 			$this->redirect(Yii::app()->user->returnUrl);
