@@ -2,35 +2,74 @@
 	
 	$(document).ready(function() {
 		
-		//$('#emails > .form-group input[type="text"]').addClass('form-actions');
-		//$('#emails > .form-group').append('<button type="button" class="btn btn-success btn-sm btn-actions" title="Agregar otro email"><i class="fa fa-plus" aria-hidden="true"></i></button>');
-		$('.control-label').css('display','block');
-		$('#UsuarioIps_email').attr('type', 'hidden');
+		$('.control-label').css('display','block'); // forzar el los label a block
+		$('#UsuarioIps_email').attr('type', 'hidden'); // Me sirve para setear el verdadero campo que actualiza en BD
+		$('#UsuarioIps_telefono').attr('type', 'hidden'); // Me sirve para setear el verdadero campo que actualiza en BD
 		var valuesEmail = $('#UsuarioIps_email').val();
+		var valuesTlf = $('#UsuarioIps_telefono').val();
 		var splitEmail = valuesEmail.split(',');
+		var splitTlf = valuesTlf.split(',');
+		var countMailBD = splitEmail.length;
+		var countTlfBD = splitTlf.length;
+		var html = '';
+		
 
-		//if (splitEmail.length > 1) {
-//
-		//	for (var i = 1; i <= splitEmail.length; i++) {
-		//		$('#em'+i).val(splitEmail[i-1]);
-		//	}
-//
-		//} else {
+		if (countMailBD > 1) {
+
+			for (var i = 2; i <= countMailBD; i++) { // Bucle para obtener todos los correos de Base de datos y crearlos con sus
+				$('#em1').val(splitEmail[0]); 		 // respectivos input's.
+				html = '<div class="parent"><input style="margin-top: 10px" type="email" name="" class="form-control correo form-actions" placeholder="Correo" value="'+splitEmail[i-1]+'">';
+			html += '<button type="button" class="btn btn-danger btn-sm btn-actions removeEmail" title="Agregar otro email"><i class="fa fa-minus" aria-hidden="true"></i></button></div>';
+			$('#emails').append(html);
+			} 
+
+		} else {
 
 			$('#em1').val(splitEmail[0]);
 
-		//}
+		}
 
-		$('#addEmail').on('click',function(){
+		if (countTlfBD > 1) {
+
+			for (var i = 2; i <= countTlfBD; i++) { // Bucle para obtener todos los telefonos de Base de datos y crearlos con sus
+				$('#tlf1').val(splitTlf[0]); 		 // respectivos input's.
+				html = '<div class="parent"><input style="margin-top: 10px" type="text" name="" class="form-control tlf form-actions" placeholder="Telefono" value="'+splitTlf[i-1]+'">';
+			html += '<button type="button" class="btn btn-danger btn-sm btn-actions removeTlf" title="Agregar otro tlf"><i class="fa fa-minus" aria-hidden="true"></i></button></div>';
+			$('#telefonos').append(html);
+			}
+
+		} else {
+
+			$('#tlf1').val(splitTlf[0]);
+
+		}
+
+		$('#addEmail').on('click',function(){ // Evento que agrega más campos email's.
 
 			var countEmail = $('.correo').length + 1;
-			var html = '<div class="parent"><input style="margin-top: 10px" type="email" name="" id="em'+countEmail+'" class="form-control correo form-actions" placeholder="Correo">';
+			var html = '<div class="parent"><input style="margin-top: 10px" type="email" name="" class="form-control correo form-actions" placeholder="Correo">';
 			html += '<button type="button" class="btn btn-danger btn-sm btn-actions removeEmail" title="Agregar otro email"><i class="fa fa-minus" aria-hidden="true"></i></button></div>';
 			$('#emails').append(html);
 
 		});
 
-		$(document).on('click','.removeEmail',function(){
+		$('#addTlf').on('click',function(){ // Evento que agrega más campos tlfn's.
+
+			var countTlf = $('.tlf').length + 1;
+			var html = '<div class="parent"><input style="margin-top: 10px" type="text" name="" class="form-control tlf form-actions" placeholder="Telefono">';
+			html += '<button type="button" class="btn btn-danger btn-sm btn-actions removeTlf" title="Agregar otro tlf"><i class="fa fa-minus" aria-hidden="true"></i></button></div>';
+			$('#telefonos').append(html);
+
+		});
+
+		$(document).on('click','.removeEmail',function(){ // Elimina el campo email posicionado.
+			
+			var sel = $(this).parents().get(0);
+			$(sel).remove();
+
+		});
+
+		$(document).on('click','.removeTlf',function(){ // Elimina el campo telefono posicionado.
 			
 			var sel = $(this).parents().get(0);
 			$(sel).remove();
@@ -40,13 +79,19 @@
 		$('#update').on('click',function(){
 			
 			var arrayEmails = new Array;
+			var arrayTlf = new Array;
 
 			$('.correo').each(function(){
 				arrayEmails.push($(this).val());
 			});
+
+			$('.tlf').each(function(){
+				arrayTlf.push($(this).val());
+			});
 			
-			//console.log(arrayEmails.join());
 			$('#UsuarioIps_email').val(arrayEmails.join());
+			$('#UsuarioIps_telefono').val(arrayTlf.join());
+
 			$('#update').on('click');
 		});
 
@@ -142,15 +187,42 @@
 			</div>
 		<?php } else{ ?>
 
-					<div>
+				<?php if(Yii::app()->user->hasFlash('profile')): ?>
+					<div class="row">
+						<div class="col-sm-12">
+							<?php echo Yii::app()->user->getFlash('profile'); ?>
+						</div>
+					</div>
+				<?php endif; ?>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<?php echo $form->textFieldGroup($model,'nombres',array('widgetOptions' => array('size'=>30, 'maxlength'=>50))) ?>
+						</div>
+						<div class="col-sm-6">
+							<?php echo $form->textFieldGroup($model,'apellidos',array('widgetOptions' => array('size'=>30, 'maxlength'=>50))) ?>
+						</div>
+					</div>
+
+					<div class="row">
 						
+						<div class="col-sm-6">
 						<?php echo $form->textFieldGroup($model,'email',array('widgetOptions' => array('size'=>60, 'maxlength'=>250))) ?>
-						<input type="email" name="" id="em1" class="form-control correo form-actions" placeholder="Correo"><button type="button" id="addEmail" class="btn btn-success btn-sm btn-actions" title="Agregar otro email"><i class="fa fa-plus" aria-hidden="true"></i></button>
-						<div id="emails"></div>
+							<input type="email" name="" id="em1" class="form-control correo form-actions" placeholder="Correo"><button type="button" id="addEmail" class="btn btn-success btn-sm btn-actions" title="Agregar otro email"><i class="fa fa-plus" aria-hidden="true"></i></button>
+							<div id="emails"></div>
+						</div>
+						
+					
+
+						<div class="col-sm-6">
+							<?php echo $form->textFieldGroup($model,'telefono',array('widgetOptions' => array('size'=>15,'maxlength'=>15))); ?>
+							<input type="text" name="" id="tlf1" class="form-control tlf form-actions" placeholder="Telefono"><button type="button" id="addTlf" class="btn btn-success btn-sm btn-actions" title="Agregar otro tlf"><i class="fa fa-plus" aria-hidden="true"></i></button>
+							<div id="telefonos"></div>
+						</div>
 					</div><br>
 
-					<div id="telefonos">
-						<?php echo $form->textFieldGroup($model,'telefono',array('widgetOptions' => array('size'=>15,'maxlength'=>15))); ?>
+					<div>
+						<?php echo $form->textFieldGroup($model,'direccion',array('widgetOptions' => array('size'=>60, 'maxlength'=>100))) ?>
 					</div>
 
 					<div>

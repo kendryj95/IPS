@@ -95,7 +95,8 @@ class UsuarioIpsController extends Controller
 		{
 			$model->attributes=$_POST['UsuarioIps'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->idusuario_ips));
+				Yii::app()->user->setFlash('profile','<div class="alert alert-success"><b>Perfil Actualizado satisfactoriamente</b></div>');
+				$this->refresh();
 		}
 
 		$this->render('update',array(

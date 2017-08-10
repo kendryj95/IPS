@@ -33,7 +33,7 @@ class UsuarioIps extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('login, email, pwd, confirm_password, fecha_creado, hora_creado, telefono', 'required'),
+			array('login, email, pwd, confirm_password, fecha_creado, hora_creado, telefono, nombres, apellidos, direccion', 'required'),
 			array('estatus', 'numerical', 'integerOnly'=>true),
 			array('login', 'length', 'max'=>20),
 			array('pwd', 'length', 'max'=>90),
@@ -70,8 +70,11 @@ class UsuarioIps extends CActiveRecord
 	{
 		return array(
 			'idusuario_ips' => 'Idusuario Ips',
+			'nombres' => 'Nombres',
+			'apellidos' => 'Apellidos',
 			'email' => 'Correo',
 			'telefono' => 'Telefono',
+			'direccion' => 'Dirección',
 			'login' => 'Usuario',
 			'pwd' => 'Contraseña',
 			'estatus' => 'Estatus',
@@ -103,8 +106,11 @@ class UsuarioIps extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('idusuario_ips',$this->idusuario_ips);
+		$criteria->compare('nombres',$this->nombres,true);
+		$criteria->compare('apellidos',$this->apellidos,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('telefono',$this->telefono,true);
+		$criteria->compare('direccion',$this->direccion,true);
 		$criteria->compare('login',$this->login,true);
 		$criteria->compare('pwd',$this->pwd,true);
 		$criteria->compare('estatus',$this->estatus);
