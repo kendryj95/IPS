@@ -12,7 +12,10 @@
 		var countMailBD = splitEmail.length;
 		var countTlfBD = splitTlf.length;
 		var html = '';
-		
+
+		<?php if($preferencias != ""): ?> // Esta parte es donde se setea el widget de select multiple de Yii
+			$('#PreferenciasUsuarioips_id_categoria').val("<?= $preferencias ?>");
+		<?php endif; ?>
 
 		if (countMailBD > 1) {
 
@@ -76,7 +79,7 @@
 
 		});
 
-		$('#update').on('click',function(){
+		$('#update').on('click',function(){ // Btn de "actualizar".
 			
 			var arrayEmails = new Array;
 			var arrayTlf = new Array;
@@ -92,7 +95,7 @@
 			$('#UsuarioIps_email').val(arrayEmails.join());
 			$('#UsuarioIps_telefono').val(arrayTlf.join());
 
-			$('#update').on('click');
+			$('#update').on('click'); // Forzar a que se envíe el formulario.
 		});
 
 
@@ -222,7 +225,36 @@
 					</div><br>
 
 					<div>
+							<?php 
+								$categorias = array();
+								foreach ($modelCategoria as $value) {
+									if ($value->abreviatura != '') {
+										$categorias[] = $value->abreviatura;
+									}
+								}
+							 ?>
 						<?php echo $form->textFieldGroup($model,'direccion',array('widgetOptions' => array('size'=>60, 'maxlength'=>100))) ?>
+					</div>
+
+					<div>
+						<?php echo $form->select2Group(
+										$modelPreferencias,
+										'id_categoria',
+										array(
+											'wrapperHtmlOptions' => array(
+												'class' => 'col-sm-6',
+											),
+											'widgetOptions' => array(
+												'asDropDownList' => false,
+												'options' => array(
+													'tags' => $categorias,
+													'placeholder' => 'Preferencia Deportivas',
+													/* 'width' => '40%', */
+													'tokenSeparators' => array(',', ' ')
+												),
+											)
+										)
+									);?>
 					</div>
 
 					<div>

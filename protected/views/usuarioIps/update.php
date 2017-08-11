@@ -17,4 +17,4 @@ $this->menu=array(
 ?>
 <h2 style="text-align: center;">Actualizar perfil</h2>
 <hr>
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'modelCategoria'=>$modelCategoria,'modelPreferencias'=>$modelPreferencias,'preferencias'=>$preferencias)); ?>

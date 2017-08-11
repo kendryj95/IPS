@@ -27,7 +27,7 @@ class PreferenciasUsuarioips extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_usuario, id_categoria', 'required'),
-			array('id_usuario, id_categoria', 'numerical', 'integerOnly'=>true),
+			//array('id_usuario, id_categoria', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_usuario, id_categoria', 'safe', 'on'=>'search'),
@@ -53,7 +53,7 @@ class PreferenciasUsuarioips extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'id_usuario' => 'Id Usuario',
-			'id_categoria' => 'Id Categoria',
+			'id_categoria' => 'Preferencias Deportivas',
 		);
 	}
 

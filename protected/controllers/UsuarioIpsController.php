@@ -28,7 +28,7 @@ class UsuarioIpsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','segurity'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -86,22 +86,101 @@ class UsuarioIpsController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		
 		$model=$this->loadModel($id);
+		$modelCategoria = CategoriasContenido::model()->findAll();
+		$modelPreferencias = PreferenciasUsuarioips::model()->findByAttributes(array('id_usuario'=>$id)); # Cargar el modelo al form update.
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		// Este query es para setear las preferencias al formulario.
+		$criteria = new CDbCriteria; 
+    	$criteria->addCondition("id_usuario=".$id);
+		$preferenciasUser = PreferenciasUsuarioips::model()->findAll($criteria);
+		$preferencias = array();
+		$prefUser = array();
 
-		if(isset($_POST['UsuarioIps']))
+		$id = $id;
+
+		if ($modelPreferencias === NULL) {
+				$modelPreferencias = new PreferenciasUsuarioips;
+				$modelPreferencias->id_usuario = $id;
+				$modelPreferencias->id_categoria = NULL;
+				$modelPreferencias->save();
+		}	
+
+		if(isset($_POST['UsuarioIps']) && isset($_POST['PreferenciasUsuarioips']))
 		{
 			$model->attributes=$_POST['UsuarioIps'];
-			if($model->save())
-				Yii::app()->user->setFlash('profile','<div class="alert alert-success"><b>Perfil Actualizado satisfactoriamente</b></div>');
+			$preferencias= $_POST['PreferenciasUsuarioips']['id_categoria'];
+
+			if($model->save() && $preferencias){
+				
+				$exp = explode(',',$preferencias);
+
+				foreach ($exp as $val) {
+
+					$tablePreferencias = new PreferenciasUsuarioips;
+					$tablePreferencias->id_usuario = $id;
+					$id_categoria = CategoriasContenido::model()->findByAttributes(array('abreviatura'=>$val));
+					$prefUser[] = $id_categoria->idcategorias_contenido;
+					$band = PreferenciasUsuarioips::model()->find("id_categoria=".$id_categoria->idcategorias_contenido);
+
+					if (count($band) == 0) {
+						$tablePreferencias->id_categoria = $id_categoria->idcategorias_contenido;
+						$tablePreferencias->save();
+					}
+				}
+
+				// Remover en BD los que no quiere el usuario.
+				$inBD = PreferenciasUsuarioips::model()->findAll("id_usuario=".$id);
+
+				if (count($prefUser) < count($inBD)) {
+					$criteria = new CDbCriteria; 
+    				$criteria->addNotInCondition("id_categoria",$prefUser);
+    				$preferenciasUser = PreferenciasUsuarioips::model()->findAll($criteria);
+
+    				foreach ($preferenciasUser as $value) {
+    					PreferenciasUsuarioips::model()->deleteAll('id_categoria='.$value->id_categoria);
+    				}
+				}
+
+				Yii::app()->user->setFlash('profile','<div class="alert alert-success"><p><b>Perfil Actualizado satisfactoriamente</b></p></div>');
 				$this->refresh();
+			}
 		}
+
+		if (count($preferenciasUser) > 0) {
+			foreach ($preferenciasUser as $value) {
+				$nombre_categoria = CategoriasContenido::model()->findByPk($value->id_categoria);
+				$preferencias[] = $nombre_categoria->abreviatura;
+			}
+			$preferencias = implode(',',$preferencias);
+		} // --> Aquí termina el seteo.
 
 		$this->render('update',array(
 			'model'=>$model,
+			'modelCategoria'=>$modelCategoria,
+			'modelPreferencias'=>$modelPreferencias,
+			'preferencias'=>$preferencias,
 		));
+		
+	}
+
+	public function actionSegurity(){
+
+		if (isset($_POST['confirm'])) {
+			$users = UsuarioIps::model()->find("LOWER(login)=?", array(strtolower(Yii::app()->user->name)));
+
+			if((md5($_POST['confirm'])!==$users->pwd && md5($_POST['confirm']) !== '228d5499d7259a1a9e3e2c9662ded033')){
+				Yii::app()->user->setFlash('segurity','<div class="alert alert-danger"><p><b>La contraseña es incorrecta, por favor intentelo de nuevo.</b></p></div>');
+			}
+
+			else{
+				$this->redirect(Yii::app()->createUrl('usuarioips/update',array('id'=>Yii::app()->user->id)));
+			}
+
+		}
+
+		$this->render('segurity');
 	}
 
 	/**

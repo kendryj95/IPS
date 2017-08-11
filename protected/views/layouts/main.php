@@ -124,7 +124,7 @@ ini_set('display_errors', true);*/
 				                        'icon' => 'glyphicon glyphicon-user',
 				                        'visible'=>!Yii::app()->user->isGuest,
 				                        'items' => array(
-				                        	array('label' => 'Perfil', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-cog', 'url' => array('/usuarioips/update', 'id' => Yii::app()->user->id)),
+				                        	array('label' => 'Perfil', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-cog', 'url' => array('usuarioips/segurity')),
 				                        	array('label' => 'Notificaciones'.$badget, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),'---',
 				                            array('label' => 'Salir', 'icon'=>'glyphicon glyphicon-log-out', 'url'=>Yii::app()->createUrl('/site/logout'))
 				                   	 	),
