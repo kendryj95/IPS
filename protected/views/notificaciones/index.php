@@ -119,34 +119,48 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 							            		   'url' => 'Yii::app()->createUrl("/notificaciones/entregarContenido", array("id_compra"=>$data->id_compra))',
 							            		   'options' => array('class'=>'glyphicon glyphicon-eye-open', 'data-toggle'=>'tooltip', 'data-placement'=>'top', 'title'=>'Ver', 'style'=>'color:black;', 'data-toggle' => 'modal', 'data-tooltip'=>'tooltip', 'data-target' => '#modal-detalleCompra'),
 							            		   'click' => 'function(){
-								                                    $.ajax({
-								                                        beforeSend: function(){
-								                                           $("#modal-detalleCompra").addClass("loading");
-								                                        },
-								                                        complete: function(){
-								                                           $("#modal-detalleCompra").removeClass("loading");
-								                                        },
-								                                        type: "POST",
-								                                        url: $(this).attr("href"),
-								                                        success: function(data) { 
-								                                            
+														            $.ajax({
+														                beforeSend: function(){
+														                   $("#modal-detalleCompra").addClass("loading");
+														                },
+														                complete: function(){
+														                   $("#modal-detalleCompra").removeClass("loading");
+														                },
+														                type: "POST",
+														                url: $(this).attr("href"),
+														                success: function(data) { 
+														                    
 															                $("#modal-detalleCompra .modal-header").html("<a class=\"close\" data-dismiss=\"modal\">&times;</a><h4>COMPRA #"+data.id_compra+"</h4>");
 															                var compras = data.notificacion_compras;
 
 															                if(compras.length > 0){
-															                	$("#modal-detalleCompra .modal-body").html(JSON.stringify(compras));
+
+															                	var text = "<p style=\"word-wrap: break-word;\">estado_compra " + compras[0].estado_compra  + "<br> estado_pago " + compras[0].estado_pago + "<br> payer_info_email " + compras[0].payer_info_email + "<br> id_compra " + compras[0].id_compra + "<br> desp_op " + compras[0].desp_op + "<br></p>";
+
+																				for(var i = 0; i < compras.length; i++) {
+																					if(compras[i].contenido_texto != null){
+																						text += "<p style=\"word-wrap: break-word;\"><br>sms_sc " + compras[i].sms_sc + "<br> consumidor_email " + compras[i].consumidor_email + "<br> consumidor_telefono " + compras[i].consumidor_telefono + "<br> categoria " + compras[i].categoria + "<br> deporte " + compras[i].deporte + "<br> pais " + compras[i].pais + "<br> tipo " + compras[i].tipo + "<br> abreviatura " + compras[i].abreviatura + "<br> contenido_texto " + compras[i].contenido_texto + "<br></p>";
+																					}else{
+																						if(compras[i].abreviatura == ".mp3"){
+																							text += "<p style=\"word-wrap: break-word;\"><br>sms_sc " + compras[i].sms_sc + "<br> consumidor_email " + compras[i].consumidor_email + "<br> consumidor_telefono " + compras[i].consumidor_telefono + "<br> categoria " + compras[i].categoria + "<br> deporte " + compras[i].deporte + "<br> abreviatura " + compras[i].abreviatura + "<br> pais " + compras[i].pais + "<br> tipo " + compras[i].tipo_contenido + "<br> nombre_archivo " + compras[i].nombre_archivo + "<br> contenido_archivo <audio src=\"data:audio/mp3; base64, " + compras[i].contenido_archivo + "\" controls> </audio> <br></p>";
+																						}
+																						
+																					}
+																				};
+
+																				$("#modal-detalleCompra .modal-body").html(text);
 															                }
 															                else{
 															                	$("#modal-detalleCompra .modal-body").html("Disculpe, esta compra presenta errores.");
 															                }
 
 															                $("#modal-detalleCompra").modal("show");
-								                                        },
-								                                        error: function() { 
-								                                            alert("ERROR - entregarContenido");
-								                                        }
-								                                    });
-					                                }'
+														                },
+														                error: function() { 
+														                    alert("ERROR - entregarContenido");
+														                }
+														            });
+																}'
 						                         ),
 	            ),
 	        ),
@@ -154,10 +168,11 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
     ));
 
 ?>
+<!--$("#modal-detalleCompra .modal-body").html(JSON.stringify(compras));-->
 
 <?php $this->beginWidget(
     'booster.widgets.TbModal',
-    array('id' => 'modal')
+    array('id' => 'modal-detalleCompra')
 ); ?>
  
     <div class="modal-header modal-headerIPS">
@@ -165,8 +180,8 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
         <h4>¡GRACIAS POR SU COMPRA!</h4>
     </div>
  
-    <div class="modal-body">
-        <p>One fine body...</p>
+    <div class="modal-body" style="overflow: scroll; height: 350px;">
+        <!--<p>One fine body...</p>-->
     </div>
  
     <div class="modal-footer">
@@ -184,7 +199,7 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
             array(
                 'label' => 'Close',
                 'url' => '#',
-                'htmlOptions' => array('data-dismiss' => 'modal'),
+                'htmlOptions' => array('data-dismiss' => 'modal', 'class' => 'btn-defaultIPS'),
             )
         ); ?>
     </div>
@@ -195,13 +210,13 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 	$(document).ready(function(){
 		registrarNotificacion();
 
-		$(".idCompra_reg").click(function (e) {
+		/*$(".idCompra_reg").click(function (e) {
 			var id_compra = $(this).attr('id_registro');
-			entregarContenido(id_compra);
+			//entregarContenido(id_compra);
 			//e.stopPropagation();
 		    //e.preventDefault();
 		    //return false;
-		});
+		});*/
 
 		//$('#notificaciones-grid .pagination li').on('change', 'a', function(e){
 		//$('#notificaciones-grid .pagination li a').live('click', function (e) {
@@ -247,8 +262,8 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 		//alert("sasdsd");
 		//console.log(document.getElementById("modal"));
 		
-		$.ajax({
-            url:"<?php echo Yii::app()->createUrl('/notificaciones/entregarContenido'); ?>",
+		/*$.ajax({
+            url:"<?php //echo Yii::app()->createUrl('/notificaciones/entregarContenido'); ?>",
             type:"POST",    
             data:{id_compra: id_compra},
             
@@ -270,7 +285,10 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
             }
         });
 
-        $('#modal-detalleCompra').modal("show");
+        $('#modal-detalleCompra').modal("show");*/
+        console.log(id_compra);
+        return 0;
+        
 	}
 
 </script>
