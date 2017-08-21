@@ -8,3 +8,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 AddDefaultCharset utf-8
 # otherwise forward it to index.php
 RewriteRule . index.php
+
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^http://localhost:8080/IPS*/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://localhost:8080/IPS*$ [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp|zip|pdf|mp3)$ - [F,NC]
