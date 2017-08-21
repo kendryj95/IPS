@@ -86,10 +86,11 @@ class UsuarioIpsController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		
 		$model=$this->loadModel($id);
 		$modelCategoria = CategoriasContenido::model()->findAll();
 		$modelPreferencias = PreferenciasUsuarioips::model()->findByAttributes(array('id_usuario'=>$id)); # Cargar el modelo al form update.
+		$modelContacto = ContactoUsuario::model()->findByAttributes(array('idusuario_ips'=>$id)); # Cargar el modelo al form update.
+
 
 		// Este query es para setear las preferencias al formulario.
 		$criteria = new CDbCriteria; 
@@ -97,6 +98,52 @@ class UsuarioIpsController extends Controller
 		$preferenciasUser = PreferenciasUsuarioips::model()->findAll($criteria);
 		$preferencias = array();
 		$prefUser = array();
+		$emailUser = array();
+		$tlfUser = array();
+
+		if (count($preferenciasUser) > 0) {
+			foreach ($preferenciasUser as $value) {
+				$nombre_categoria = CategoriasContenido::model()->findByPk($value->id_categoria);
+				$preferencias[] = $nombre_categoria->abreviatura;
+			}
+			$preferencias = implode(',',$preferencias);
+		} else {
+			$preferencias = "";
+		} // --> Aquí termina el seteo.
+
+		// Este query es para setear los emails al formulario.
+		$criteria = new CDbCriteria; 
+    	$criteria->addCondition("idusuario_ips=".$id);
+    	$criteria->addCondition("tipo_contacto='email'");
+		$contactoUserEmail = ContactoUsuario::model()->findAll($criteria);
+		$contactosEmail = array();
+
+		if (count($contactoUserEmail) > 0) {
+			foreach ($contactoUserEmail as $value) {
+				
+				$contactosEmail[] = $value->email;
+			}
+			$contactosEmail = implode(',',$contactosEmail);
+		} else {
+			$contactosEmail = "";
+		} // --> Aquí termina el seteo.
+
+		// Este query es para setear las preferencias al formulario.
+		$criteria = new CDbCriteria; 
+    	$criteria->addCondition("idusuario_ips=".$id);
+    	$criteria->addCondition("tipo_contacto='telefono'");
+		$contactoUserTlf = ContactoUsuario::model()->findAll($criteria);
+		$contactosTlf = array();
+
+		if (count($contactoUserTlf) > 0) {
+			foreach ($contactoUserTlf as $value) {
+				
+				$contactosTlf[] = $value->telefono;
+			}
+			$contactosTlf = implode(',',$contactosTlf);
+		} else {
+			$contactosTlf = "";
+		} // --> Aquí termina el seteo.
 
 		$id = $id;
 
@@ -105,36 +152,47 @@ class UsuarioIpsController extends Controller
 				$modelPreferencias->id_usuario = $id;
 				$modelPreferencias->id_categoria = NULL;
 				$modelPreferencias->save();
+		}
+
+		if ($modelContacto === NULL) {
+				$modelContacto = new ContactoUsuario;
+				$modelContacto->idusuario_ips = $id;
+				$modelContacto->save();
 		}	
 
-		if(isset($_POST['UsuarioIps']) && isset($_POST['PreferenciasUsuarioips']))
+		if(isset($_POST['UsuarioIps']) && isset($_POST['PreferenciasUsuarioips']) && isset($_POST['ContactoUsuario']))
 		{
 			$model->attributes=$_POST['UsuarioIps'];
 			$preferencias= $_POST['PreferenciasUsuarioips']['id_categoria'];
+			$contactosEmail= $_POST['ContactoUsuario']['email'];
+			$contactosTlf= $_POST['ContactoUsuario']['telefono'];
 
-			if($model->save() && $preferencias){
+			if($model->save() && $preferencias && $contactosEmail && $contactosTlf){
 				
-				$exp = explode(',',$preferencias);
+				$expPref = explode(',',$preferencias);
+				$expContEmail = explode(',',$contactosEmail);
+				$expContTlf = explode(',',$contactosTlf);
 
-				foreach ($exp as $val) {
+				foreach ($expPref as $val) {
 
 					$tablePreferencias = new PreferenciasUsuarioips;
 					$tablePreferencias->id_usuario = $id;
 					$id_categoria = CategoriasContenido::model()->findByAttributes(array('abreviatura'=>$val));
 					$prefUser[] = $id_categoria->idcategorias_contenido;
 					$band = PreferenciasUsuarioips::model()->find("id_categoria=".$id_categoria->idcategorias_contenido);
+					$tablePreferencias->id_categoria = $id_categoria->idcategorias_contenido;
 
 					if (count($band) == 0) {
-						$tablePreferencias->id_categoria = $id_categoria->idcategorias_contenido;
 						$tablePreferencias->save();
 					}
 				}
 
-				// Remover en BD los que no quiere el usuario.
+				// Remover en BD las preferencias que no quiere el usuario.
 				$inBD = PreferenciasUsuarioips::model()->findAll("id_usuario=".$id);
 
 				if (count($prefUser) < count($inBD)) {
-					$criteria = new CDbCriteria; 
+					$criteria = new CDbCriteria;
+					$criteria->addCondition('id_usuario='.$id); 
     				$criteria->addNotInCondition("id_categoria",$prefUser);
     				$preferenciasUser = PreferenciasUsuarioips::model()->findAll($criteria);
 
@@ -143,26 +201,82 @@ class UsuarioIpsController extends Controller
     				}
 				}
 
+				foreach ($expContEmail as $value) {
+					$tableContactos = new ContactoUsuario;
+					$tableContactos->idusuario_ips = $id;
+					$tableContactos->email = $value;
+					$tableContactos->tipo_contacto = 'email';
+					$emailUser[] = $value;
+
+					$band = ContactoUsuario::model()->find("email='".$value."'");
+					
+					if (count($band) == 0) {
+						$tableContactos->save(false);
+					}
+
+				}
+
+				// Remover en BD los emails que no quiere el usuario.
+				$inBD = ContactoUsuario::model()->findAll("idusuario_ips=".$id." AND tipo_contacto='email'");
+
+				if (count($emailUser) < count($inBD)) {
+					$criteria = new CDbCriteria;
+					$criteria->addCondition('idusuario_ips='.$id); 
+					$criteria->addCondition('tipo_contacto="email"'); 
+    				$criteria->addNotInCondition("email",$emailUser);
+    				$emailsUser = ContactoUsuario::model()->findAll($criteria);
+
+    				foreach ($emailsUser as $value) {
+    					ContactoUsuario::model()->deleteByPk($value->idcontacto_usuario);
+    				}
+				}
+
+				foreach ($expContTlf as $value) {
+					$tableContactos = new ContactoUsuario;
+					$tableContactos->idusuario_ips = $id;
+					$tableContactos->telefono = $value;
+					$tableContactos->tipo_contacto = 'telefono';
+					$tlfUser[] = $value;
+
+					$band = ContactoUsuario::model()->find("telefono=$value");
+					
+					if (count($band) == 0) {
+						$tableContactos->save(false);
+					}
+
+				}
+
+				
+
+				// Remover en BD los emails que no quiere el usuario.
+				$inBD = ContactoUsuario::model()->findAll("idusuario_ips=".$id." AND tipo_contacto='telefono'");
+
+				if (count($tlfUser) < count($inBD)) {
+					$criteria = new CDbCriteria;
+					$criteria->addCondition('idusuario_ips='.$id); 
+					$criteria->addCondition('tipo_contacto="telefono"'); 
+    				$criteria->addNotInCondition("telefono",$tlfUser);
+    				$tlfnsUser = ContactoUsuario::model()->findAll($criteria);
+
+    				foreach ($tlfnsUser as $value) {
+    					ContactoUsuario::model()->deleteByPk($value->idcontacto_usuario);
+    				}
+				}
+
 				Yii::app()->user->setFlash('profile','<div class="alert alert-success"><p><b>Perfil Actualizado satisfactoriamente</b></p></div>');
 				$this->refresh();
 			}
 		}
 
-		if (count($preferenciasUser) > 0) {
-			foreach ($preferenciasUser as $value) {
-				$nombre_categoria = CategoriasContenido::model()->findByPk($value->id_categoria);
-				$preferencias[] = $nombre_categoria->abreviatura;
-			}
-			$preferencias = implode(',',$preferencias);
-		} // --> Aquí termina el seteo.
-
 		$this->render('update',array(
 			'model'=>$model,
 			'modelCategoria'=>$modelCategoria,
 			'modelPreferencias'=>$modelPreferencias,
+			'modelContacto'=>$modelContacto,
 			'preferencias'=>$preferencias,
+			'contactosEmail'=>$contactosEmail,
+			'contactosTlf'=>$contactosTlf,
 		));
-		
 	}
 
 	public function actionSegurity(){
@@ -182,6 +296,7 @@ class UsuarioIpsController extends Controller
 
 		$this->render('segurity');
 	}
+
 
 	/**
 	 * Deletes a particular model.

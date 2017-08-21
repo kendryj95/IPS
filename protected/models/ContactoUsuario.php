@@ -6,7 +6,8 @@
  * The followings are the available columns in table 'contacto_usuario':
  * @property integer $idcontacto_usuario
  * @property integer $idusuario_ips
- * @property string $valor
+ * @property string $email
+ * @property string $telefono
  * @property string $tipo_contacto
  */
 class ContactoUsuario extends CActiveRecord
@@ -27,13 +28,12 @@ class ContactoUsuario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('idusuario_ips, valor, tipo_contacto', 'required'),
+			array('idusuario_ips,email,telefono', 'required'),
 			array('idusuario_ips', 'numerical', 'integerOnly'=>true),
-			array('valor', 'length', 'max'=>100),
 			array('tipo_contacto', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idcontacto_usuario, idusuario_ips, valor, tipo_contacto', 'safe', 'on'=>'search'),
+			array('idcontacto_usuario, idusuario_ips, email, telefono, tipo_contacto', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,7 +56,8 @@ class ContactoUsuario extends CActiveRecord
 		return array(
 			'idcontacto_usuario' => 'Idcontacto Usuario',
 			'idusuario_ips' => 'Idusuario Ips',
-			'valor' => 'Valor',
+			'email' => 'Email',
+			'telefono' => 'Telefono',
 			'tipo_contacto' => 'Tipo Contacto',
 		);
 	}
@@ -81,7 +82,8 @@ class ContactoUsuario extends CActiveRecord
 
 		$criteria->compare('idcontacto_usuario',$this->idcontacto_usuario);
 		$criteria->compare('idusuario_ips',$this->idusuario_ips);
-		$criteria->compare('valor',$this->valor,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('telefono',$this->telefono,true);
 		$criteria->compare('tipo_contacto',$this->tipo_contacto,true);
 
 		return new CActiveDataProvider($this, array(
