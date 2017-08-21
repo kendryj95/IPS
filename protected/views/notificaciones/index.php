@@ -51,8 +51,8 @@ echo "</pre>";*/
    .interna embed {
         display: block;
         margin: 0 auto;
-        width: 90%;
-        height: 100%;
+        width: 120%;
+        height: 550px;
     }
 </style>
 <?php
