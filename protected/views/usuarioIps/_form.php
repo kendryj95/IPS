@@ -3,10 +3,19 @@
 	$(document).ready(function() {
 		
 		$('.control-label').css('display','block'); // forzar el los label a block
-		$('#UsuarioIps_email').attr('type', 'hidden'); // Me sirve para setear el verdadero campo que actualiza en BD
-		$('#UsuarioIps_telefono').attr('type', 'hidden'); // Me sirve para setear el verdadero campo que actualiza en BD
-		var valuesEmail = $('#UsuarioIps_email').val();
-		var valuesTlf = $('#UsuarioIps_telefono').val();
+		$('#ContactoUsuario_email').attr('type', 'hidden'); // Me sirve para setear el verdadero campo que actualiza en BD
+		$('#ContactoUsuario_telefono').attr('type', 'hidden'); // Me sirve para setear el verdadero campo que actualiza en BD
+
+		<?php if($contactosEmail != ""): ?> // Esta parte es donde se setea el widget de select multiple de Yii
+			$('#ContactoUsuario_email').val("<?= $contactosEmail ?>");
+		<?php endif; ?>
+
+		<?php if($contactosTlf != ""): ?> // Esta parte es donde se setea el widget de select multiple de Yii
+			$('#ContactoUsuario_telefono').val("<?= $contactosTlf ?>");
+		<?php endif; ?>
+		
+		var valuesEmail = $('#ContactoUsuario_email').val();
+		var valuesTlf = $('#ContactoUsuario_telefono').val();
 		var splitEmail = valuesEmail.split(',');
 		var splitTlf = valuesTlf.split(',');
 		var countMailBD = splitEmail.length;
@@ -16,6 +25,7 @@
 		<?php if($preferencias != ""): ?> // Esta parte es donde se setea el widget de select multiple de Yii
 			$('#PreferenciasUsuarioips_id_categoria').val("<?= $preferencias ?>");
 		<?php endif; ?>
+
 
 		if (countMailBD > 1) {
 
@@ -56,10 +66,11 @@
 
 		});
 
+
 		$('#addTlf').on('click',function(){ // Evento que agrega más campos tlfn's.
 
 			var countTlf = $('.tlf').length + 1;
-			var html = '<div class="parent"><input style="margin-top: 10px" type="text" name="" class="form-control tlf form-actions" placeholder="Telefono">';
+			var html = '<div class="parent"><input style="margin-top: 10px" type="tel" name="" class="form-control tlf form-actions" placeholder="Telefono" pattern="[0-9]{11}">';
 			html += '<button type="button" class="btn btn-danger btn-sm btn-actions removeTlf" title="Agregar otro tlf"><i class="fa fa-minus" aria-hidden="true"></i></button></div>';
 			$('#telefonos').append(html);
 
@@ -91,11 +102,20 @@
 			$('.tlf').each(function(){
 				arrayTlf.push($(this).val());
 			});
-			
-			$('#UsuarioIps_email').val(arrayEmails.join());
-			$('#UsuarioIps_telefono').val(arrayTlf.join());
 
-			$('#update').on('click'); // Forzar a que se envíe el formulario.
+			if (arrayEmails.includes( '' ) || arrayTlf.includes( '' )) {
+
+				$('#error').html("<div class='alert alert-danger alert-dismissible' role='	alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><b>Error!</b> Has dejado campos vacios.</div>");
+
+				return false;
+			} else {
+
+				$('#ContactoUsuario_email').val(arrayEmails.join());
+				$('#ContactoUsuario_telefono').val(arrayTlf.join());
+
+				$('#update').on('click'); // Forzar a que se envíe el formulario.
+			}
+			
 		});
 
 
@@ -107,6 +127,8 @@
 	<div class="col-sm-offset-3 col-sm-6">
 					<fieldset class="login-border">
 					<legend class="login-border"><b>DATOS DE USUARIO</b></legend>
+
+					<div id="error"></div>
 <?php
 /* @var $this UsuarioIpsController */
 /* @var $model UsuarioIps */
@@ -210,7 +232,7 @@
 					<div class="row">
 						
 						<div class="col-sm-6">
-						<?php echo $form->textFieldGroup($model,'email',array('widgetOptions' => array('size'=>60, 'maxlength'=>250))) ?>
+						<?php echo $form->textFieldGroup($modelContacto,'email',array('widgetOptions' => array('size'=>60, 'maxlength'=>250))) ?>
 							<input type="email" name="" id="em1" class="form-control correo form-actions" placeholder="Correo"><button type="button" id="addEmail" class="btn btn-success btn-sm btn-actions" title="Agregar otro email"><i class="fa fa-plus" aria-hidden="true"></i></button>
 							<div id="emails"></div>
 						</div>
@@ -218,8 +240,8 @@
 					
 
 						<div class="col-sm-6">
-							<?php echo $form->textFieldGroup($model,'telefono',array('widgetOptions' => array('size'=>15,'maxlength'=>15))); ?>
-							<input type="text" name="" id="tlf1" class="form-control tlf form-actions" placeholder="Telefono"><button type="button" id="addTlf" class="btn btn-success btn-sm btn-actions" title="Agregar otro tlf"><i class="fa fa-plus" aria-hidden="true"></i></button>
+							 <?php echo $form->textFieldGroup($modelContacto,'telefono',array('widgetOptions' => array('size'=>15,'maxlength'=>15))); ?>
+							<input type="tel" name="" id="tlf1" class="form-control tlf form-actions" placeholder="Telefono" pattern="[0-9]{11}"><button type="button" id="addTlf" class="btn btn-success btn-sm btn-actions" title="Agregar otro tlf"><i class="fa fa-plus" aria-hidden="true"></i></button>
 							<div id="telefonos"></div>
 						</div>
 					</div><br>
