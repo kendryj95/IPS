@@ -179,7 +179,7 @@ class UsuarioIpsController extends Controller
 					$tablePreferencias->id_usuario = $id;
 					$id_categoria = CategoriasContenido::model()->findByAttributes(array('abreviatura'=>$val));
 					$prefUser[] = $id_categoria->idcategorias_contenido;
-					$band = PreferenciasUsuarioips::model()->find("id_categoria=".$id_categoria->idcategorias_contenido);
+					$band = PreferenciasUsuarioips::model()->find("id_categoria=".$id_categoria->idcategorias_contenido." AND id_usuario=".$id);
 					$tablePreferencias->id_categoria = $id_categoria->idcategorias_contenido;
 
 					if (count($band) == 0) {
