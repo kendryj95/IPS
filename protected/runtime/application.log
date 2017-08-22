@@ -1,0 +1,1663 @@
+2017/08/21 16:19:25 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:25 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:25 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:25 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:25 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:25 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:25 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:25 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:25 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:25 [trace] [system.db.CDbCommand] Querying SQL: SELECT p.nombre_de_archivo, p.titulo, p.descripcion FROM insignia_payments_solutions.publicidad p, insignia_payments_solutions.tipo_publicidad t WHERE p.idtipo_publicidad = p.idtipo_publicidad AND p.status = 1 AND t.descripcion = 'Carrusel'
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:25 [trace] [system.db.CDbCommand] Querying SQL: SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido  GROUP BY p.id_producto
+in C:\xampp\htdocs\IPS\protected\models\ProductosDigitales.php (154)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (42)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:25 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\index.php (13)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:25 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+2017/08/21 16:19:25 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/21 16:19:25 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/21 16:19:43 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:43 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:43 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:43 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:43 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:43 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:43 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:43 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\login.php (39)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (132)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:43 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1152)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (389)
+2017/08/21 16:19:44 [trace] [system.CModule] Loading "messages" application component
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedValidator.php (23)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1152)
+2017/08/21 16:19:44 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (436)
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedValidator.php (28)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+2017/08/21 16:19:44 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (132)
+2017/08/21 16:19:44 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/21 16:19:44 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:44 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:44 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:44 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:44 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:44 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:44 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:44 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (416)
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (144)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.db.ar.CActiveRecord] UsuarioIps.find()
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/21 16:19:52 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/21 16:19:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/21 16:19:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/21 16:19:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuario_ips` `t` WHERE LOWER(login)=? LIMIT 1
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (416)
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (386)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (94)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT p.nombre_de_archivo, p.titulo, p.descripcion FROM insignia_payments_solutions.publicidad p, insignia_payments_solutions.tipo_publicidad t WHERE p.idtipo_publicidad = p.idtipo_publicidad AND p.status = 1 AND t.descripcion = 'Carrusel'
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido  GROUP BY p.id_producto
+in C:\xampp\htdocs\IPS\protected\models\ProductosDigitales.php (154)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (42)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\index.php (13)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/21 16:19:52 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/21 16:19:55 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:55 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:55 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:55 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:55 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:19:55 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:55 [trace] [system.web.filters.CFilterChain] Running filter UsuarioIpsController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:55 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:55 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:55 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\column2.php (2)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (310)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:19:55 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column2.php (22)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (310)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.web.filters.CFilterChain] Running filter UsuarioIpsController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] UsuarioIps.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (298)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (298)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (298)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (298)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (298)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuario_ips` `t` WHERE LOWER(login)=? LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (298)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.web.filters.CFilterChain] Running filter UsuarioIpsController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] UsuarioIps.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuario_ips` `t` WHERE `t`.`idusuario_ips`=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE `t`.`id_usuario`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE `t`.`idusuario_ips`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_usuario=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=4 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=5 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=2 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=3 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=6 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='email')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='telefono')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\usuarioIps\_form.php (145)
+in C:\xampp\htdocs\IPS\protected\views\usuarioIps\update.php (20)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (292)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1152)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (389)
+2017/08/21 16:20:02 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column2.php (22)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (292)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.web.filters.CFilterChain] Running filter UsuarioIpsController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] UsuarioIps.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuario_ips` `t` WHERE `t`.`idusuario_ips`=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE `t`.`id_usuario`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE `t`.`idusuario_ips`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_usuario=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=4 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=5 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=2 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=3 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=6 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='email')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='telefono')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] UsuarioIps.update()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (170)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] UsuarioIps.updateByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (170)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `usuario_ips` SET `idusuario_ips`=:yp0, `nombres`=:yp1, `apellidos`=:yp2, `email`=:yp3, `telefono`=:yp4, `direccion`=:yp5, `login`=:yp6, `pwd`=:yp7, `estatus`=:yp8, `fecha_creado`=:yp9, `hora_creado`=:yp10, `fecha_expiracion`=:yp11, `hora_expiracion`=:yp12, `tipo_usuario`=:yp13 WHERE `usuario_ips`.`idusuario_ips`=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (170)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=4 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=5 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=2 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=3 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=6 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (191)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_usuario=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (191)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE email='carmen.soto1@insignia.com.ve' AND idusuario_ips=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE email='carmen.soto2@insignia.com.ve' AND idusuario_ips=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE email='prueba@gmail.com' AND idusuario_ips=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (214)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE email='prueba@gmail.com' LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (214)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.web.filters.CFilterChain] Running filter UsuarioIpsController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] UsuarioIps.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuario_ips` `t` WHERE `t`.`idusuario_ips`=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE `t`.`id_usuario`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE `t`.`idusuario_ips`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_usuario=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=4 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=5 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=2 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=3 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=6 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='email')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='telefono')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\usuarioIps\_form.php (145)
+in C:\xampp\htdocs\IPS\protected\views\usuarioIps\update.php (20)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (292)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1152)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (389)
+2017/08/21 16:20:28 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column2.php (22)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (292)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.web.filters.CFilterChain] Running filter UsuarioIpsController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] UsuarioIps.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuario_ips` `t` WHERE `t`.`idusuario_ips`=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE `t`.`id_usuario`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE `t`.`idusuario_ips`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_usuario=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=4 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=5 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=2 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=3 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=6 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='email')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='telefono')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] UsuarioIps.update()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (170)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] UsuarioIps.updateByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (170)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `usuario_ips` SET `idusuario_ips`=:yp0, `nombres`=:yp1, `apellidos`=:yp2, `email`=:yp3, `telefono`=:yp4, `direccion`=:yp5, `login`=:yp6, `pwd`=:yp7, `estatus`=:yp8, `fecha_creado`=:yp9, `hora_creado`=:yp10, `fecha_expiracion`=:yp11, `hora_expiracion`=:yp12, `tipo_usuario`=:yp13 WHERE `usuario_ips`.`idusuario_ips`=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (170)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=4 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=5 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=2 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=3 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=6 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (191)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_usuario=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (191)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE email='carmen.soto1@insignia.com.ve' AND idusuario_ips=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE email='carmen.soto2@insignia.com.ve' AND idusuario_ips=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (226)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE idusuario_ips=11 AND tipo_contacto='email'
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (226)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (247)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE telefono=41269853621 AND idusuario_ips=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (247)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (247)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE telefono=4126819913 AND idusuario_ips=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (247)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (265)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE idusuario_ips=11 AND tipo_contacto='telefono'
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (265)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.web.filters.CFilterChain] Running filter UsuarioIpsController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] UsuarioIps.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuario_ips` `t` WHERE `t`.`idusuario_ips`=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE `t`.`id_usuario`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE `t`.`idusuario_ips`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_usuario=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=4 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=5 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=2 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=3 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=6 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='email')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='telefono')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:42 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\usuarioIps\_form.php (145)
+in C:\xampp\htdocs\IPS\protected\views\usuarioIps\update.php (20)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (292)
+2017/08/21 16:20:43 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1152)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (389)
+2017/08/21 16:20:43 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column2.php (22)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (292)
+2017/08/21 16:20:58 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:58 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:58 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:58 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:58 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:58 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:58 [trace] [system.web.filters.CFilterChain] Running filter UsuarioIpsController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:58 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:58 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] UsuarioIps.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuario_ips` `t` WHERE `t`.`idusuario_ips`=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE `t`.`id_usuario`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE `t`.`idusuario_ips`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_usuario=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=4 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=5 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=2 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=3 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=6 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='email')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='telefono')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] UsuarioIps.update()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (170)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] UsuarioIps.updateByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (170)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `usuario_ips` SET `idusuario_ips`=:yp0, `nombres`=:yp1, `apellidos`=:yp2, `email`=:yp3, `telefono`=:yp4, `direccion`=:yp5, `login`=:yp6, `pwd`=:yp7, `estatus`=:yp8, `fecha_creado`=:yp9, `hora_creado`=:yp10, `fecha_expiracion`=:yp11, `hora_expiracion`=:yp12, `tipo_usuario`=:yp13 WHERE `usuario_ips`.`idusuario_ips`=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (170)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=4 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=5 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=2 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`abreviatura`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (180)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_categoria=3 AND id_usuario=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (182)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (191)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_usuario=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (191)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (197)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE (id_usuario=11) AND (id_categoria NOT IN (:ycp0, :ycp1, :ycp2, :ycp3))
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (197)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.deleteAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (200)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Executing SQL: DELETE FROM `preferencias_usuarioips` WHERE id_categoria=6
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (200)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE email='carmen.soto1@insignia.com.ve' AND idusuario_ips=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE email='carmen.soto2@insignia.com.ve' AND idusuario_ips=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (211)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (226)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE idusuario_ips=11 AND tipo_contacto='email'
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (226)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (247)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE telefono=41269853621 AND idusuario_ips=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (247)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.find()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (247)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE telefono=4126819913 AND idusuario_ips=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (247)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (265)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE idusuario_ips=11 AND tipo_contacto='telefono'
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (265)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.web.filters.CFilterChain] Running filter UsuarioIpsController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] UsuarioIps.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuario_ips` `t` WHERE `t`.`idusuario_ips`=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE `t`.`id_usuario`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE `t`.`idusuario_ips`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_usuario=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=4 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=5 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=2 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=3 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='email')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='telefono')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\usuarioIps\_form.php (145)
+in C:\xampp\htdocs\IPS\protected\views\usuarioIps\update.php (20)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (292)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1152)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (389)
+2017/08/21 16:20:59 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column2.php (22)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (292)
+2017/08/22 07:23:08 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:08 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:08 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:08 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:23:08 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:23:08 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:08 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:08 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (218)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:08 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (218)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:09 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:09 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:09 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:09 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:23:09 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:23:09 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:09 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:09 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:09 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT p.nombre_de_archivo, p.titulo, p.descripcion FROM insignia_payments_solutions.publicidad p, insignia_payments_solutions.tipo_publicidad t WHERE p.idtipo_publicidad = p.idtipo_publicidad AND p.status = 1 AND t.descripcion = 'Carrusel'
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido  GROUP BY p.id_producto
+in C:\xampp\htdocs\IPS\protected\models\ProductosDigitales.php (154)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (42)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:09 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\index.php (13)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:23:09 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+2017/08/22 07:23:09 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:23:09 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
