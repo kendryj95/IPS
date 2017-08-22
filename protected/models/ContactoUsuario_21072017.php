@@ -7,7 +7,7 @@
  * @property integer $idcontacto_usuario
  * @property integer $idusuario_ips
  * @property string $email
- * @property string $telefono
+ * @property integer $telefono
  * @property string $tipo_contacto
  */
 class ContactoUsuario extends CActiveRecord
@@ -56,7 +56,7 @@ class ContactoUsuario extends CActiveRecord
 		return array(
 			'idcontacto_usuario' => 'Idcontacto Usuario',
 			'idusuario_ips' => 'Idusuario Ips',
-			'email' => 'Email',
+			'email' => 'Correo Electronico',
 			'telefono' => 'Telefono',
 			'tipo_contacto' => 'Tipo Contacto',
 		);
@@ -83,7 +83,7 @@ class ContactoUsuario extends CActiveRecord
 		$criteria->compare('idcontacto_usuario',$this->idcontacto_usuario);
 		$criteria->compare('idusuario_ips',$this->idusuario_ips);
 		$criteria->compare('email',$this->email,true);
-		$criteria->compare('telefono',$this->telefono,true);
+		$criteria->compare('telefono',$this->telefono);
 		$criteria->compare('tipo_contacto',$this->tipo_contacto,true);
 
 		return new CActiveDataProvider($this, array(

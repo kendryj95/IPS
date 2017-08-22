@@ -5,11 +5,6 @@
  *
  * The followings are the available columns in table 'usuario_ips':
  * @property integer $idusuario_ips
- * @property string $nombres
- * @property string $apellidos
- * @property string $email
- * @property string $telefono
- * @property string $direccion
  * @property string $login
  * @property string $pwd
  * @property integer $estatus

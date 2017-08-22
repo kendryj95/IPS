@@ -86,6 +86,7 @@ class UsuarioIpsController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		
 		$model=$this->loadModel($id);
 		$modelCategoria = CategoriasContenido::model()->findAll();
 		$modelPreferencias = PreferenciasUsuarioips::model()->findByAttributes(array('id_usuario'=>$id)); # Cargar el modelo al form update.
@@ -179,7 +180,7 @@ class UsuarioIpsController extends Controller
 					$tablePreferencias->id_usuario = $id;
 					$id_categoria = CategoriasContenido::model()->findByAttributes(array('abreviatura'=>$val));
 					$prefUser[] = $id_categoria->idcategorias_contenido;
-					$band = PreferenciasUsuarioips::model()->find("id_categoria=".$id_categoria->idcategorias_contenido." AND id_usuario=".$id);
+					$band = PreferenciasUsuarioips::model()->find("id_categoria=".$id_categoria->idcategorias_contenido);
 					$tablePreferencias->id_categoria = $id_categoria->idcategorias_contenido;
 
 					if (count($band) == 0) {
@@ -208,17 +209,11 @@ class UsuarioIpsController extends Controller
 					$tableContactos->tipo_contacto = 'email';
 					$emailUser[] = $value;
 
-					$band = ContactoUsuario::model()->find("email='".$value."' AND idusuario_ips=".$id);
+					$band = ContactoUsuario::model()->find("email='".$value."'");
 					
 					if (count($band) == 0) {
-						$existe = ContactoUsuario::model()->find("email='".$value."'");
-						if (count($existe) > 0) {
-							Yii::app()->user->setFlash('profile','<div class="alert alert-danger"><p><b>El email "'.$value.'" ya está registrado.</b></p></div>');
-							$this->refresh();
-						} else {
-							$tableContactos->save(false);
-						}
-					} 
+						$tableContactos->save(false);
+					}
 
 				}
 
@@ -244,17 +239,10 @@ class UsuarioIpsController extends Controller
 					$tableContactos->tipo_contacto = 'telefono';
 					$tlfUser[] = $value;
 
-					$band = ContactoUsuario::model()->find("telefono=$value AND idusuario_ips=".$id);
+					$band = ContactoUsuario::model()->find("telefono=$value");
 					
 					if (count($band) == 0) {
-						$existe = ContactoUsuario::model()->find("telefono=$value");
-						if (count($existe) > 0) {
-							Yii::app()->user->setFlash('profile','<div class="alert alert-danger"><p><b>El telefono "'.$value.'" ya está registrado.</b></p></div>');
-							$this->refresh();
-						} else {
-
-							$tableContactos->save(false);
-						}
+						$tableContactos->save(false);
 					}
 
 				}
@@ -283,13 +271,13 @@ class UsuarioIpsController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
-			'modelCategoria'=>$modelCategoria,
-			'modelPreferencias'=>$modelPreferencias,
+			'modelCategoria'=>$modelCategoria,			'modelPreferencias'=>$modelPreferencias,
 			'modelContacto'=>$modelContacto,
 			'preferencias'=>$preferencias,
 			'contactosEmail'=>$contactosEmail,
 			'contactosTlf'=>$contactosTlf,
 		));
+		
 	}
 
 	public function actionSegurity(){
@@ -309,7 +297,6 @@ class UsuarioIpsController extends Controller
 
 		$this->render('segurity');
 	}
-
 
 	/**
 	 * Deletes a particular model.

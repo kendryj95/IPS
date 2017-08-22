@@ -1,23 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "contacto_usuario".
+ * This is the model class for table "preferencias_usuarioips".
  *
- * The followings are the available columns in table 'contacto_usuario':
- * @property integer $idcontacto_usuario
- * @property integer $idusuario_ips
- * @property string $email
- * @property string $telefono
- * @property string $tipo_contacto
+ * The followings are the available columns in table 'preferencias_usuarioips':
+ * @property integer $id
+ * @property integer $id_usuario
+ * @property integer $id_categoria
  */
-class ContactoUsuario extends CActiveRecord
+class PreferenciasUsuarioips extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'contacto_usuario';
+		return 'preferencias_usuarioips';
 	}
 
 	/**
@@ -28,12 +26,11 @@ class ContactoUsuario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('idusuario_ips,email,telefono', 'required'),
-			array('idusuario_ips', 'numerical', 'integerOnly'=>true),
-			array('tipo_contacto', 'length', 'max'=>45),
+			array('id_usuario, id_categoria', 'required'),
+			//array('id_usuario, id_categoria', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idcontacto_usuario, idusuario_ips, email, telefono, tipo_contacto', 'safe', 'on'=>'search'),
+			array('id, id_usuario, id_categoria', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,11 +51,9 @@ class ContactoUsuario extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'idcontacto_usuario' => 'Idcontacto Usuario',
-			'idusuario_ips' => 'Idusuario Ips',
-			'email' => 'Email',
-			'telefono' => 'Telefono',
-			'tipo_contacto' => 'Tipo Contacto',
+			'id' => 'ID',
+			'id_usuario' => 'Id Usuario',
+			'id_categoria' => 'Preferencias Deportivas',
 		);
 	}
 
@@ -80,11 +75,9 @@ class ContactoUsuario extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('idcontacto_usuario',$this->idcontacto_usuario);
-		$criteria->compare('idusuario_ips',$this->idusuario_ips);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('telefono',$this->telefono,true);
-		$criteria->compare('tipo_contacto',$this->tipo_contacto,true);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('id_usuario',$this->id_usuario);
+		$criteria->compare('id_categoria',$this->id_categoria);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -95,7 +88,7 @@ class ContactoUsuario extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return ContactoUsuario the static model class
+	 * @return PreferenciasUsuarioips the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

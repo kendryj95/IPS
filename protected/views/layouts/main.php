@@ -130,8 +130,6 @@ ini_set('display_errors', true);*/
 		                            array('label' => 'Salir', 'icon'=>'glyphicon glyphicon-log-out', 'url'=>Yii::app()->createUrl('/site/logout'))
 		                   	 	),
 		                	),
-		                	array('label' => 'Registrarse', 'url' => array('/site/signUp'), 'visible' => Yii::app()->user->isGuest),
-						),
 	        		),
 	    		)
 	        )
@@ -146,6 +144,7 @@ ini_set('display_errors', true);*/
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog" role="document">
+<<<<<<< HEAD
 	<div class="modal-content">
 		<div class="modal-header modal-headerIPS">
 			<a class="close" data-dismiss="modal">&times;</a>
@@ -153,18 +152,18 @@ ini_set('display_errors', true);*/
 		</div>
 	 
 	    <div class="modal-body" style="background: #EDECED;">
-			<div class="text-center">
-				<form class="form-inline" method="post" action="index.php?r=site/busqueda">
+		<div class="text-center">
+			<form class="form-inline" method="post" action="index.php?r=site/busqueda">
 		    		<div class="form-group">
 		                <input type="text" class="form-control" name="text_search" id="text_search" placeholder="Nombre del producto">
 		    		</div>
-					<select name="tipo_search" id="tipo_search" class="form-control">
-						<option value="1">Producto</option>
-						<option value="2">Cliente</option>
-						<option value="3">País</option>
-						<option value="4">Categoría</option>
-					</select>
-					<button type="submit" class="btn btn-primaryIPS">Buscar</button>
+				<select name="tipo_search" id="tipo_search" class="form-control">
+					<option value="1">Producto</option>
+					<option value="2">Cliente</option>
+					<option value="3">País</option>
+					<option value="4">Categoría</option>
+				</select>
+				<button type="submit" class="btn btn-primaryIPS">Buscar</button>
 		        </form>
 	        </div>
 	    </div>

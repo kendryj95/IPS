@@ -361,3 +361,53 @@ legend.login-border {
     transition: 0.3s;
     transform: scale(1.4);
 }
+
+.palabras {
+    display: block;
+    word-break: break-all;
+}
+
+.labelPrecio:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.4);
+}
+
+.btnHome {
+    background: grey;
+    border: #2B6CA8;
+    border-radius: 0px;
+    color: #FFF;
+}
+
+.btnHome:hover {
+    background: gainsboro;
+    /*opacity: .8;*/
+    color: black;
+}
+
+.btnComprar {
+    background: #82E39E;
+    border: #236937;
+    border-radius: 0px;
+    color: black;
+}
+
+.btnComprar:hover {
+    background: #82E39E;
+    opacity: .8;
+    color: black;
+}
+
+.btn-actions {
+    border-radius: 100%; 
+    width: 24px; 
+    height: 24px; 
+    padding: 5px; 
+    margin-left: 5px;
+}
+
+.form-actions {
+    width: 87%;
+    display: inline-block;
+}
