@@ -130,6 +130,7 @@ ini_set('display_errors', true);*/
 		                            array('label' => 'Salir', 'icon'=>'glyphicon glyphicon-log-out', 'url'=>Yii::app()->createUrl('/site/logout'))
 		                   	 	),
 		                	),
+		                )
 	        		),
 	    		)
 	        )

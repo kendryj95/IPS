@@ -1,0 +1,827 @@
+2017/08/22 07:37:39 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:37:39 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:37:39 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:37:39 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:37:39 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:37:39 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:37:39 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:37:39 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:37:39 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:37:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT p.nombre_de_archivo, p.titulo, p.descripcion FROM insignia_payments_solutions.publicidad p, insignia_payments_solutions.tipo_publicidad t WHERE p.idtipo_publicidad = p.idtipo_publicidad AND p.status = 1 AND t.descripcion = 'Carrusel'
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:37:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido  GROUP BY p.id_producto
+in C:\xampp\htdocs\IPS\protected\models\ProductosDigitales.php (154)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (42)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:37:39 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\index.php (13)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:38:41 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:38:41 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:38:41 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:38:41 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:38:41 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:38:41 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:38:41 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:38:41 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:38:41 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:38:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT p.nombre_de_archivo, p.titulo, p.descripcion FROM insignia_payments_solutions.publicidad p, insignia_payments_solutions.tipo_publicidad t WHERE p.idtipo_publicidad = p.idtipo_publicidad AND p.status = 1 AND t.descripcion = 'Carrusel'
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:38:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido  GROUP BY p.id_producto
+in C:\xampp\htdocs\IPS\protected\models\ProductosDigitales.php (154)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (42)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:38:41 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\index.php (13)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:38:41 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+2017/08/22 07:38:41 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:38:41 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:39:27 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:27 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:27 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:27 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:27 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:27 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:27 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:27 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:27 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT p.nombre_de_archivo, p.titulo, p.descripcion FROM insignia_payments_solutions.publicidad p, insignia_payments_solutions.tipo_publicidad t WHERE p.idtipo_publicidad = p.idtipo_publicidad AND p.status = 1 AND t.descripcion = 'Carrusel'
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido  GROUP BY p.id_producto
+in C:\xampp\htdocs\IPS\protected\models\ProductosDigitales.php (154)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (42)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:27 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\index.php (13)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:27 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+2017/08/22 07:39:27 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:39:27 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:39:35 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:35 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:35 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:35 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:35 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:35 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:35 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:35 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\controllers\CartController.php (51)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:35 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\controllers\CartController.php (51)
+2017/08/22 07:39:35 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\controllers\CartController.php (51)
+2017/08/22 07:39:35 [trace] [system.db.ar.CActiveRecord] TipoDeMonedas.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\CartController.php (60)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:35 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\controllers\CartController.php (60)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:35 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\controllers\CartController.php (60)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tipo_de_monedas`
+in C:\xampp\htdocs\IPS\protected\controllers\CartController.php (60)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tipo_de_monedas`
+in C:\xampp\htdocs\IPS\protected\controllers\CartController.php (60)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tipo_de_monedas` `t` WHERE estatus=1
+in C:\xampp\htdocs\IPS\protected\controllers\CartController.php (60)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:36 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (2)
+in C:\xampp\htdocs\IPS\protected\controllers\CartController.php (62)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:38 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:38 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:38 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:38 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:38 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:38 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:38 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:38 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (2)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:38 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:38 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:39:38 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:41 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\views\site\contact.php (15)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (105)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\views\site\contact.php (15)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (105)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\contact.php (34)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (105)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1152)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (389)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (105)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:41 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:42 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:42 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (416)
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (144)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:47 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:47 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:47 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:47 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:47 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:47 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:47 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:47 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\login.php (39)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (132)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1152)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (389)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "messages" application component
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedValidator.php (23)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1152)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (436)
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedValidator.php (28)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (132)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:48 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:48 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (416)
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (144)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.db.ar.CActiveRecord] UsuarioIps.find()
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/22 07:39:54 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/22 07:39:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/22 07:39:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/22 07:39:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuario_ips` `t` WHERE LOWER(login)=? LIMIT 1
+in C:\xampp\htdocs\IPS\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (63)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (416)
+in C:\xampp\htdocs\IPS\protected\extensions\captchaExtended\CaptchaExtendedAction.php (386)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\models\LoginForm.php (94)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (128)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT p.nombre_de_archivo, p.titulo, p.descripcion FROM insignia_payments_solutions.publicidad p, insignia_payments_solutions.tipo_publicidad t WHERE p.idtipo_publicidad = p.idtipo_publicidad AND p.status = 1 AND t.descripcion = 'Carrusel'
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido  GROUP BY p.id_producto
+in C:\xampp\htdocs\IPS\protected\models\ProductosDigitales.php (154)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (42)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\index.php (13)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:39:54 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.web.filters.CFilterChain] Running filter NotificacionesController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\controllers\NotificacionesController.php (161)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\controllers\NotificacionesController.php (161)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `notificaciones`
+in C:\xampp\htdocs\IPS\protected\controllers\NotificacionesController.php (161)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `notificaciones`
+in C:\xampp\htdocs\IPS\protected\controllers\NotificacionesController.php (161)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\notificaciones\index.php (190)
+in C:\xampp\htdocs\IPS\protected\controllers\NotificacionesController.php (167)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:03 [trace] [system.db.ar.CActiveRecord] Notificaciones.count()
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\xampp\htdocs\IPS\protected\views\notificaciones\index.php (190)
+2017/08/22 07:40:03 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `notificaciones` `t`
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\xampp\htdocs\IPS\protected\views\notificaciones\index.php (190)
+2017/08/22 07:40:03 [trace] [system.db.ar.CActiveRecord] Notificaciones.findAll()
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\xampp\htdocs\IPS\protected\views\notificaciones\index.php (190)
+2017/08/22 07:40:03 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `notificaciones` `t` ORDER BY fecha DESC, hora DESC LIMIT 10
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\xampp\htdocs\IPS\protected\views\notificaciones\index.php (190)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbGridView.php (125)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "format" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbExtendedGridView.php (632)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbExtendedGridView.php (244)
+in C:\xampp\htdocs\IPS\protected\views\notificaciones\index.php (190)
+2017/08/22 07:40:03 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column2.php (22)
+in C:\xampp\htdocs\IPS\protected\controllers\NotificacionesController.php (167)
+2017/08/22 07:40:06 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:06 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:06 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:06 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:40:06 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:40:06 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:06 [trace] [system.web.filters.CFilterChain] Running filter NotificacionesController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:06 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:06 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:06 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\models\Notificaciones.php (128)
+in C:\xampp\htdocs\IPS\protected\controllers\NotificacionesController.php (220)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:06 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\models\Notificaciones.php (128)
+in C:\xampp\htdocs\IPS\protected\controllers\NotificacionesController.php (220)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT  p.estado_compra, p.estado_pago, p.payer_info_email, p.id_compra, p.id_producto_insignia, p.sms_sc, p.consumidor_email, p.consumidor_telefono, pd.id_producto AS all_id_productos, cc.descripcion AS categoria, cc.deporte, cc.abreviatura, cc.pais, tc.descripcion AS tipo, tc.abreviatura, pd.contenido_texto, pd.nombre_archivo, pd.contenido_archivo, pd.tipo_contenido, s.sc, s.desp_op
+				FROM
+					pagos p,
+					productos_digitales pd,
+					categorias_contenido cc,
+					tipo_contenido tc,
+				    sms.smsin s
+				WHERE
+				    p.id_compra = '4U974268GR325190E'
+				AND s.id_producto = pd.id_producto
+				AND pd.id_categoria = cc.idcategorias_contenido
+				AND pd.tipo = tc.id_tipo_de_contenido
+				AND p.sms_id = s.id_sms
+				AND p.fecha_pago = s.data_arrive GROUP BY s.id_producto
+in C:\xampp\htdocs\IPS\protected\models\Notificaciones.php (128)
+in C:\xampp\htdocs\IPS\protected\controllers\NotificacionesController.php (220)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.web.filters.CFilterChain] Running filter UsuarioIpsController.filteraccessControl()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.ar.CActiveRecord] UsuarioIps.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuario_ips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuario_ips` `t` WHERE `t`.`idusuario_ips`=11 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (363)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (89)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `categorias_contenido`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (90)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preferencias_usuarioips`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE `t`.`id_usuario`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (91)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findByAttributes()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `contacto_usuario`
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE `t`.`idusuario_ips`=:yp0 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (92)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.ar.CActiveRecord] PreferenciasUsuarioips.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `preferencias_usuarioips` `t` WHERE id_usuario=11
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (98)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=4 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=5 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=2 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.ar.CActiveRecord] CategoriasContenido.findByPk()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `categorias_contenido` `t` WHERE `t`.`idcategorias_contenido`=3 LIMIT 1
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (106)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='email')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (118)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.ar.CActiveRecord] ContactoUsuario.findAll()
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `contacto_usuario` `t` WHERE (idusuario_ips=11) AND (tipo_contacto='telefono')
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (135)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\usuarioIps\_form.php (145)
+in C:\xampp\htdocs\IPS\protected\views\usuarioIps\update.php (20)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (292)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1303)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (1152)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\widgets\TbActiveForm.php (389)
+2017/08/22 07:40:12 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column2.php (22)
+in C:\xampp\htdocs\IPS\protected\controllers\UsuarioIpsController.php (292)
+2017/08/22 07:40:18 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:18 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:18 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:18 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:40:18 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:40:18 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:18 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:18 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:18 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT p.nombre_de_archivo, p.titulo, p.descripcion FROM insignia_payments_solutions.publicidad p, insignia_payments_solutions.tipo_publicidad t WHERE p.idtipo_publicidad = p.idtipo_publicidad AND p.status = 1 AND t.descripcion = 'Carrusel'
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido  GROUP BY p.id_producto
+in C:\xampp\htdocs\IPS\protected\models\ProductosDigitales.php (154)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (42)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:18 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\index.php (13)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:18 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+2017/08/22 07:40:18 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:40:18 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:40:20 [trace] [system.CModule] Loading "log" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:20 [trace] [system.CModule] Loading "booster" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:20 [trace] [system.CModule] Loading "clientScript" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (420)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (212)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:20 [trace] [system.CModule] Loading "assetManager" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:40:20 [trace] [system.CModule] Loading "request" application component
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (413)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\packages.php (14)
+in C:\xampp\htdocs\IPS\protected\extensions\booster\components\Booster.php (260)
+2017/08/22 07:40:20 [trace] [system.CModule] Loading "urlManager" application component
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:20 [trace] [system.web.filters.CFilterChain] Running filter BoosterFilter.filter()
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:20 [trace] [system.CModule] Loading "db" application component
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:20 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT p.nombre_de_archivo, p.titulo, p.descripcion FROM insignia_payments_solutions.publicidad p, insignia_payments_solutions.tipo_publicidad t WHERE p.idtipo_publicidad = p.idtipo_publicidad AND p.status = 1 AND t.descripcion = 'Carrusel'
+in C:\xampp\htdocs\IPS\protected\models\Publicidad.php (111)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (41)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido  GROUP BY p.id_producto
+in C:\xampp\htdocs\IPS\protected\models\ProductosDigitales.php (154)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (42)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:20 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\xampp\htdocs\IPS\protected\views\site\index.php (13)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+in C:\xampp\htdocs\IPS\index.php (13)
+2017/08/22 07:40:20 [trace] [system.CModule] Loading "shoppingCart" application component
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+in C:\xampp\htdocs\IPS\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\IPS\protected\controllers\SiteController.php (44)
+2017/08/22 07:40:20 [trace] [system.CModule] Loading "user" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
+2017/08/22 07:40:20 [trace] [system.CModule] Loading "session" application component
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (36)
+in C:\xampp\htdocs\IPS\protected\extensions\shoppingCart\EShoppingCart.php (29)
+in C:\xampp\htdocs\IPS\protected\views\layouts\main.php (90)
