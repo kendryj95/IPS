@@ -259,8 +259,6 @@ class UsuarioIpsController extends Controller
 
 				}
 
-				
-
 				// Remover en BD los emails que no quiere el usuario.
 				$inBD = ContactoUsuario::model()->findAll("idusuario_ips=".$id." AND tipo_contacto='telefono'");
 
