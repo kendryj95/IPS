@@ -91,7 +91,7 @@ return array(
     	),
 
 		// uncomment the following to enable URLs in path-format
-		'urlManager' => array(
+		/*'urlManager' => array(
             'urlFormat' => 'path',
             'showScriptName' => false,
             'rules' => array(
@@ -100,7 +100,7 @@ return array(
                     'class' => 'application.components.CustomUrlRule',
                 ),
             ),
-        ),
+        ),*/
 
 		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',

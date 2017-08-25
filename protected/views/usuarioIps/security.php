@@ -5,8 +5,8 @@
 		<legend class="login-border">SEGURIDAD</legend>
 
 		<?php
-			if(Yii::app()->user->hasFlash('segurity')){
-				echo Yii::app()->user->getFlash('segurity');
+			if(Yii::app()->user->hasFlash('security')){
+				echo Yii::app()->user->getFlash('security');
 			}
 		?>
 
@@ -14,7 +14,7 @@
 			<h4>Por tu seguridad y la de tus datos, favor introducir su contraseña actual</h4>
 		</div>
 
-		<form method="post" action="<?= Yii::app()->createUrl('usuarioips/segurity') ?>">
+		<form method="post" action="<?= Yii::app()->createUrl('usuarioips/security') ?>">
 			<div class="form-group">
 				<input class="form-control" type="password" name="confirm" placeholder="Introduce tu contraseña"></input>
 			</div>

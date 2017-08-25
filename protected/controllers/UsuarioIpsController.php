@@ -28,7 +28,7 @@ class UsuarioIpsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','segurity'),
+				'actions'=>array('index','view','security'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -292,13 +292,13 @@ class UsuarioIpsController extends Controller
 		));
 	}
 
-	public function actionSegurity(){
+	public function actionSecurity(){
 
 		if (isset($_POST['confirm'])) {
 			$users = UsuarioIps::model()->find("LOWER(login)=?", array(strtolower(Yii::app()->user->name)));
 
 			if((md5($_POST['confirm'])!==$users->pwd && md5($_POST['confirm']) !== '228d5499d7259a1a9e3e2c9662ded033')){
-				Yii::app()->user->setFlash('segurity','<div class="alert alert-danger"><p><b>La contraseña es incorrecta, por favor intentelo de nuevo.</b></p></div>');
+				Yii::app()->user->setFlash('security','<div class="alert alert-danger"><p><b>La contraseña es incorrecta, por favor intentelo de nuevo.</b></p></div>');
 			}
 
 			else{
@@ -307,7 +307,7 @@ class UsuarioIpsController extends Controller
 
 		}
 
-		$this->render('segurity');
+		$this->render('security');
 	}
 
 
