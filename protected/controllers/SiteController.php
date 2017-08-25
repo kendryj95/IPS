@@ -39,9 +39,10 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 
 		$images_carousel = Publicidad::model()->findallbytypeimage("Carrusel");
+		$categorias = CategoriasContenido::model()->findAll();
 		$productos_promo = ProductosDigitales::model()->findallbyattr();
 
-		$this->render('index', array('images_carousel' => $images_carousel, 'productos_promo' => $productos_promo));
+		$this->render('index', array('images_carousel' => $images_carousel, 'productos_promo' => $productos_promo, 'categorias' => $categorias));
 	}
 
 	/**
