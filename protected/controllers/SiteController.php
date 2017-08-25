@@ -321,4 +321,19 @@ class SiteController extends Controller
 			$this->redirect(Yii::app()->user->returnUrl);
 		}
 	}
+
+	public function actionProd_categoria($cat)
+	{
+
+		$cat = isset($cat) ? $cat : '';
+
+		if ($cat != "") {
+			$productos_promo = ProductosDigitales::model()->findallbyattr('cc.abreviatura',"'".$cat."'");
+			$this->render('search',array('productos_promo' => $productos_promo));
+		} else {
+			$this->redirect(Yii::app()->user->returnUrl);
+		}
+		
+		
+	}
 }

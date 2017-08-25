@@ -52,11 +52,17 @@ $this->widget('booster.widgets.TbCarousel', array(
 	<?php foreach($categorias as $cat): ?>
 		<div class="col-sm-4 col-md-2">
 	    	<div class="thumbnail">
-		      <img src="<?= Yii::app()->request->baseUrl; ?>/images/<?= str_replace(" ","-",$cat->deporte) . "_" . str_replace(" ","-",$cat->abreviatura) ?>.png" alt="<?= $cat->abreviatura ?>">
+		      <img src="<?= Yii::app()->request->baseUrl; ?>/images/<?= str_replace(" ","-",$cat->deporte) . "_" . str_replace(" ","-",$cat->abreviatura) ?>.png" alt="<?= $cat->abreviatura ?>" style="width: 178.16px; height: 178.16px">
 		      <div class="caption">
-		        <h4><?= str_replace(" ","-",$cat->deporte) . " | " . str_replace(" ","-",$cat->abreviatura) ?></h4>
-		        <p>Ver productos digitales de la <b><?= $cat->abreviatura ?></b></p>
-		        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+		        <div class="text-center">
+		        	<h4><?= $cat->abreviatura ?></h4>
+		        </div>
+		        <p style="text-align: center">Ver productos digitales de la <b><?= $cat->abreviatura ?></b></p>
+		        <div class="text-center">
+		        	<!-- <p><a href="#" class="btn btn-primaryIPS" role="button">Ver producto/s</a></p> -->
+		        	<?php echo CHtml::link('Ver Producto/s',array('site/prod_categoria',
+                   'cat'=> $cat->abreviatura), array('class'=>'btn btn-primaryIPS')); ?>
+		        </div>
 		      </div>
 	    	</div>
   		</div>
