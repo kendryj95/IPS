@@ -60,7 +60,8 @@ ini_set('display_errors', true);*/
 				const producto = '1';
 				const cliente = '2';
 				const pais = '3';
-				const categoria = '4';
+				const subcategoria = '4';
+				const categoria = '5';
 
 				switch(tipo){
 					case producto:
@@ -71,6 +72,9 @@ ini_set('display_errors', true);*/
 						break;
 					case pais:
 						$('#text_search').attr('placeholder','Pais del deporte');
+						break;
+					case subcategoria:
+						$('#text_search').attr('placeholder','Nombre de la subcategoria');
 						break;
 					case categoria:
 						$('#text_search').attr('placeholder','Nombre de la categoria');
@@ -162,7 +166,8 @@ ini_set('display_errors', true);*/
 					<option value="1">Producto</option>
 					<option value="2">Cliente</option>
 					<option value="3">País</option>
-					<option value="4">Categoría</option>
+					<option value="5">Categoría</option>
+					<option value="4">Subcategoría</option>
 				</select>
 				<button type="submit" class="btn btn-primaryIPS">Buscar</button>
 		        </form>
