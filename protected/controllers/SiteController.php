@@ -226,7 +226,7 @@ class SiteController extends Controller
 
 		$id = isset($_POST['id']) ? $_POST['id'] : '';
 
-		$productos_promo = ProductosDigitales::model()->findallbyattr('pd.id_producto',$id);
+		$productos_promo = ProductosDigitales::model()->findallbyattr(1, 'pd.id_producto',$id);
 
 		/*echo "<pre>";
 		print_r($productos_promo);

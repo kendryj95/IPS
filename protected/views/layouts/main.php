@@ -149,7 +149,6 @@ ini_set('display_errors', true);*/
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog" role="document">
-<<<<<<< HEAD
 	<div class="modal-content">
 		<div class="modal-header modal-headerIPS">
 			<a class="close" data-dismiss="modal">&times;</a>

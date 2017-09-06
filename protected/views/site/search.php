@@ -107,7 +107,7 @@
 
 <?php $this->beginWidget('booster.widgets.TbModal',array('id' => 'myModal')); ?> 
     
-    <div class="modal-header modalHeaderStyle">
+    <div class="modal-header modal-headerIPS">
         <a class="close" data-dismiss="modal">&times;</a>
         <h4>Detalles del Producto</h4>
     </div>
@@ -159,7 +159,7 @@
 	            array(
 	                'label' => 'Cerrar',
 	                'url' => '#',
-	                'htmlOptions' => array('data-dismiss' => 'modal', 'class' => 'btn btn-primary btnModal'),
+	                'htmlOptions' => array('data-dismiss' => 'modal', 'class' => 'btn btn-primaryIPS'),
 	            )
         	);
         ?>
