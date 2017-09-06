@@ -46,7 +46,13 @@
 						
 
 						<!--<p> -->
-							<?php 
+							<?php
+
+								if (isset($_GET['cat'])) {
+									$categoria = $_GET['cat'];
+								} elseif (isset($_POST['text_search'])) {
+									$categoria = $_POST['text_search'];
+								}
 
 								$this->widget('booster.widgets.TbButton',
 								    array(
@@ -55,7 +61,7 @@
 								        'size' => 'small',
 								        'icon' => 'fa fa-money',
 								        'buttonType' => 'link',
-								        'url' => Yii::app()->createUrl('/cart/addToCart', array('id_producto' => $info_producto['idproductos_digitales'])),
+								        'url' => Yii::app()->createUrl('/cart/addToCart', array('id_producto' => $info_producto['idproductos_digitales'], 'categoria' => $categoria)),
 								        'htmlOptions' => array('class' => 'btn btn-primaryIPS')
 								        
 								    )

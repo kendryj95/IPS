@@ -158,7 +158,7 @@ ini_set('display_errors', true);*/
 	 
 	    <div class="modal-body" style="background: #EDECED;">
 		<div class="text-center">
-			<form class="form-inline" method="post" action="index.php?r=site/busqueda">
+			<form class="form-inline" method="post" action="<?= Yii::app()->createUrl('site/busqueda') ?>">
 		    		<div class="form-group">
 		                <input type="text" class="form-control" name="text_search" id="text_search" placeholder="Nombre del producto">
 		    		</div>

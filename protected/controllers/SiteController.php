@@ -282,7 +282,7 @@ class SiteController extends Controller
 
 			switch ($tipo) {
 				case PRODUCTO:
-					$productos_promo = ProductosDigitales::model()->findallbyattr('p.desc_producto', "'%".$search."%'", 2);
+					$productos_promo = ProductosDigitales::model()->findallbyattr(2, 'p.desc_producto', "'%".$search."%'");
 					break;
 				case PAIS:
 					$sql = "SELECT 
@@ -292,7 +292,7 @@ class SiteController extends Controller
 
 					$id_cat = Yii::app()->db_sms->createCommand($sql)->query()->read();
 
-					$productos_promo = ProductosDigitales::model()->findallbyattr('pd.id_categoria',$id_cat['id_cat'],1);
+					$productos_promo = ProductosDigitales::model()->findallbyattr(1, 'pd.id_categoria',$id_cat['id_cat']);
 					break;
 				case CLIENTE:
 					$sql = "SELECT 
@@ -312,10 +312,10 @@ class SiteController extends Controller
 					
 					break;
 				case SUBCATEGORIA:
-					$productos_promo = ProductosDigitales::model()->findallbyattr('cc.abreviatura',"'".$search."'",1);
+					$productos_promo = ProductosDigitales::model()->findallbyattr(1, 'cc.abreviatura',"'".$search."'");
 					break;
 				case CATEGORIA:
-					$productos_promo = ProductosDigitales::model()->findallbyattr('cc.deporte',"'".$search."'",1);
+					$productos_promo = ProductosDigitales::model()->findallbyattr(1, 'cc.deporte',"'".$search."'");
 					break;
 			}
 
@@ -332,7 +332,7 @@ class SiteController extends Controller
 		$cat = isset($cat) ? $cat : '';
 
 		if ($cat != "") {
-			$productos_promo = ProductosDigitales::model()->findallbyattr('cc.abreviatura',"'".$cat."'");
+			$productos_promo = ProductosDigitales::model()->findallbyattr(1, 'cc.abreviatura',"'".$cat."'");
 			$this->render('search',array('productos_promo' => $productos_promo));
 		} else {
 			$this->redirect(Yii::app()->user->returnUrl);

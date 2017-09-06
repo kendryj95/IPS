@@ -103,14 +103,14 @@ class CartController extends Controller
 		}
 	***/
 
-	public function actionAddToCart($id_producto = null){		
+	public function actionAddToCart($id_producto = null, $categoria = null){		
 		if($id_producto == null){
 			if(isset($_POST['id_producto'])){
 				$id_producto = $_POST['id_producto'];
 			}
 		}
 
-		$producto = ProductosDigitales::model()->findallbyattr('idproductos_digitales',$id_producto); //ProductosDigitales::model()->findByPk($id_producto);
+		$producto = ProductosDigitales::model()->findallbyattr(1, 'idproductos_digitales',$id_producto); //ProductosDigitales::model()->findByPk($id_producto);
 		//ProductosDigitales::model()->findallbyattr('idproductos_digitales',$id_producto);
 		
 		$p = new ProductosDigitales();
@@ -147,7 +147,7 @@ class CartController extends Controller
 		}*/
 
 		Yii::app()->shoppingCart->put($p);
-		$this->redirect(Yii::app()->user->returnUrl);
+		$this->redirect(Yii::app()->createUrl('site/prod_categoria', array('cat' => $categoria)));
 	}
 
 	public function actionRemoveToCart($id_producto = null, $tipo = null){
