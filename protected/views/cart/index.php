@@ -1,3 +1,8 @@
+<script>
+    $(document).ready(function(){
+        $('.paginate_button.active > a').css({'backgroundColor':'#902828','borderColor':'#902828'});
+    });
+</script>
 <div  id="page-content-wrapper">
     <?php
         /* @var $this SiteController */
@@ -10,14 +15,14 @@
             <hr>
             <div>
                 <?php 
-                    echo CHtml::link('<span class="glyphicon glyphicon-trash"></span> Limpiar carrito', Yii::app()->createUrl('/cart/removeToCart', array('tipo' => '2')), array('class' => 'btn btn-sm btn-danger'));
+                    echo CHtml::link('<span class="glyphicon glyphicon-trash"></span> Limpiar carrito', Yii::app()->createUrl('/cart/removeToCart', array('tipo' => '2')), array('class' => 'btn btn-sm btn-primaryIPS'));
                 ?>    
             </div>
             <br><br>
             <div>
                <div class="table-responsive">     
                 <table id="table-cart" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead>
+                    <thead style="background: rgb(144, 40, 40); color: #FFF">
                         <tr>
                             <th style="text-align: center;" hidden='hidden'>C&oacute;digo</th>
                             <th style="text-align: center;">Cantidad</th>
@@ -43,7 +48,7 @@
                                     echo "<td style='text-align: center;'>".$item->getQuantity()."</td>";
                                     echo "<td style='text-align: center;'>".$item->nombre_producto."</td>";
                                     echo "<td style='text-align: center;'><span class='currency_selected'></span> ".number_format((float)$item->getSumPrice(), 2, '.', '')."</td>";
-                                    echo "<td style='text-align: center;'>".CHtml::link('<span class="glyphicon glyphicon-trash"></span>', Yii::app()->createUrl('/cart/removeToCart', array('id_producto' => $item->idproductos_digitales, 'tipo' => '1')), array('class' => 'btn btn-sm btn-danger'))."</td>";
+                                    echo "<td style='text-align: center;'>".CHtml::link('<span class="glyphicon glyphicon-trash"></span>', Yii::app()->createUrl('/cart/removeToCart', array('id_producto' => $item->idproductos_digitales, 'tipo' => '1')), array('style' => 'color: black'))."</td>";
                                     $cart_temp[] = array('idproductos_digitales' => $item->idproductos_digitales, 'qty' => $item->getQuantity(), 'descripcion_producto' => $item->nombre_producto, 'precio' => (float)$item->precio, 'tipo_de_contenido' => $item->tipo, 'id_producto' => $item->id_producto);
                                     //$cart_temp[] = array();
                             }
@@ -59,20 +64,22 @@
                 </table>
                 </div>
                 <br>
-                <div class="col col-xs-6 col-md-4 col-lg-6">
+                <!-- <div class="col col-xs-6 col-md-4 col-lg-6">
                     <?php 
-                        echo CHtml::dropDownList('tipo_de_moneda', 'USD', $currencies, array('empty' => 'Seleccione la moneda de pago', 'class' => 'form-control input-sm',  'onChange' => 'javascript:change_currency()' ));
+                        //echo CHtml::dropDownList('tipo_de_moneda', 'USD', $currencies, array('empty' => 'Seleccione la moneda de pago', 'class' => 'form-control input-sm',  'onChange' => 'javascript:change_currency()' ));
                     ?> 
-                </div>
-                <div class="col col-xs-2 col-md-8 col-lg-6" style="text-align: center;">
+                </div> -->
+                <!-- <div class="col col-xs-2 col-md-8 col-lg-6" style="text-align: center;"> -->
                     
-                    <?php if(Yii::app()->user->isGuest){ ?>
-                        <button type="button" class="btn btn-sm btn-default" id="btn_pay_ips" data-toggle="tooltip" data-placement="right" title="Debe iniciar sesión antes de pagar">   <strong>PAGA CON INSIGNIA</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?></button>
-                    <?php }else{ ?>
-                        <button type="button" class="btn btn-sm btn-warning" id="btn_pay_ips" onclick='process_payment(<?= json_encode($cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>");'>   <strong>PAGA CON INSIGNIA</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?></button>
-                    <?php } ?>
-                    <div id="ips-container"></div>
-                </div>
+                    <div class="text-center">
+                        <?php if(Yii::app()->user->isGuest){ ?>
+                            <button type="button" class="btn btn-sm btn-default" id="btn_pay_ips" data-toggle="tooltip" data-placement="right" title="Debe iniciar sesión antes de pagar">   <strong>PAGA CON INSIGNIA</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?></button>
+                        <?php }else{ ?>
+                            <button type="button" class="btn btn-sm btn-warning" id="btn_pay_ips" onclick='process_payment(<?= json_encode($cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>");'>   <strong>PAGA CON INSIGNIA</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?></button>
+                        <?php } ?>
+                        <div id="ips-container"></div>
+                    </div>
+                <!-- </div> -->
             </div>
     <?php } else { ?>
                 <div class="container">
