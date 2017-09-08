@@ -1,7 +1,7 @@
 <script>
-    $(document).ready(function(){
-        $('.paginate_button.active > a').css({'backgroundColor':'#902828','borderColor':'#902828'});
-    });
+    /*$(document).ready(function(){
+        $('.paginate_button.active > a').css({'backgroundColor':'#C30B13','borderColor':'#C30B13'});
+    });*/
 </script>
 <div  id="page-content-wrapper">
     <?php
@@ -22,7 +22,7 @@
             <div>
                <div class="table-responsive">     
                 <table id="table-cart" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead style="background: rgb(144, 40, 40); color: #FFF">
+                    <thead class="tableHover">
                         <tr>
                             <th style="text-align: center;" hidden='hidden'>C&oacute;digo</th>
                             <th style="text-align: center;">Cantidad</th>
