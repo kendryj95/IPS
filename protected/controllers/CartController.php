@@ -125,27 +125,6 @@ class CartController extends Controller
 		$p->id_producto = $producto[0]['id_producto_sms'];
 		$p->tipo_contenido = $producto[0]['tipo_contenido'];
 
-		/*echo "<pre>";
-		print_r($p);
-		echo "</pre>";
-		exit;*/
-
-		/*if(Yii::app()->shoppingCart->getCount() > 0){
-			$cart = Yii::app()->shoppingCart->getPositions();
-			
-			foreach($cart as $item) {
-				$id_producto_in_cart = $item->idproductos_digitales;
-	
-				if($id_producto_in_cart != $p->idproductos_digitales){
-					Yii::app()->shoppingCart->put($p);
-				}else{
-					echo "ALERT ERROR PRODUCT IN THE CART";
-				}
-			}	
-		}else{
-			Yii::app()->shoppingCart->put($p);
-		}*/
-
 		Yii::app()->shoppingCart->put($p);
 		$this->redirect(Yii::app()->createUrl('site/prod_categoria', array('cat' => $categoria)));
 	}
