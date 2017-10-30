@@ -60,7 +60,8 @@ ini_set('display_errors', true);*/
 				const producto = '1';
 				const cliente = '2';
 				const pais = '3';
-				const categoria = '4';
+				const subcategoria = '4';
+				const categoria = '5';
 
 				switch(tipo){
 					case producto:
@@ -71,6 +72,9 @@ ini_set('display_errors', true);*/
 						break;
 					case pais:
 						$('#text_search').attr('placeholder','Pais del deporte');
+						break;
+					case subcategoria:
+						$('#text_search').attr('placeholder','Nombre de la subcategoria');
 						break;
 					case categoria:
 						$('#text_search').attr('placeholder','Nombre de la categoria');
@@ -145,7 +149,6 @@ ini_set('display_errors', true);*/
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog" role="document">
-<<<<<<< HEAD
 	<div class="modal-content">
 		<div class="modal-header modal-headerIPS">
 			<a class="close" data-dismiss="modal">&times;</a>
@@ -154,7 +157,7 @@ ini_set('display_errors', true);*/
 	 
 	    <div class="modal-body" style="background: #EDECED;">
 		<div class="text-center">
-			<form class="form-inline" method="post" action="index.php?r=site/busqueda">
+			<form class="form-inline" method="post" action="<?= Yii::app()->createUrl('site/busqueda') ?>">
 		    		<div class="form-group">
 		                <input type="text" class="form-control" name="text_search" id="text_search" placeholder="Nombre del producto">
 		    		</div>
@@ -162,7 +165,8 @@ ini_set('display_errors', true);*/
 					<option value="1">Producto</option>
 					<option value="2">Cliente</option>
 					<option value="3">País</option>
-					<option value="4">Categoría</option>
+					<option value="5">Categoría</option>
+					<option value="4">Subcategoría</option>
 				</select>
 				<button type="submit" class="btn btn-primaryIPS">Buscar</button>
 		        </form>

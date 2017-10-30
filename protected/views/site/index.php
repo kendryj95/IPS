@@ -49,52 +49,24 @@ $this->widget('booster.widgets.TbCarousel', array(
 <br>
 <div class="bs-example" data-example-id="thumbnails-with-custom-content">
 	<div class="row">
-		<?php foreach($productos_promo AS $info_producto){ ?>
-			<div class="col-sm-4 col-md-2">
-				<div class="thumbnail">
-					<div class="caption">
-					<p style="text-align: right; font-size: 20px;"><span class="label label-primaryIPS"><strong>$ <?= number_format((float)$info_producto['precio'], 2, '.', ''); ?></strong></span></p>
-						<div class="palabras"><p><strong><?php echo "Producto: ".$info_producto['nombre_producto']; ?></strong></p></div>
-						<p><?php echo "<strong>Contenido en formato: </strong>".ucfirst($info_producto['tipo_contenido'])." (".$info_producto['abrev_tipo'].")"; ?></p>
-						
-						<!--<p> -->
-						<?php 
-
-								$this->widget('booster.widgets.TbButton',
-								    array(
-								        'label' => 'Comprar',
-								        //'context' => 'success',
-								        'size' => 'small',
-								        'icon' => 'fa fa-money',
-								        'buttonType' => 'link',
-								        'url' => Yii::app()->createUrl('/cart/addToCart', array('id_producto' => $info_producto['idproductos_digitales'])),
-								        'htmlOptions' => array('class' => 'btn-primaryIPS')
-								        
-								    )
-								);
-								echo "&nbsp;";	
-								$this->widget('booster.widgets.TbButton',
-								    array(
-								        'label' => 'Detalles',
-								        //'context' => 'info',
-								        'size' => 'small',
-								        'icon' => 'fa fa-eye',
-								        'htmlOptions' => array(
-								            'data-toggle' => 'modal',
-								            'data-target' => '#modal-detalle',
-								            'class' => 'detailPD btn-defaultIPS',
-								            'data-idPD' => $info_producto['id_producto_sms'],
-								     
-								        ),
-								    )
-								); 
-							?>
-							
-						<!--</p>-->
-					</div>
-				</div>
-			</div>
-		<?php } ?>
+	<?php foreach($categorias as $cat): ?>
+		<div class="col-sm-4 col-md-2">
+	    	<div class="thumbnail">
+		      <img src="<?= Yii::app()->request->baseUrl; ?>/images/<?= str_replace(" ","-",$cat->deporte) . "_" . str_replace(" ","-",$cat->abreviatura) ?>.png" alt="<?= $cat->abreviatura ?>" style="width: 178.16px; height: 178.16px">
+		      <div class="caption">
+		        <div class="text-center">
+		        	<h4><?= $cat->abreviatura ?></h4>
+		        </div>
+		        <p style="text-align: center">Ver productos digitales de la <b><?= $cat->abreviatura ?></b></p>
+		        <div class="text-center">
+		        	<!-- <p><a href="#" class="btn btn-primaryIPS" role="button">Ver producto/s</a></p> -->
+		        	<?php echo CHtml::link('Ver Producto/s',array('site/prod_categoria',
+                   'cat'=> $cat->abreviatura), array('class'=>'btn btn-primaryIPS')); ?>
+		        </div>
+		      </div>
+	    	</div>
+  		</div>
+  	<?php endforeach; ?>	
 	</div>
 </div>
 <br>

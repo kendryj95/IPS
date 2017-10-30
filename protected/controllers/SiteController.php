@@ -39,9 +39,10 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 
 		$images_carousel = Publicidad::model()->findallbytypeimage("Carrusel");
-		$productos_promo = ProductosDigitales::model()->findallbyattr();
+		$categorias = CategoriasContenido::model()->findAll();
+		$productos_promo = ProductosDigitales::model()->findallbyattr(1);
 
-		$this->render('index', array('images_carousel' => $images_carousel, 'productos_promo' => $productos_promo));
+		$this->render('index', array('images_carousel' => $images_carousel, 'productos_promo' => $productos_promo, 'categorias' => $categorias));
 	}
 
 	/**
@@ -225,7 +226,7 @@ class SiteController extends Controller
 
 		$id = isset($_POST['id']) ? $_POST['id'] : '';
 
-		$productos_promo = ProductosDigitales::model()->findallbyattr('pd.id_producto',$id);
+		$productos_promo = ProductosDigitales::model()->findallbyattr(1, 'pd.id_producto',$id);
 
 		/*echo "<pre>";
 		print_r($productos_promo);
@@ -270,7 +271,8 @@ class SiteController extends Controller
 		define('PRODUCTO',1);
 		define('PAIS',3);
 		define('CLIENTE',2);
-		define('CATEGORIA',4);
+		define('SUBCATEGORIA',4);
+		define('CATEGORIA',5);
 
 		$search = isset($_POST['text_search']) ? $_POST['text_search'] : '';
 
@@ -280,7 +282,7 @@ class SiteController extends Controller
 
 			switch ($tipo) {
 				case PRODUCTO:
-					$productos_promo = ProductosDigitales::model()->findallbyattr('p.desc_producto',"'".$search."'");
+					$productos_promo = ProductosDigitales::model()->findallbyattr(2, 'p.desc_producto', "'%".$search."%'");
 					break;
 				case PAIS:
 					$sql = "SELECT 
@@ -290,7 +292,7 @@ class SiteController extends Controller
 
 					$id_cat = Yii::app()->db_sms->createCommand($sql)->query()->read();
 
-					$productos_promo = ProductosDigitales::model()->findallbyattr('pd.id_categoria',$id_cat['id_cat']);
+					$productos_promo = ProductosDigitales::model()->findallbyattr(1, 'pd.id_categoria',$id_cat['id_cat']);
 					break;
 				case CLIENTE:
 					$sql = "SELECT 
@@ -306,11 +308,14 @@ class SiteController extends Controller
 
 					$id_productos = Yii::app()->db_sms->createCommand($sql)->query()->read();
 
-					$productos_promo = ProductosDigitales::model()->findallbyattr('pd.id_producto',$id_productos['id_producto']);
+					$productos_promo = ProductosDigitales::model()->findallbyattr('pd.id_producto',$id_productos['id_producto'],1);
 					
 					break;
+				case SUBCATEGORIA:
+					$productos_promo = ProductosDigitales::model()->findallbyattr(1, 'cc.abreviatura',"'".$search."'");
+					break;
 				case CATEGORIA:
-					$productos_promo = ProductosDigitales::model()->findallbyattr('cc.abreviatura',"'".$search."'");
+					$productos_promo = ProductosDigitales::model()->findallbyattr(1, 'cc.deporte',"'".$search."'");
 					break;
 			}
 
@@ -319,5 +324,20 @@ class SiteController extends Controller
 		} else {
 			$this->redirect(Yii::app()->user->returnUrl);
 		}
+	}
+
+	public function actionProd_categoria($cat)
+	{
+
+		$cat = isset($cat) ? $cat : '';
+
+		if ($cat != "") {
+			$productos_promo = ProductosDigitales::model()->findallbyattr(1, 'cc.abreviatura',"'".$cat."'");
+			$this->render('search',array('productos_promo' => $productos_promo));
+		} else {
+			$this->redirect(Yii::app()->user->returnUrl);
+		}
+		
+		
 	}
 }

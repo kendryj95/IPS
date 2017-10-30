@@ -147,10 +147,10 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 															                if(compras.length > 0){
 
 															                	var text = "";
-															                	console.log(compras.length);
+															                	console.log(compras);
 																				for(var i = 0; i < compras.length; i++) {
-																					text += "<table id=\"table-detalle\" class=\"table table-striped\"><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de compra</b></div></td><td>"+compras[0].estado_compra+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de pago</b></div></td><td>"+compras[0].estado_pago+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email del comprador</b></div></td><td>"+compras[0].payer_info_email+"</td></tr>";
-																					
+																					text += "<div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse"+i+"\">Producto # "+(i+1)+"</a></h4></div><div id=\"collapse"+i+"\" class=\"panel-collapse collapse\"><div class=\"panel-body\"><table style=\"border: 1px solid black;\" width=\"100%\"><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de compra</b></div></td><td>"+compras[0].estado_compra+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de pago</b></div></td><td>"+compras[0].estado_pago+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email del comprador</b></div></td><td>"+compras[0].payer_info_email+"</td></tr>";
+
 																					if(compras[i].contenido_texto != null){
 																						text += "<tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Shortcode</b></div></td><td>"+compras[i].sms_sc+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email de recepcion</b></div></td><td>"+compras[i].consumidor_email+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Notificar al</b></div></td><td>"+compras[i].consumidor_telefono+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Categoria</b></div></td><td>"+compras[i].categoria+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Deporte</b></div></td><td>"+compras[i].deporte+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Pais</b></div></td><td>"+compras[i].pais+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Tipo</b></div></td><td>"+compras[i].tipo+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Abreviatura</b></div></td><td>"+compras[i].abreviatura+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Contenido</b></div></td><td>"+compras[i].contenido_texto+"</td></tr>";
 																					}else{
@@ -167,7 +167,8 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 																							text += "<tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Shortcode</b></div></td><td>"+compras[i].sms_sc+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email de recepcion</b></div></td><td>"+compras[i].consumidor_email+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Notificar al</b></div></td><td>"+compras[i].consumidor_telefono+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Categoria</b></div></td><td>"+compras[i].categoria+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Deporte</b></div></td><td>"+compras[i].deporte+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Pais</b></div></td><td>"+compras[i].pais+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Tipo</b></div></td><td>"+compras[i].tipo+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Contenido</b></div></td><td><textarea rows=\"4\" cols=\"50\">" + compras[i].contenido_texto + "</textarea></td></tr>";
 																						}
 																					}
-																					text += "</table><br><br>";
+
+																					text += "</table></div></div></div>";
 																				};
 																				
 																				$("#modal-detalleCompra .modal-body").html(text);
@@ -192,6 +193,8 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 ?>
 <!--$("#modal-detalleCompra .modal-body").html(JSON.stringify(compras));-->
 
+
+
 <?php $this->beginWidget(
     'booster.widgets.TbModal',
     array('id' => 'modal-detalleCompra')
@@ -202,7 +205,7 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
         <h4>¡GRACIAS POR SU COMPRA!</h4>
     </div>
  
-    <div class="modal-body" style="overflow: scroll; height: 350px;">
+    <div class="modal-body" style="overflow: scroll; height: 450px;">
         <!--<p>One fine body...</p>-->
     </div>
  
@@ -238,7 +241,7 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
         <h4>REVISI&Oacute;N DE CONTENIDO</h4>
     </div>
  
-    <div class="modal-body" style="overflow: scroll; height: 350px;">
+    <div class="modal-body" style="overflow: scroll; height: 450px;">
         <!--<p>One fine body...</p>-->
     </div>
  
@@ -265,10 +268,7 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 <?php $this->endWidget(); ?>
 
 <script type="text/javascript">
-	function alertaaaa(){
-		alert("sssssss");
-		$('#modal-ContenidoArchivo .modal-body').html("SSSDSEDWWEF566V22D65F5G98");
-	}
+	
 	$(document).ready(function(){
 		registrarNotificacion();
 
@@ -352,5 +352,62 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
         return 0;
         
 	}
+
+	/*
+		function(){
+														            $.ajax({
+														                beforeSend: function(){
+														                   $("#modal-detalleCompra").addClass("loading");
+														                },
+														                complete: function(){
+														                   $("#modal-detalleCompra").removeClass("loading");
+														                },
+														                type: "POST",
+														                url: $(this).attr("href"),
+														                success: function(data) { 
+														                    
+															                $("#modal-detalleCompra .modal-header").html("<a class=\"close\" data-dismiss=\"modal\">&times;</a><h4>COMPRA #"+data.id_compra+"</h4>");
+															                var compras = data.notificacion_compras;
+
+															                if(compras.length > 0){
+
+															                	var text = "";
+															                	console.log(compras.length);
+																				for(var i = 0; i < compras.length; i++) {
+																					text += "<table id=\"table-detalle\" class=\"table table-striped\"><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de compra</b></div></td><td>"+compras[0].estado_compra+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de pago</b></div></td><td>"+compras[0].estado_pago+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email del comprador</b></div></td><td>"+compras[0].payer_info_email+"</td></tr>";
+																					
+																					if(compras[i].contenido_texto != null){
+																						text += "<tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Shortcode</b></div></td><td>"+compras[i].sms_sc+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email de recepcion</b></div></td><td>"+compras[i].consumidor_email+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Notificar al</b></div></td><td>"+compras[i].consumidor_telefono+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Categoria</b></div></td><td>"+compras[i].categoria+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Deporte</b></div></td><td>"+compras[i].deporte+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Pais</b></div></td><td>"+compras[i].pais+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Tipo</b></div></td><td>"+compras[i].tipo+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Abreviatura</b></div></td><td>"+compras[i].abreviatura+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Contenido</b></div></td><td>"+compras[i].contenido_texto+"</td></tr>";
+																					}else{
+																						
+																						if(compras[i].abreviatura == ".mp3"){
+																							text += "<tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Shortcode</b></div></td><td>"+compras[i].sms_sc+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email de recepcion</b></div></td><td>"+compras[i].consumidor_email+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Notificar al</b></div></td><td>"+compras[i].consumidor_telefono+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Categoria</b></div></td><td>"+compras[i].categoria+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Deporte</b></div></td><td>"+compras[i].deporte+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Pais</b></div></td><td>"+compras[i].pais+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Tipo</b></div></td><td>"+compras[i].tipo+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Contenido</b></div></td><td><audio src=\"data:audio/mp3; base64, " + compras[i].contenido_archivo + "\" controls> </audio></td></tr>";
+																						}
+																						
+																						if(compras[i].abreviatura == ".pdf"){
+																							text += "<tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Shortcode</b></div></td><td>"+compras[i].sms_sc+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email de recepcion</b></div></td><td>"+compras[i].consumidor_email+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Notificar al</b></div></td><td>"+compras[i].consumidor_telefono+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Categoria</b></div></td><td>"+compras[i].categoria+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Deporte</b></div></td><td>"+compras[i].deporte+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Pais</b></div></td><td>"+compras[i].pais+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Tipo</b></div></td><td>"+compras[i].tipo+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Contenido</b></div></td><td><a href=\"#\" data-toggle=\"modal\" data-target=\"#modal-ContenidoArchivo\" onclick=\"alertaaaa();\">" + compras[i].nombre_archivo + "</a><div class=\"interna\"><embed src=\"data:application/pdf; base64, " + compras[i].contenido_archivo + "\"></div></td></tr>";
+																						}
+
+																						if(compras[i].abreviatura == ".txt"){
+																							text += "<tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Shortcode</b></div></td><td>"+compras[i].sms_sc+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email de recepcion</b></div></td><td>"+compras[i].consumidor_email+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Notificar al</b></div></td><td>"+compras[i].consumidor_telefono+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Categoria</b></div></td><td>"+compras[i].categoria+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Deporte</b></div></td><td>"+compras[i].deporte+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Pais</b></div></td><td>"+compras[i].pais+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Tipo</b></div></td><td>"+compras[i].tipo+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Contenido</b></div></td><td><textarea rows=\"4\" cols=\"50\">" + compras[i].contenido_texto + "</textarea></td></tr>";
+																						}
+																					}
+																					text += "</table><br><br>";
+																				};
+																				
+																				$("#modal-detalleCompra .modal-body").html(text);
+															                }
+															                else{
+															                	$("#modal-detalleCompra .modal-body").html("Disculpe, esta compra presenta errores.");
+															                }
+
+															                $("#modal-detalleCompra").modal("show");
+														                },
+														                error: function() { 
+														                    alert("ERROR - entregarContenido");
+														                }
+														            });
+																}
+	*/
 
 </script>

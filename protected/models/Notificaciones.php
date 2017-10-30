@@ -110,7 +110,7 @@ class Notificaciones extends CActiveRecord
 		
 		$detalle_compra = array();
 
-		$sql = "SELECT  p.estado_compra, p.estado_pago, p.payer_info_email, p.id_compra, p.id_producto_insignia, p.sms_sc, p.consumidor_email, p.consumidor_telefono, pd.id_producto AS all_id_productos, cc.descripcion AS categoria, cc.deporte, cc.abreviatura, cc.pais, tc.descripcion AS tipo, tc.abreviatura, pd.contenido_texto, pd.nombre_archivo, pd.contenido_archivo, pd.tipo_contenido, s.sc, s.desp_op
+		$sql = "SELECT p.estado_compra, p.estado_pago, p.payer_info_email, p.id_compra, p.id_producto_insignia, p.sms_sc, p.consumidor_email, p.consumidor_telefono, pd.id_producto AS all_id_productos, cc.descripcion AS categoria, cc.deporte, cc.abreviatura, cc.pais, tc.descripcion AS tipo, tc.abreviatura, pd.contenido_texto, pd.nombre_archivo, pd.contenido_archivo, pd.tipo_contenido, s.sc, s.desp_op
 				FROM
 					pagos p,
 					productos_digitales pd,
