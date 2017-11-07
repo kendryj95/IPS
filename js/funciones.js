@@ -61,7 +61,7 @@ function process_payment(cart, email, phone){
         });*/
 
         IPS.purchase.pay({
-            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDM4NTY5NDAxMTMsImNsaWVudGUiOnsiaWQiOiJJTUNASVBTXzk4NzMyMV8xNDk1MjE2OTQwMTEzIiwibm9tYnJlIjoiSU1DIiwib3JpZ2VuIjoiSVBTXzk4NzMyMSIsInNjIjoiSVBTXzk4NzMyMSJ9fQ.1LC_3QedkoK0Ud0_woL7POYQK9pZZDRGoO8ms7uDGYQ",
+            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTgwMTcyNjA3MDUsImNsaWVudGUiOnsiaWQiOiJLZW5kcnkgT3J0aXpAMTIzNDU2XzE1MDkzNzcyNjA3MDUiLCJub21icmUiOiJLZW5kcnkgT3J0aXoiLCJvcmlnZW4iOiIxMjM0NTYiLCJzYyI6IjEyMzQ1NiJ9fQ.QSK7h6DjtaToZZfMzu0rn3sHD6Z0gvcHNx09LKEBPPY",
             
             purchase: {
                 client: {
@@ -72,7 +72,7 @@ function process_payment(cart, email, phone){
                 products: items_list,
             }
             
-        }, 'http://localhost:8080/IPS/K3KPgBrvwQAAiHdIXsZVMEM5dnF8xj7STUtCbDSa_bI', 'ips-container');
+        }, 'http://localhost/IPS/K3KPgBrvwQAAiHdIXsZVMEM5dnF8xj7STUtCbDSa_bI', 'ips-container');
         
         //http://localhost:8080/IPS/K3KPgBrvwQAAiHdIXsZVMEM5dnF8xj7STUtCbDSa_bI
         /*IPS.purchase.pay({
@@ -113,7 +113,12 @@ function process_payment(cart, email, phone){
     );*/
 
     }else{
-        alert("Debe elegir una moneda para pagar");
+        //alert("Debe elegir una moneda para pagar");
+        swal(
+          'Error',
+          'Debe elegir una moneda para pagar',
+          'error'
+        )
     }  
 }
 

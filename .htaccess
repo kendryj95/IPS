@@ -12,4 +12,4 @@ RewriteRule . index.php
 RewriteEngine on
 RewriteCond %{HTTP_REFERER} !^http://localhost:8080/IPS_CS*/.*$ [NC]
 RewriteCond %{HTTP_REFERER} !^http://localhost:8080/IPS_CS*$ [NC]
-RewriteRule .*\.(jpg|jpeg|gif|png|bmp|zip|pdf|mp3)$ - [F,NC]
+#RewriteRule .*\.(jpg|jpeg|gif|png|bmp|zip|pdf|mp3)$ - [F,NC]

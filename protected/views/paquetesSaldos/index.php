@@ -34,7 +34,7 @@ $this->breadcrumbs=array(
 									        'size' => 'small',
 									        'icon' => 'fa fa-money',
 									        'buttonType' => 'link',
-									        'url' => Yii::app()->createUrl('/cart/addToCart', array('id_producto' => $paquetes->id, 'categoria' => '')),
+									        'url' => Yii::app()->createUrl('/cart/addToCart', array('paqueteSaldo' => $paquetes->id, 'categoria' => '')),
 									        'htmlOptions' => array('class' => 'btn btn-primaryIPS')
 									        
 									    )
