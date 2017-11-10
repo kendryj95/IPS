@@ -37,9 +37,10 @@ function getVariableURL(variable) {
 
 function process_payment(cart, email, phone){
     var items_list = [];
-    var currency_code = document.getElementById('tipo_de_moneda');
-    var currency_selected = currency_code.options[currency_code.selectedIndex].value;
-
+    //var currency_code = document.getElementById('tipo_de_moneda');
+    //var currency_selected = currency_code.options[currency_code.selectedIndex].value;
+    var currency_selected = "USD";
+    
     if(currency_selected != ""){
         for (var i = 0; i < cart.length; i++) {
             var items_in_cart = {id: cart[i].id_producto, name: cart[i].descripcion_producto, description: cart[i].descripcion_producto, price: parseFloat(cart[i].precio), quantity: cart[i].qty, type: cart[i].id_tipo_de_contenido};
@@ -61,7 +62,7 @@ function process_payment(cart, email, phone){
         });*/
 
         IPS.purchase.pay({
-            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDM4NTY5NDAxMTMsImNsaWVudGUiOnsiaWQiOiJJTUNASVBTXzk4NzMyMV8xNDk1MjE2OTQwMTEzIiwibm9tYnJlIjoiSU1DIiwib3JpZ2VuIjoiSVBTXzk4NzMyMSIsInNjIjoiSVBTXzk4NzMyMSJ9fQ.1LC_3QedkoK0Ud0_woL7POYQK9pZZDRGoO8ms7uDGYQ",
+            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTgwMTcyNjA3MDUsImNsaWVudGUiOnsiaWQiOiJLZW5kcnkgT3J0aXpAMTIzNDU2XzE1MDkzNzcyNjA3MDUiLCJub21icmUiOiJLZW5kcnkgT3J0aXoiLCJvcmlnZW4iOiIxMjM0NTYiLCJzYyI6IjEyMzQ1NiJ9fQ.QSK7h6DjtaToZZfMzu0rn3sHD6Z0gvcHNx09LKEBPPY",
             
             purchase: {
                 client: {
