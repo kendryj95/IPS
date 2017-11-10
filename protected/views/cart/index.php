@@ -73,7 +73,10 @@
                     
                     <div class="text-center">
                         <?php if(Yii::app()->user->isGuest){ ?>
-                            <button type="button" class="btn btn-sm btn-default" id="btn_pay_ips" data-toggle="tooltip" data-placement="right" title="Debe iniciar sesión antes de pagar">   <strong>PAGA CON INSIGNIA</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?></button>
+                            <button type="button" class="btn btn-sm btn-default" id="btn_pay_ips" data-toggle="tooltip" data-placement="right" title="Debe iniciar sesión antes de pagar">   <strong>
+                                <?php echo CHtml::link('PAGA CON INSIGNIA', array('/site/login')); ?>
+
+                            </strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?></button>
                         <?php }else{ ?>
                             <button type="button" class="btn btn-sm btn-warning" id="btn_pay_ips" onclick='process_payment(<?= json_encode($cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>");'>   <strong>PAGA CON INSIGNIA</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?></button>
                         <?php } ?>
