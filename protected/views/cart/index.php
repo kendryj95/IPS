@@ -43,7 +43,7 @@
                                     echo "<td style='text-align: center;'>".$item->nombre_producto."</td>";
                                     echo "<td style='text-align: center;'><span class='currency_selected'></span> ".number_format((float)$item->getSumPrice(), 2, '.', '')."</td>";
                                     echo "<td style='text-align: center;'>".CHtml::link('<span class="glyphicon glyphicon-trash"></span>', Yii::app()->createUrl('/cart/removeToCart', array('id_producto' => $item->idproductos_digitales, 'tipo' => '1', 'prodIsSaldo' => $isSaldo)), array('style' => 'color: black'))."</td>";
-                                    $cart_temp[] = array('idproductos_digitales' => $item->idproductos_digitales, 'qty' => $item->getQuantity(), 'descripcion_producto' => $item->nombre_producto, 'precio' => (float)$item->precio, 'tipo_de_contenido' => $item->tipo, 'id_producto' => $item->id_producto);
+                                    $cart_temp[] = array('idproductos_digitales' => $item->idproductos_digitales, 'qty' => $item->getQuantity(), 'descripcion_producto' => $item->nombre_producto, 'precio' => (float)$item->precio, 'tipo_de_contenido' => $item->tipo_contenido, 'id_producto' => $item->id_producto);
                                     //$cart_temp[] = array();
                             }
                         ?>
@@ -116,7 +116,7 @@
                     <button style="height: 37px" type="button" class="btn btn-sm btn-default" id="btn_pay_ips" data-toggle="tooltip" data-placement="left" title="No tienes saldo suficiente para pagar con tus fondos">   <strong>PAGA CON TU SALDO</strong> <i class="fa fa-money fa-2x" aria-hidden="true" style="font-size: 1.5em; color: brown"></i>
                     </button>
                 <?php else: ?>
-                    <button type="button" class="btn btn-sm btn-primaryIPS" id="" onclick='process_payment(<?= json_encode(@$cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>");'> <strong>PAGA CON TU SALDO</strong>  <i class="fa fa-money fa-2x" aria-hidden="true" style="font-size: 1.5em; color: brown"></i>
+                    <button type="button" class="btn btn-sm btn-primary" id="" onclick='process_payment(<?= json_encode(@$cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>");'> <strong>PAGA CON TU SALDO</strong>  <i class="fa fa-money fa-2x" aria-hidden="true" style="font-size: 1.5em; color: brown"></i>
                     </button>
                 <?php endif; ?>
                     <button type="button" class="btn btn-sm btn-warning" id="btn_pay_ips" onclick='process_payment(<?= json_encode(@$cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>");'>   <strong>PAGA CON INSIGNIA</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?>
