@@ -11,6 +11,15 @@ $this->widget('booster.widgets.TbCarousel', array(
         );
     }, $images_carousel)
 ));
+
+
+// Asignarle el saldo IPS a la variable session de Yii.
+if (!Yii::app()->user->isGuest) {
+	if (!(Yii::app()->user->hasState('saldo_ips'))) {
+		Yii::app()->user->setState('saldo_ips', number_format($saldo_ips->saldo_ips,2,'.',''));
+	}
+}
+
 ?>
 
 <script type="text/javascript">

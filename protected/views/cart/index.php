@@ -33,23 +33,17 @@
                     </thead>
                     <tbody>
 
-                        <?php 
-                            /*$cart_temp[] = array();
-                            foreach($cart->getPositions() as $item) {
-                                echo "<pre>";
-                                print_r($item);
-                                echo "<pre>";
-                                exit;
-                            }*/
+                        <?php
                             foreach($cart->getPositions() as $item) { 
                                 //echo var_dump($item);
+                                $isSaldo = $item->tipo_contenido == 'saldo' ? true : false; // Valido si el item es un producto de tipo saldo o es un producto digital.
                                 echo "<tr>";
                                     echo "<td style='text-align: center;' hidden='hidden'>".$item->idproductos_digitales."</td>";
                                     echo "<td style='text-align: center;'>".$item->getQuantity()."</td>";
                                     echo "<td style='text-align: center;'>".$item->nombre_producto."</td>";
                                     echo "<td style='text-align: center;'><span class='currency_selected'></span> ".number_format((float)$item->getSumPrice(), 2, '.', '')."</td>";
-                                    echo "<td style='text-align: center;'>".CHtml::link('<span class="glyphicon glyphicon-trash"></span>', Yii::app()->createUrl('/cart/removeToCart', array('id_producto' => $item->idproductos_digitales, 'tipo' => '1')), array('style' => 'color: black'))."</td>";
-                                    $cart_temp[] = array('idproductos_digitales' => $item->idproductos_digitales, 'qty' => $item->getQuantity(), 'descripcion_producto' => $item->nombre_producto, 'precio' => (float)$item->precio, 'tipo_de_contenido' => $item->tipo, 'id_producto' => $item->id_producto);
+                                    echo "<td style='text-align: center;'>".CHtml::link('<span class="glyphicon glyphicon-trash"></span>', Yii::app()->createUrl('/cart/removeToCart', array('id_producto' => $item->idproductos_digitales, 'tipo' => '1', 'prodIsSaldo' => $isSaldo)), array('style' => 'color: black'))."</td>";
+                                    $cart_temp[] = array('idproductos_digitales' => $item->idproductos_digitales, 'qty' => $item->getQuantity(), 'descripcion_producto' => $item->nombre_producto, 'precio' => (float)$item->precio, 'tipo_de_contenido' => $item->tipo_contenido, 'id_producto' => $item->id_producto);
                                     //$cart_temp[] = array();
                             }
                         ?>
@@ -64,25 +58,33 @@
                 </table>
                 </div>
                 <br>
-                <!-- <div class="col col-xs-6 col-md-4 col-lg-6">
-                    <?php 
-                        //echo CHtml::dropDownList('tipo_de_moneda', 'USD', $currencies, array('empty' => 'Seleccione la moneda de pago', 'class' => 'form-control input-sm',  'onChange' => 'javascript:change_currency()' ));
-                    ?> 
-                </div> -->
-                <!-- <div class="col col-xs-2 col-md-8 col-lg-6" style="text-align: center;"> -->
+                
+                <?php
                     
-                    <div class="text-center">
-                        <?php if(Yii::app()->user->isGuest){ ?>
-                            <button type="button" class="btn btn-sm btn-default" id="btn_pay_ips" data-toggle="tooltip" data-placement="right" title="Debe iniciar sesión antes de pagar">   <strong>
-                                <?php echo CHtml::link('PAGA CON INSIGNIA', array('/site/login')); ?>
+                    if (!Yii::app()->user->isGuest) {
+                        $monto_total = number_format((float)$cart->getCost(), 2, '.', '');
+                        $saldoUserIPS = number_format(Yii::app()->user->getState("saldo_ips"),2,'.','');
+                        $diff_saldo = $saldoUserIPS - $monto_total;
+                    }
+                ?>
 
-                            </strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?></button>
-                        <?php }else{ ?>
-                            <button type="button" class="btn btn-sm btn-warning" id="btn_pay_ips" onclick='process_payment(<?= json_encode($cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>");'>   <strong>PAGA CON INSIGNIA</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?></button>
-                        <?php } ?>
+                 <div class="col col-xs-6 col-md-4 col-lg-6">
+                    <?php
+                        #echo CHtml::dropDownList('tipo_de_moneda', 'USD', $currencies, array('empty' => 'Seleccione la moneda de pago', 'class' => 'form-control input-sm',  'onChange' => 'javascript:change_currency()', 'type' => 'hidden' ));
+                        echo CHtml::dropDownList('tipo_de_moneda', 'USD', array("USD"=>"Dólar estadounidense"), array('empty' => 'Seleccione la moneda de pago', 'class' => 'form-control input-sm',  'onChange' => 'javascript:change_currency()', 'type' => 'hidden' ));
+                    ?> 
+                </div> 
+                <div class="col col-xs-2 col-md-8 col-lg-6" style="text-align: center;">
+                    <div class="text-center">
+                        <?php if(Yii::app()->user->isGuest): ?>
+                            <button type="button" class="btn btn-sm btn-default" id="btn_pay_ips" data-toggle="tooltip" data-placement="right" title="Debe iniciar sesión antes de pagar">   <strong>Facturar</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?></button>
+                        <?php else: ?>
+                            <a type="button" href="javascript:void(0)" class="btn btn-sm btn-warning" id="" data-toggle="modal" data-target=".facturar">   <strong>Facturar</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?>
+                            </a>
+                        <?php endif; ?>
                         <div id="ips-container"></div>
                     </div>
-                <!-- </div> -->
+                </div>
             </div>
     <?php } else { ?>
                 <div class="container">
@@ -97,4 +99,31 @@
                     </div>
                 </div>
     <?php } ?>
+</div>
+
+<div class="modal fade facturar" tabindex="-1" role="dialog" aria-labelledby="prueba">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header modal-headerIPS">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h4>Facturar</h4>
+        </div>
+     
+        <div class="modal-body" style="background: #EDECED;">
+            <div class="text-center">
+            <?php if(!Yii::app()->user->isGuest): ?>
+                <?php if(@$diff_saldo < 0): ?> <!-- Valido si el saldo no es suficiente para realizar su compra -->
+                    <button style="height: 37px" type="button" class="btn btn-sm btn-default" id="btn_pay_ips" data-toggle="tooltip" data-placement="left" title="No tienes saldo suficiente para pagar con tus fondos">   <strong>PAGA CON TU SALDO</strong> <i class="fa fa-money fa-2x" aria-hidden="true" style="font-size: 1.5em; color: brown"></i>
+                    </button>
+                <?php else: ?>
+                    <button type="button" class="btn btn-sm btn-primary" id="" onclick='process_payment(<?= json_encode(@$cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>");'> <strong>PAGA CON TU SALDO</strong>  <i class="fa fa-money fa-2x" aria-hidden="true" style="font-size: 1.5em; color: brown"></i>
+                    </button>
+                <?php endif; ?>
+                    <button type="button" class="btn btn-sm btn-warning" id="btn_pay_ips" onclick='process_payment(<?= json_encode(@$cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>");'>   <strong>PAGA CON INSIGNIA</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?>
+                    </button>
+            <?php endif; ?>
+            </div>
+        </div>
+    </div>
+  </div>
 </div>

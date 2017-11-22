@@ -41,8 +41,12 @@ class SiteController extends Controller
 		$images_carousel = Publicidad::model()->findallbytypeimage("Carrusel");
 		$categorias = CategoriasContenido::model()->findAll();
 		$productos_promo = ProductosDigitales::model()->findallbyattr(1);
-
-		$this->render('index', array('images_carousel' => $images_carousel, 'productos_promo' => $productos_promo, 'categorias' => $categorias));
+		$saldo_ips = null;
+		if (!Yii::app()->user->isGuest) {
+			$saldo_ips = SaldosUsuariosIps::model()->find('id_usuario='.Yii::app()->user->id);
+		}
+		
+		$this->render('index', array('images_carousel' => $images_carousel, 'productos_promo' => $productos_promo, 'categorias' => $categorias, 'saldo_ips' => $saldo_ips));
 	}
 
 	/**

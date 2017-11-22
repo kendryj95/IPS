@@ -32,6 +32,8 @@ ini_set('display_errors', true);*/
 	<meta name="msapplication-TileImage" content="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/simple-sidebar.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/sweetalert2.min.css">
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sweetalert2.min.js"></script>
 	<script src="http://72.14.188.47/ips/lib/dist/checkout.js"></script>
 	<script src="https://use.fontawesome.com/e694455cac.js"></script>
 	<!--<script src='https://insigniamobile.net.ve/testVersion/insignia_payments_solutions_IPS/webservice_ips/dist/checkout.js'></script>-->
@@ -124,13 +126,15 @@ ini_set('display_errors', true);*/
 		                    array('label' => 'Buscar', 'url' => 'javascript:void(0)', 'itemOptions' => array('data-toggle' => 'modal', 'data-target' => '.bs-example-modal-sm')),
 		                    array('label' => 'Acceder', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
 		                    array(
-		                        'label' => Yii::app()->user->name,
+		                        'label' => Yii::app()->user->name . " - $" . @Yii::app()->user->getState("saldo_ips"),
 		                        'url' => '#',
 		                        'icon' => 'glyphicon glyphicon-user',
 		                        'visible'=>!Yii::app()->user->isGuest,
 		                        'items' => array(
 		                        	array('label' => 'Perfil', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-cog', 'url' => array('/usuarioips/security')),
-		                        	array('label' => 'Notificaciones'.$badget, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),'---',
+		                        	array('label' => 'Notificaciones'.$badget, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),
+		                        	array('label' => 'Gestionar Saldo', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-usd', 'url'=>Yii::app()->createUrl('/paquetesSaldos/index')),
+		                        	'---',
 		                            array('label' => 'Salir', 'icon'=>'glyphicon glyphicon-log-out', 'url'=>Yii::app()->createUrl('/site/logout'))
 		                   	 	),
 		                	),

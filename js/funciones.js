@@ -73,7 +73,7 @@ function process_payment(cart, email, phone){
                 products: items_list,
             }
             
-        }, 'http://localhost:8080/IPS/K3KPgBrvwQAAiHdIXsZVMEM5dnF8xj7STUtCbDSa_bI', 'ips-container');
+        }, 'http://localhost/IPS/K3KPgBrvwQAAiHdIXsZVMEM5dnF8xj7STUtCbDSa_bI', 'ips-container');
         
         //http://localhost:8080/IPS/K3KPgBrvwQAAiHdIXsZVMEM5dnF8xj7STUtCbDSa_bI
         /*IPS.purchase.pay({
@@ -114,7 +114,12 @@ function process_payment(cart, email, phone){
     );*/
 
     }else{
-        alert("Debe elegir una moneda para pagar");
+        //alert("Debe elegir una moneda para pagar");
+        swal(
+          'Error',
+          'Debe elegir una moneda para pagar',
+          'error'
+        )
     }  
 }
 

@@ -57,6 +57,10 @@ class CartController extends Controller
 		}
 		echo "</pre>";
 		exit;*/
+		/*echo "<pre>";
+		print_r($cart->getPositions());
+		echo "</pre>";
+		exit;*/
 		$currencies = CHtml::listData(TipoDeMonedas::model()->findAll("estatus=1"), 'abreviatura', 'descripcion');
 
 		$this->render('index', array('cart' => $cart, 'count_items' => $count_items, 'currencies' => $currencies));
@@ -103,60 +107,63 @@ class CartController extends Controller
 		}
 	***/
 
-	public function actionAddToCart($id_producto = null, $categoria = null){		
+	public function actionAddToCart($id_producto = null, $paqueteSaldo = null, $categoria = null){		
 		if($id_producto == null){
 			if(isset($_POST['id_producto'])){
 				$id_producto = $_POST['id_producto'];
 			}
 		}
 
-		$producto = ProductosDigitales::model()->findallbyattr(1, 'idproductos_digitales',$id_producto); //ProductosDigitales::model()->findByPk($id_producto);
 		//ProductosDigitales::model()->findallbyattr('idproductos_digitales',$id_producto);
-		
+
 		$p = new ProductosDigitales();
-		$p->breve_descripcion = $producto[0]['breve_descripcion'];
-		$p->nombre_producto = $producto[0]['nombre_producto'];
-		$p->precio = $producto[0]['precio'];
-		$p->abrev_tipo = $producto[0]['abrev_tipo'];
-		$p->deporte = $producto[0]['deporte'];
-		$p->categoria = $producto[0]['categoria'];
-		$p->abrev_deporte = $producto[0]['abrev_deporte'];
-		$p->idproductos_digitales = $producto[0]['idproductos_digitales'];
-		$p->id_producto = $producto[0]['id_producto_sms'];
-		$p->tipo_contenido = $producto[0]['tipo_contenido'];
 
-		/*echo "<pre>";
-		print_r($p);
-		echo "</pre>";
-		exit;*/
-
-		/*if(Yii::app()->shoppingCart->getCount() > 0){
-			$cart = Yii::app()->shoppingCart->getPositions();
+		if ($id_producto != null) {
 			
-			foreach($cart as $item) {
-				$id_producto_in_cart = $item->idproductos_digitales;
-	
-				if($id_producto_in_cart != $p->idproductos_digitales){
-					Yii::app()->shoppingCart->put($p);
-				}else{
-					echo "ALERT ERROR PRODUCT IN THE CART";
-				}
-			}	
-		}else{
-			Yii::app()->shoppingCart->put($p);
-		}*/
+			$producto = ProductosDigitales::model()->findallbyattr(1, 'idproductos_digitales',$id_producto); //ProductosDigitales::model()->findByPk($id_producto);
+
+			$p->breve_descripcion = $producto[0]['breve_descripcion'];
+			$p->nombre_producto = $producto[0]['nombre_producto'];
+			$p->precio = $producto[0]['precio'];
+			$p->abrev_tipo = $producto[0]['abrev_tipo'];
+			$p->deporte = $producto[0]['deporte'];
+			$p->categoria = $producto[0]['categoria'];
+			$p->abrev_deporte = $producto[0]['abrev_deporte'];
+			$p->idproductos_digitales = $producto[0]['idproductos_digitales'];
+			$p->id_producto = $producto[0]['id_producto_sms'];
+			$p->tipo_contenido = $producto[0]['tipo_contenido'];
+		} else {
+			$getPaqueteSaldo = PaquetesSaldos::model()->findByPk($paqueteSaldo);
+
+			$p->breve_descripcion = "Compra de saldo IPS de $".$getPaqueteSaldo->saldo;
+			$p->nombre_producto = "saldo_".$getPaqueteSaldo->saldo;
+			$p->precio = $getPaqueteSaldo->saldo;
+			$p->abrev_tipo = "Saldo IPS";
+			$p->deporte = "No aplica";
+			$p->categoria = "No aplica";
+			$p->abrev_deporte = "No aplica";
+			$p->idproductos_digitales = $getPaqueteSaldo->id;
+			$p->id_producto = $getPaqueteSaldo->id;
+			$p->tipo_contenido = "saldo";
+		}
+		
 
 		Yii::app()->shoppingCart->put($p);
-		$this->redirect(Yii::app()->createUrl('site/prod_categoria', array('cat' => $categoria)));
+		if ($p->tipo_contenido != "saldo") {
+			$this->redirect(Yii::app()->createUrl('site/prod_categoria', array('cat' => $categoria)));
+		} else {
+			$this->redirect(Yii::app()->createUrl('paquetesSaldos/index'));
+		}
+		
 	}
 
-	public function actionRemoveToCart($id_producto = null, $tipo = null){
+	public function actionRemoveToCart($id_producto = null, $tipo = null, $prodIsSaldo = null){
 		if($tipo == null){
 			if (isset($_POST['tipo'])) {
 				$tipo = $_POST['tipo'];
 			}
 		}
-
+		$removeProd = null;
 		if($tipo == 1){
 			if($id_producto == null){
 				if(isset($_POST['id_producto'])){
@@ -164,8 +171,15 @@ class CartController extends Controller
 				}
 			}
 
-			$producto = ProductosDigitales::model()->findByPk($id_producto);
-			Yii::app()->shoppingCart->remove($producto->getId());
+			if ($prodIsSaldo != null && $prodIsSaldo) { // Valido si el producto en el carrito es de tipo saldo o no.
+				$paqueteSaldo = PaquetesSaldos::model()->findByPk($id_producto);
+				$removeProd = 'digital_products'.$paqueteSaldo->id;
+			} else {
+				$producto = ProductosDigitales::model()->findByPk($id_producto);
+				$removeProd = $producto->getId();
+			}
+
+			Yii::app()->shoppingCart->remove($removeProd);
 			$this->actionIndex();
 		}else{
 			Yii::app()->shoppingCart->clear();
