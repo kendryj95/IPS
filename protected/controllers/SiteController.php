@@ -44,6 +44,15 @@ class SiteController extends Controller
 		$saldo_ips = null;
 		if (!Yii::app()->user->isGuest) {
 			$saldo_ips = SaldosUsuariosIps::model()->find('id_usuario='.Yii::app()->user->id);
+			if (!$saldo_ips) {
+				$initSaldo = new SaldosUsuariosIps;
+
+				//Inicializar saldo para el que no lo tenga
+				$initSaldo->id_usuario = Yii::app()->user->id;
+				$initSaldo->saldo_ips = 0;
+				$initSaldo->save();
+				$saldo_ips = SaldosUsuariosIps::model()->find('id_usuario='.Yii::app()->user->id);
+			}
 		}
 		
 		$this->render('index', array('images_carousel' => $images_carousel, 'productos_promo' => $productos_promo, 'categorias' => $categorias, 'saldo_ips' => $saldo_ips));
