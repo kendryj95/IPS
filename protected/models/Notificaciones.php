@@ -32,13 +32,13 @@ class Notificaciones extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('idusuario_ips, id_compra, asunto, mensaje, fecha, hora', 'required'),
-			array('idusuario_ips, id_cliente, estado', 'numerical', 'integerOnly'=>true),
+			array('idusuario_ips, estado', 'numerical', 'integerOnly'=>true),
 			array('id_compra', 'length', 'max'=>145),
 			array('asunto', 'length', 'max'=>50),
 			array('mensaje', 'length', 'max'=>2000),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_notificacion, idusuario_ips, id_compra, id_cliente, asunto, mensaje, fecha, hora, estado', 'safe', 'on'=>'search'),
+			array('id_notificacion, idusuario_ips, id_compra, asunto, mensaje, fecha, hora, estado', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,9 +59,8 @@ class Notificaciones extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_notificacion' => 'Id Notificacion',
-			'idusuario_ips' => 'Idusuario Ips',
-			'id_cliente' => 'Id Cliente',
+			'id_notificacion' => 'Notificacion',
+			'idusuario_ips' => 'Usuario',
 			'asunto' => 'Asunto',
 			'mensaje' => 'Mensaje',
 			'fecha' => 'Fecha',
@@ -91,7 +90,6 @@ class Notificaciones extends CActiveRecord
 
 		$criteria->compare('id_notificacion',$this->id_notificacion);
 		$criteria->compare('idusuario_ips',$this->idusuario_ips);
-		$criteria->compare('id_cliente',$this->id_cliente);
 		$criteria->compare('asunto',$this->asunto,true);
 		$criteria->compare('mensaje',$this->mensaje,true);
 		$criteria->compare('fecha',$this->fecha,true);
@@ -110,15 +108,17 @@ class Notificaciones extends CActiveRecord
 		
 		$detalle_compra = array();
 
-		$sql = "SELECT p.estado_compra, p.estado_pago, p.payer_info_email, p.id_compra, p.id_producto_insignia, p.sms_sc, p.consumidor_email, p.consumidor_telefono, pd.id_producto AS all_id_productos, cc.descripcion AS categoria, cc.deporte, cc.abreviatura, cc.pais, tc.descripcion AS tipo, tc.abreviatura, pd.contenido_texto, pd.nombre_archivo, pd.contenido_archivo, pd.tipo_contenido, s.sc, s.desp_op
+		$sql = "SELECT pp.desc_producto, p.estado_compra, p.estado_pago, p.payer_info_email, p.id_compra, p.id_producto_insignia, p.sms_sc, p.consumidor_email, p.consumidor_telefono, pd.id_producto AS all_id_productos, cc.descripcion AS categoria, cc.deporte, cc.abreviatura, cc.pais, tc.descripcion AS tipo, tc.abreviatura, pd.contenido_texto, pd.nombre_archivo, pd.contenido_archivo, pd.tipo_contenido, s.sc, s.desp_op
 				FROM
 					pagos p,
 					productos_digitales pd,
 					categorias_contenido cc,
 					tipo_contenido tc,
-				    sms.smsin s
+					sms.smsin s,
+					sms.producto pp
 				WHERE
 				    p.id_compra = '".$id_compra."'
+				AND pp.id_producto IN(pd.id_producto)
 				AND s.id_producto = pd.id_producto
 				AND pd.id_categoria = cc.idcategorias_contenido
 				AND pd.tipo = tc.id_tipo_de_contenido

@@ -14,35 +14,6 @@ $this->breadcrumbs=array(
 <h2 style="text-align: center;">Notificaciones</h2>
 <hr>
 
-<?php /*$this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-));*/ ?>
-
-<?php
-/*echo "<pre>";
-print_r($_GET);
-echo "</pre>";*/
-?>
-
-<?php /*$this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'notificaciones-grid',
-	'dataProvider'=>$dataProvider,
-	'filter'=>$model,
-	'columns'=>array(
-		'id_compra',
-		'asunto',
-		'mensaje',
-		'fecha',
-		'hora',
-		'estado',
-
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-));*/ ?>
-
 <style>
     html, body{
         height: 95vh;
@@ -68,15 +39,6 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
         'htmlOptions' => array('class' => 'trOverFlow col-xs-12 col-sm-12 col-md-12 col-lg-12'),
         'filter'=> $model,
         'columns'=> array( 
-        	/*array(
-	            'name' => 'id_compra',
-	            'header' => 'Ticket',
-	            'type' => 'raw',
-	            'htmlOptions' => array('style' => 'text-align: center;'),
-	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
-	            'value'=>'CHtml::link("$data->id_compra", "#", array("class" => "idCompra_reg", "id_registro" => "$data->id_compra", "data-toggle" => "modal", ))'
-
-        	), */
         	array(
 	            'name' => 'id_compra',
 	            'header' => 'Ticket',
@@ -113,13 +75,6 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
             ),
 
-            /*array(
-            	'name' => 'estatus',
-            	'header' => 'Estatus',
-            	'htmlOptions' => array('style' => 'text-align: center;'),
-	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
-            ),*/
-
             array(
 	            'class' => 'CButtonColumn',
 	            'header' => 'Acciones',
@@ -149,7 +104,7 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 															                	var text = "";
 															                	console.log(compras);
 																				for(var i = 0; i < compras.length; i++) {
-																					text += "<div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse"+i+"\">Producto # "+(i+1)+"</a></h4></div><div id=\"collapse"+i+"\" class=\"panel-collapse collapse\"><div class=\"panel-body\"><table style=\"border: 1px solid black;\" width=\"100%\"><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de compra</b></div></td><td>"+compras[0].estado_compra+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de pago</b></div></td><td>"+compras[0].estado_pago+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email del comprador</b></div></td><td>"+compras[0].payer_info_email+"</td></tr>";
+																					text += "<div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse"+i+"\"><strong>Producto: </strong>"+compras[i].desc_producto+"</a></h4></div><div id=\"collapse"+i+"\" class=\"panel-collapse collapse\"><div class=\"panel-body\"><table style=\"border: 1px solid black;\" width=\"100%\"><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de compra</b></div></td><td>"+compras[0].estado_compra+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de pago</b></div></td><td>"+compras[0].estado_pago+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email del comprador</b></div></td><td>"+compras[0].payer_info_email+"</td></tr>";
 
 																					if(compras[i].contenido_texto != null){
 																						text += "<tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Shortcode</b></div></td><td>"+compras[i].sms_sc+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email de recepcion</b></div></td><td>"+compras[i].consumidor_email+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Notificar al</b></div></td><td>"+compras[i].consumidor_telefono+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Categoria</b></div></td><td>"+compras[i].categoria+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Deporte</b></div></td><td>"+compras[i].deporte+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Pais</b></div></td><td>"+compras[i].pais+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Tipo</b></div></td><td>"+compras[i].tipo+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Abreviatura</b></div></td><td>"+compras[i].abreviatura+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Contenido</b></div></td><td>"+compras[i].contenido_texto+"</td></tr>";
