@@ -140,17 +140,6 @@ class ProductosDigitales extends CActiveRecord implements IECartPosition
 		
 		$productos = array();
 		$condition = "";
-
-		/*if($tipo != null && $accion === 1){
-			$condition = " AND ".$tipo." IN(".$valor.")";	
-		} elseif ($tipo != null && $accion === 2) {
-			$condition = " AND ".$tipo." LIKE $valor";	
-		}*/
-		
-		/*$sql = "SELECT p.idproductos_digitales, p.id_producto, p.descripcion  AS descripcion_producto, pp.cliente, pp.usuario, t.descripcion, t.abreviacion, pm.id_metodo_de_pago, p.id_categoria, p.precio
-				FROM productos_digitales p, tipo_contenido t, categorias_contenido c, metodos_de_pago pm, sms.producto pp
-				WHERE pp.id_producto IN(p.id_producto) AND t.id_tipo_de_contenido = p.id_tipo_de_contenido AND p.id_categoria = c.idcategorias_contenido AND p.id_metodo_de_pago = pm.id_metodo_de_pago".$condition;*/
-
 		$sql = "";
 
 		switch ($accion) {
@@ -160,7 +149,7 @@ class ProductosDigitales extends CActiveRecord implements IECartPosition
 					$condition = " AND ".$tipo." IN(".$valor.")";	
 				}
 
-				$sql = "SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido ".$condition." GROUP BY p.id_producto";
+				$sql = "SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido ".$condition." AND pd.fecha_actualizacion = CURDATE() GROUP BY p.id_producto";
 
 				break;
 			
@@ -170,7 +159,7 @@ class ProductosDigitales extends CActiveRecord implements IECartPosition
 					$condition = " AND ".$tipo." LIKE $valor";	
 				}
 
-				$sql = "SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido ".$condition." GROUP BY p.id_producto";
+				$sql = "SELECT pd.idproductos_digitales, pd.id_producto AS id_producto_sms, pd.contenido_texto AS breve_descripcion, p.desc_producto AS nombre_producto, pr.precio, tc.descripcion AS tipo_contenido, tc.abreviatura AS abrev_tipo, cc.deporte, cc.descripcion AS categoria, cc.abreviatura AS abrev_deporte FROM productos_digitales pd, precios_productos_digitales pr, tipo_contenido tc, categorias_contenido cc,  sms.producto p WHERE pd.id_producto = pr.id_producto AND pr.estatus = 1 AND p.id_producto IN(pd.id_producto) AND pd.tipo = tc.id_tipo_de_contenido AND pd.id_categoria = cc.idcategorias_contenido ".$condition." AND pd.fecha_actualizacion = CURDATE() GROUP BY p.id_producto";
 
 				break;
 		}
@@ -181,10 +170,6 @@ class ProductosDigitales extends CActiveRecord implements IECartPosition
 		foreach($list_productos as $data){
 		    $productos[] = $data;
 		}
-		/*echo "<pre>";
-		print_r($productos);
-		echo "</pre>";
-		exit;*/
 		return $productos;
 	}
 }
