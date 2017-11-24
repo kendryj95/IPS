@@ -96,7 +96,7 @@ class Notificaciones extends CActiveRecord
 		$criteria->compare('hora',$this->hora,true);
 		$criteria->compare('id_compra',$this->id_compra,true);
 		$criteria->compare('estado',$this->estado);
-
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination'=>array('pageSize' => 10, 'route' => 'notificaciones/index'),
@@ -133,10 +133,7 @@ class Notificaciones extends CActiveRecord
 			}
 		    $detalle_compra[] = $data;
 		}
-		/*echo "<pre>";
-		print_r($detalle_compra);
-		echo "</pre>";
-		exit;*/
+
 		return $detalle_compra;
 	}
 

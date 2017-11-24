@@ -27,7 +27,10 @@ $this->breadcrumbs=array(
     }
 </style>
 <?php
-
+/*echo "<pre>";
+print_r($model->search());
+echo "</pre>";
+exit;*/
 $this->widget('booster.widgets.TbExtendedGridView' , array (
         'id'=>'notificaciones-grid',
         'type'=>'striped bordered', 
@@ -45,7 +48,6 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 	            'type' => 'raw',
 	            'htmlOptions' => array('style' => 'text-align: center;'),
 	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
-
         	),
         	array(
 	            'name' => 'asunto',
@@ -74,7 +76,24 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
             	'htmlOptions' => array('style' => 'text-align: center;'),
 	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
             ),
-
+            array(
+	            'name' => 'estado',
+	            'header' => 'Estado',
+	            'type' => 'raw',
+	            'value' => function($data){
+	            	$objeto = Yii::app()->Funciones->getColorLabelEstadoNotificaciones($data->estado);
+	            	//print_r($objeto);
+	            	Controller::widget(
+					    'booster.widgets.TbLabel',
+					    array(
+					        'label' => $objeto['label'],
+					        'htmlOptions'=>array('style'=>'background-color: '.$objeto['background_color'].';'),	
+					    )
+					);
+	            },
+	            'htmlOptions' => array('style' => 'text-align: center;'),
+	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
+        	),
             array(
 	            'class' => 'CButtonColumn',
 	            'header' => 'Acciones',
@@ -95,14 +114,18 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 														                type: "POST",
 														                url: $(this).attr("href"),
 														                success: function(data) { 
-														                    
+
 															                $("#modal-detalleCompra .modal-header").html("<a class=\"close\" data-dismiss=\"modal\">&times;</a><h4>COMPRA #"+data.id_compra+"</h4>");
 															                var compras = data.notificacion_compras;
+
+															                $("#notificaciones-grid").yiiGridView("update", {
+																				data: $(this).serialize()
+																			});
 
 															                if(compras.length > 0){
 
 															                	var text = "";
-															                	console.log(compras);
+															                	
 																				for(var i = 0; i < compras.length; i++) {
 																					text += "<div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse"+i+"\"><strong>Producto: </strong>"+compras[i].desc_producto+"</a></h4></div><div id=\"collapse"+i+"\" class=\"panel-collapse collapse\"><div class=\"panel-body\"><table style=\"border: 1px solid black;\" width=\"100%\"><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de compra</b></div></td><td>"+compras[0].estado_compra+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de pago</b></div></td><td>"+compras[0].estado_pago+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email del comprador</b></div></td><td>"+compras[0].payer_info_email+"</td></tr>";
 

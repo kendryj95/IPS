@@ -219,6 +219,10 @@ class NotificacionesController extends Controller
 
 	    $notificacion_compras = Notificaciones::model()->detalle_compra($id_compra);
 
+		$notificacion_leida = Notificaciones::model()->findByAttributes(array('id_compra' => $id_compra));
+		$notificacion_leida->estado = 1;
+		$notificacion_leida->save();
+
 	    header('Content-Type: application/json; charset="UTF-8"');
         echo CJSON::encode(array('id_compra' => "<strong>".$id_compra."</strong>", 'notificacion_compras' => $notificacion_compras));
 	}

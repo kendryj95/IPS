@@ -116,6 +116,39 @@ class Funciones extends CApplicationComponent
         return trim(preg_replace('/\s{2,}/', " ", $sms));
     }
 
+    public function getCantidadDeNotificaciones(){
+    	$cantd_notificaciones = 0;
+
+    	if(!Yii::app()->user->isGuest){
+	    	$criteria = new CDbCriteria;
+			$criteria->condition = 'idusuario_ips = '.Yii::app()->user->id.' AND estado = 2';
+			$notificaciones = Notificaciones::model()->findAll($criteria);
+			$cantd_notificaciones = count($notificaciones);
+		}
+		
+		return $cantd_notificaciones;
+    }
+
+    public function getColorLabelEstadoNotificaciones($id_estado)
+	{
+		$objeto = array();
+
+		if($id_estado == 0)
+			$objeto = array('label'=> 'Sin estado', 'background_color' => 'gainsboro');
+		elseif($id_estado == 1)
+			$objeto = array('label'=> 'Leída', 'background_color' => '#5cb85c');
+		elseif ($id_estado == 2)
+			$objeto = array('label'=> 'Sin leer', 'background_color' => '#434A54');
+		elseif ($id_estado == 3)
+			$objeto = array('label'=> 'Compra no aprobada', 'background_color' => '#999');
+		elseif ($id_estado == 4)
+			$objeto = array('label'=> 'Esperando confirmación', 'background_color' => '#f0ad4e');
+		elseif ($id_estado == 5)
+			$objeto = array('label'=> 'Error', 'background_color' => '#d9534f');
+
+		return $objeto;
+	}
+
 	/*public function getColorOperadoraBCNL($id_operadora)
 	{
 		if ($id_operadora == 2) //Movistar

@@ -42,6 +42,7 @@ class SiteController extends Controller
 		$categorias = CategoriasContenido::model()->findAll();
 		$productos_promo = ProductosDigitales::model()->findallbyattr(1);
 		$saldo_ips = null;
+
 		if (!Yii::app()->user->isGuest) {
 			$saldo_ips = SaldosUsuariosIps::model()->find('id_usuario='.Yii::app()->user->id);
 			if (!$saldo_ips) {
@@ -54,7 +55,7 @@ class SiteController extends Controller
 				$saldo_ips = SaldosUsuariosIps::model()->find('id_usuario='.Yii::app()->user->id);
 			}
 		}
-		
+
 		$this->render('index', array('images_carousel' => $images_carousel, 'productos_promo' => $productos_promo, 'categorias' => $categorias, 'saldo_ips' => $saldo_ips));
 	}
 

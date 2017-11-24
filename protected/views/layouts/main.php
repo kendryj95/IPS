@@ -39,7 +39,7 @@ ini_set('display_errors', true);*/
 	<!--<script src='https://insigniamobile.net.ve/testVersion/insignia_payments_solutions_IPS/webservice_ips/dist/checkout.js'></script>-->
 
 	<?php  
-		$baseUrl = Yii::app()->baseUrl; 
+		$baseUrl = Yii::app()->baseUrl;
 		Yii::app()->clientScript->registerCssFile($baseUrl.'/css/estilos.css');
 
 		Yii::app()->clientScript->registerScriptFile($baseUrl.'/js/jquery.dataTables.min.js');
@@ -93,15 +93,16 @@ ini_set('display_errors', true);*/
 	<?php	
 		Yii::import('application.extensions.shoppingCart.ECartPositionBehaviour');
 		//$dd = $this->widget('booster.widgets.TbBadge', array('context' => 'danger', 'label' => '2'));
-		 $badget = Yii::app()->shoppingCart->getCount() > 0 ? $this->widget(
-			 'booster.widgets.TbBadge',
-			 array(
-				 'context' => 'danger',
-				 // 'default', 'success', 'info', 'warning', 'danger'
-				 'label' => Yii::app()->shoppingCart->getCount()
-			 )
-			 ,true
-			 ) : '';
+		$badget = Yii::app()->shoppingCart->getCount() > 0 ? $this->widget('booster.widgets.TbBadge',
+			array('context' => 'danger',
+					// 'default', 'success', 'info', 'warning', 'danger'
+					'label' => Yii::app()->shoppingCart->getCount()),true) : '';
+
+		$notificaciones = Yii::app()->Funciones->getCantidadDeNotificaciones();
+
+		$cantd_notificaciones = $notificaciones > 0 ? $this->widget('booster.widgets.TbBadge',
+			array('context' => 'info',
+				  'label' => $notificaciones),true) : '';
 
 		$this->widget('booster.widgets.TbNavbar',
 	    array(
@@ -132,7 +133,7 @@ ini_set('display_errors', true);*/
 		                        'visible'=>!Yii::app()->user->isGuest,
 		                        'items' => array(
 		                        	array('label' => 'Perfil', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-cog', 'url' => array('/usuarioips/security')),
-		                        	array('label' => 'Notificaciones'.$badget, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),
+		                        	array('label' => 'Notificaciones'.$cantd_notificaciones, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),
 		                        	array('label' => 'Gestionar Saldo', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-usd', 'url'=>Yii::app()->createUrl('/paquetesSaldos/index')),
 		                        	'---',
 		                            array('label' => 'Salir', 'icon'=>'glyphicon glyphicon-log-out', 'url'=>Yii::app()->createUrl('/site/logout'))
