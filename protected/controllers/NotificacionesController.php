@@ -120,7 +120,7 @@ class NotificacionesController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
-	public function actionAgregarNotificacion(){
+	/*public function actionAgregarNotificacion(){
 		$model = new Notificaciones;
 		$purchase_id = $_POST['purchase_id'];
 		$payment_id = $_POST['payment_id'];
@@ -131,10 +131,9 @@ class NotificacionesController extends Controller
 
 		/*echo "<pre>";
 		print_r($compra_realizada);
-		echo "</pre>";*/
+		echo "</pre>";*
 
-		$model->idusuario_ips = 8;
-		$model->id_cliente = 32;
+		$model->idusuario_ips = Yii::app()->request->user->id;
 		$model->asunto = 'Gracias por su compra';
 		$model->mensaje = 'Haga click en el ticket para disfrutar de su contenido';
 		$model->fecha = date("Y-m-d");
@@ -144,22 +143,35 @@ class NotificacionesController extends Controller
 
 		if(!$model->save()){
 			$registrado = false;
+			Yii::app()->shoppingCart->clear();
 		}else{
 			$registrado = true;
 		}
 		
 		header('Content-Type: application/json; charset="UTF-8"');
         echo CJSON::encode(array('registrado' => $registrado, 'error'=>$model->getErrors()));
-	}
+	}*/
 
 	/**
 	 * Lists all models.
 	 */
 	public function actionIndex()
 	{
-
 		$model=new Notificaciones('search');
 		$model->unsetAttributes();
+
+		if(isset($_GET['idCompra'])){
+			$purchase_id = $_GET['idCompra'];
+			$payment_id = $_GET['paymentId'];
+
+			$criteria = new CDbCriteria;
+			$criteria->condition = 'id_compra = "'.$purchase_id.'" AND id_api_call = "'.$payment_id.'" AND estado_compra = "completed"';
+			$compra_realizada = Pagos::model()->findAll($criteria);
+			
+			if(count($compra_realizada) > 0){
+				Yii::app()->shoppingCart->clear();
+			}
+		}
 
 		if(isset($_REQUEST['Notificaciones']))
 			$model->attributes=$_REQUEST['Notificaciones'];
@@ -212,16 +224,20 @@ class NotificacionesController extends Controller
 
 	public function actionEntregarContenido(){
 	    $id_compra = "";
+	    $notificacion_compras = "";
 
 	    if (isset($_GET['id_compra'])) {
 	    	$id_compra = $_GET['id_compra'];
+
+	    	$notificacion_compras = Notificaciones::model()->detalle_compra($id_compra);
+
+			$notificacion_leida = Notificaciones::model()->findByAttributes(array('id_compra' => $id_compra));
+
+		    if($notificacion_leida != ""){
+				$notificacion_leida->estado = 1;
+				$notificacion_leida->save();
+		    }
 	    }
-
-	    $notificacion_compras = Notificaciones::model()->detalle_compra($id_compra);
-
-		$notificacion_leida = Notificaciones::model()->findByAttributes(array('id_compra' => $id_compra));
-		$notificacion_leida->estado = 1;
-		$notificacion_leida->save();
 
 	    header('Content-Type: application/json; charset="UTF-8"');
         echo CJSON::encode(array('id_compra' => "<strong>".$id_compra."</strong>", 'notificacion_compras' => $notificacion_compras));
