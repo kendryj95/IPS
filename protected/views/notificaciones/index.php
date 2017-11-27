@@ -6,10 +6,6 @@ $this->breadcrumbs=array(
 	'Notificaciones',
 );
 
-/*$this->menu=array(
-	array('label'=>'Create Notificaciones', 'url'=>array('create')),
-	array('label'=>'Manage Notificaciones', 'url'=>array('admin')),
-);*/
 ?>
 <h2 style="text-align: center;">Notificaciones</h2>
 <hr>
@@ -27,10 +23,7 @@ $this->breadcrumbs=array(
     }
 </style>
 <?php
-/*echo "<pre>";
-print_r($model->search());
-echo "</pre>";
-exit;*/
+
 $this->widget('booster.widgets.TbExtendedGridView' , array (
         'id'=>'notificaciones-grid',
         'type'=>'striped bordered', 
@@ -82,7 +75,6 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 	            'type' => 'raw',
 	            'value' => function($data){
 	            	$objeto = Yii::app()->Funciones->getColorLabelEstadoNotificaciones($data->estado);
-	            	//print_r($objeto);
 	            	Controller::widget(
 					    'booster.widgets.TbLabel',
 					    array(
@@ -171,8 +163,6 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 ?>
 <!--$("#modal-detalleCompra .modal-body").html(JSON.stringify(compras));-->
 
-
-
 <?php $this->beginWidget(
     'booster.widgets.TbModal',
     array('id' => 'modal-detalleCompra')
@@ -188,15 +178,6 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
     </div>
  
     <div class="modal-footer">
-        <?php /*$this->widget(
-            'booster.widgets.TbButton',
-            array(
-                'context' => 'primary',
-                'label' => 'Save changes',
-                'url' => '#',
-                'htmlOptions' => array('data-dismiss' => 'modal'),
-            )
-        );*/ ?>
         <?php $this->widget(
             'booster.widgets.TbButton',
             array(
@@ -224,15 +205,6 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
     </div>
  
     <div class="modal-footer">
-        <?php /*$this->widget(
-            'booster.widgets.TbButton',
-            array(
-                'context' => 'primary',
-                'label' => 'Save changes',
-                'url' => '#',
-                'htmlOptions' => array('data-dismiss' => 'modal'),
-            )
-        );*/ ?>
         <?php $this->widget(
             'booster.widgets.TbButton',
             array(
@@ -244,148 +216,3 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
     </div>
  
 <?php $this->endWidget(); ?>
-
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-		//registrarNotificacion();
-
-		/*$(".idCompra_reg").click(function (e) {
-			var id_compra = $(this).attr('id_registro');
-			//entregarContenido(id_compra);
-			//e.stopPropagation();
-		    //e.preventDefault();
-		    //return false;
-		});*/
-
-		//$('#notificaciones-grid .pagination li').on('change', 'a', function(e){
-		//$('#notificaciones-grid .pagination li a').live('click', function (e) {
-
-		    //I want do something here
-		    //e.stopPropagation();
-		    //e.preventDefault();
-		    //return false;
-		//});
-
-	});
-
-	function registrarNotificacion(){
-	    var paymentId = getVariableURL('paymentId');
-	    var idCompra = getVariableURL('idCompra');
-
-	    if((paymentId != "") && (idCompra != "")){
-	        $.ajax({
-	            url:"<?php echo Yii::app()->createUrl('/notificaciones/agregarNotificacion'); ?>",
-	            type:"POST",    
-	            data:{purchase_id: idCompra, payment_id: paymentId},
-	            
-	            beforeSend: function(){
-	               
-	            },
-
-	            complete: function(){ },
-
-	            success: function(data){
-	                console.log(data);
-					$('#notificaciones-grid').yiiGridView('update', {
-						data: $(this).serialize()
-					});
-	            },
-	            error: function(){
-	                console.log("ERROR - registrarNotificacion");
-	            }
-	        });
-	    }
-	}
-
-	function entregarContenido(id_compra){
-		//alert("sasdsd");
-		//console.log(document.getElementById("modal"));
-		
-		/*$.ajax({
-            url:"<?php //echo Yii::app()->createUrl('/notificaciones/entregarContenido'); ?>",
-            type:"POST",    
-            data:{id_compra: id_compra},
-            
-            beforeSend: function(){
-               
-            },
-
-            complete: function(){ },
-
-            success: function(data){
-                console.log(data);
-                $('#modal-detalleCompra .modal-header').html('<a class="close" data-dismiss="modal">&times;</a><h4>COMPRA #'+id_compra+'</h4>');
-                $('#modal-detalleCompra .modal-body').html(data.id_compra);
-				
-				//$('#modal-detalleCompra').modal("show");
-            },
-            error: function(){
-                console.log("ERROR - entregarContenido");
-            }
-        });
-
-        $('#modal-detalleCompra').modal("show");*/
-        console.log(id_compra);
-        return 0;
-        
-	}
-
-	/*
-		function(){
-														            $.ajax({
-														                beforeSend: function(){
-														                   $("#modal-detalleCompra").addClass("loading");
-														                },
-														                complete: function(){
-														                   $("#modal-detalleCompra").removeClass("loading");
-														                },
-														                type: "POST",
-														                url: $(this).attr("href"),
-														                success: function(data) { 
-														                    
-															                $("#modal-detalleCompra .modal-header").html("<a class=\"close\" data-dismiss=\"modal\">&times;</a><h4>COMPRA #"+data.id_compra+"</h4>");
-															                var compras = data.notificacion_compras;
-
-															                if(compras.length > 0){
-
-															                	var text = "";
-															                	console.log(compras.length);
-																				for(var i = 0; i < compras.length; i++) {
-																					text += "<table id=\"table-detalle\" class=\"table table-striped\"><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de compra</b></div></td><td>"+compras[0].estado_compra+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Estado de pago</b></div></td><td>"+compras[0].estado_pago+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email del comprador</b></div></td><td>"+compras[0].payer_info_email+"</td></tr>";
-																					
-																					if(compras[i].contenido_texto != null){
-																						text += "<tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Shortcode</b></div></td><td>"+compras[i].sms_sc+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email de recepcion</b></div></td><td>"+compras[i].consumidor_email+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Notificar al</b></div></td><td>"+compras[i].consumidor_telefono+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Categoria</b></div></td><td>"+compras[i].categoria+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Deporte</b></div></td><td>"+compras[i].deporte+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Pais</b></div></td><td>"+compras[i].pais+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Tipo</b></div></td><td>"+compras[i].tipo+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Abreviatura</b></div></td><td>"+compras[i].abreviatura+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Contenido</b></div></td><td>"+compras[i].contenido_texto+"</td></tr>";
-																					}else{
-																						
-																						if(compras[i].abreviatura == ".mp3"){
-																							text += "<tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Shortcode</b></div></td><td>"+compras[i].sms_sc+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email de recepcion</b></div></td><td>"+compras[i].consumidor_email+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Notificar al</b></div></td><td>"+compras[i].consumidor_telefono+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Categoria</b></div></td><td>"+compras[i].categoria+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Deporte</b></div></td><td>"+compras[i].deporte+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Pais</b></div></td><td>"+compras[i].pais+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Tipo</b></div></td><td>"+compras[i].tipo+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Contenido</b></div></td><td><audio src=\"data:audio/mp3; base64, " + compras[i].contenido_archivo + "\" controls> </audio></td></tr>";
-																						}
-																						
-																						if(compras[i].abreviatura == ".pdf"){
-																							text += "<tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Shortcode</b></div></td><td>"+compras[i].sms_sc+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email de recepcion</b></div></td><td>"+compras[i].consumidor_email+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Notificar al</b></div></td><td>"+compras[i].consumidor_telefono+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Categoria</b></div></td><td>"+compras[i].categoria+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Deporte</b></div></td><td>"+compras[i].deporte+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Pais</b></div></td><td>"+compras[i].pais+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Tipo</b></div></td><td>"+compras[i].tipo+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Contenido</b></div></td><td><a href=\"#\" data-toggle=\"modal\" data-target=\"#modal-ContenidoArchivo\" onclick=\"alertaaaa();\">" + compras[i].nombre_archivo + "</a><div class=\"interna\"><embed src=\"data:application/pdf; base64, " + compras[i].contenido_archivo + "\"></div></td></tr>";
-																						}
-
-																						if(compras[i].abreviatura == ".txt"){
-																							text += "<tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Shortcode</b></div></td><td>"+compras[i].sms_sc+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Email de recepcion</b></div></td><td>"+compras[i].consumidor_email+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Notificar al</b></div></td><td>"+compras[i].consumidor_telefono+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Categoria</b></div></td><td>"+compras[i].categoria+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Deporte</b></div></td><td>"+compras[i].deporte+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Pais</b></div></td><td>"+compras[i].pais+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Tipo</b></div></td><td>"+compras[i].tipo+"</td></tr><tr><td align=\"center\" class=\"title\" style=\"padding-left: 5px\"><div><b>Contenido</b></div></td><td><textarea rows=\"4\" cols=\"50\">" + compras[i].contenido_texto + "</textarea></td></tr>";
-																						}
-																					}
-																					text += "</table><br><br>";
-																				};
-																				
-																				$("#modal-detalleCompra .modal-body").html(text);
-															                }
-															                else{
-															                	$("#modal-detalleCompra .modal-body").html("Disculpe, esta compra presenta errores.");
-															                }
-
-															                $("#modal-detalleCompra").modal("show");
-														                },
-														                error: function() { 
-														                    alert("ERROR - entregarContenido");
-														                }
-														            });
-																}
-	*/
-
-</script>

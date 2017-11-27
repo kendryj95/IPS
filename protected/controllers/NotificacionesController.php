@@ -120,38 +120,6 @@ class NotificacionesController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
-	/*public function actionAgregarNotificacion(){
-		$model = new Notificaciones;
-		$purchase_id = $_POST['purchase_id'];
-		$payment_id = $_POST['payment_id'];
-
-		$criteria = new CDbCriteria;
-		$criteria->condition = 'id_compra = "'.$purchase_id.'" AND id_api_call = "'.$payment_id.'" AND estado_compra = "completed" AND estado_pago = "approved"';
-		$compra_realizada = Pagos::model()->findAll($criteria);
-
-		/*echo "<pre>";
-		print_r($compra_realizada);
-		echo "</pre>";*
-
-		$model->idusuario_ips = Yii::app()->request->user->id;
-		$model->asunto = 'Gracias por su compra';
-		$model->mensaje = 'Haga click en el ticket para disfrutar de su contenido';
-		$model->fecha = date("Y-m-d");
-		$model->hora = date("H:i:s");
-		$model->estado = 0;
-		$model->id_compra = $purchase_id;
-
-		if(!$model->save()){
-			$registrado = false;
-			Yii::app()->shoppingCart->clear();
-		}else{
-			$registrado = true;
-		}
-		
-		header('Content-Type: application/json; charset="UTF-8"');
-        echo CJSON::encode(array('registrado' => $registrado, 'error'=>$model->getErrors()));
-	}*/
-
 	/**
 	 * Lists all models.
 	 */
