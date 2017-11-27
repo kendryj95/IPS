@@ -18,8 +18,8 @@ $this->breadcrumbs=array(
    .interna embed {
         display: block;
         margin: 0 auto;
-        width: 120%;
-        height: 550px;
+        width: 100%;
+        height: 450px;
     }
 </style>
 <?php
@@ -33,7 +33,7 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
         'summaryText'=>'Mostrando {start} a {end} de {count} registros', 
         'template' => '{items}<div class="form-group"><div class="col-md-5 col-sm-12">{summary}</div><div class="col-md-7 col-sm-12">{pager}</div></div><br />',
         'htmlOptions' => array('class' => 'trOverFlow col-xs-12 col-sm-12 col-md-12 col-lg-12'),
-        'filter'=> $model,
+        'filter'=> $model,  
         'columns'=> array( 
         	array(
 	            'name' => 'id_compra',

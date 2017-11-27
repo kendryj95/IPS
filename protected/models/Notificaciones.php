@@ -89,7 +89,7 @@ class Notificaciones extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id_notificacion',$this->id_notificacion);
-		$criteria->compare('idusuario_ips',$this->idusuario_ips);
+		$criteria->compare('idusuario_ips',Yii::app()->user->id);
 		$criteria->compare('asunto',$this->asunto,true);
 		$criteria->compare('mensaje',$this->mensaje,true);
 		$criteria->compare('fecha',$this->fecha,true);

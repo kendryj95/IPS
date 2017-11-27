@@ -128,6 +128,7 @@ class NotificacionesController extends Controller
 		$model=new Notificaciones('search');
 		$model->unsetAttributes();
 
+
 		if(isset($_GET['idCompra'])){
 			$purchase_id = $_GET['idCompra'];
 			$payment_id = $_GET['paymentId'];
