@@ -42,13 +42,13 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 	            'htmlOptions' => array('style' => 'text-align: center;'),
 	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
         	),
-        	array(
+        	/*array(
 	            'name' => 'asunto',
 	            'header' => 'Asunto',
 	            'type' => 'raw',
 	            'htmlOptions' => array('style' => 'text-align: center;'),
 	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
-        	), 
+        	), */
         	array(
 	            'name' => 'mensaje',
 	            'header' => 'Mensaje',
@@ -85,6 +85,7 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 	            },
 	            'htmlOptions' => array('style' => 'text-align: center;'),
 	            'headerHtmlOptions' => array('class'=>'tableHover hrefHover'),
+	            'filter' => false,
         	),
             array(
 	            'class' => 'CButtonColumn',
@@ -216,3 +217,4 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
     </div>
  
 <?php $this->endWidget(); ?>
+

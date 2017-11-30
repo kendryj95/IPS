@@ -154,8 +154,7 @@ class SiteController extends Controller
 	{
 		$model = new SignupForm;
 		$newUser = new UsuarioIps;
-		$newContact_email = new ContactoUsuario;
-		$newContact_phone = new ContactoUsuario;
+		$newContact = new ContactoUsuario;
 		$model_login = new LoginForm;
 		$model_login->scenario = 'loginAutomatico';
 
@@ -188,16 +187,20 @@ class SiteController extends Controller
 
 				if($newUser->save(false)) {
 					// Everything saved, redirect
-					$newContact_email->idusuario_ips = $newUser->getPrimaryKey();
-					$newContact_email->valor = $model->email;
+					$newContact->idusuario_ips = $newUser->getPrimaryKey();
+					$newContact->email = $model->email;
+					$newContact->telefono = $model->phone_number;
+					$newContact->tipo_contacto = "Principal";
+
+					/*$newContact_email->valor = $model->email;
 					$newContact_email->tipo_contacto = 'email';
 
 					$newContact_phone->idusuario_ips = $newUser->getPrimaryKey();
 					$newContact_phone->valor = $model->phone_number;
-					$newContact_phone->tipo_contacto = 'telefono';
-					
-					
-					if(($newContact_email->save(true)) && ($newContact_phone->save(true))){
+					$newContact_phone->tipo_contacto = 'telefono';*/
+
+
+					if($newContact->save(true)){
 						$transaction->commit();
 
 						$model_login->username = $model->login;

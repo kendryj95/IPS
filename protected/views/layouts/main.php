@@ -104,6 +104,8 @@ ini_set('display_errors', true);*/
 			array('context' => 'info',
 				  'label' => $notificaciones),true) : '';
 
+		
+
 		$this->widget('booster.widgets.TbNavbar',
 	    array(
 	        'type' => 'inverse',
