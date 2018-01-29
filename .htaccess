@@ -11,11 +11,6 @@ RewriteRule . index.php
 
 RewriteEngine on
 
-RewriteCond %{HTTP_REFERER} !^http://localhost/imc/IPS_CS*/.*$ [NC]
-RewriteCond %{HTTP_REFERER} !^http://localhost/imc/IPS_CS*$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://localhost/imc/IPS_website*/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://localhost/imc/IPS_website*$ [NC]
 RewriteRule .*\.(jpg|jpeg|gif|png|bmp|zip|pdf|mp3)$ - [F,NC]
-
-
-
-
-
