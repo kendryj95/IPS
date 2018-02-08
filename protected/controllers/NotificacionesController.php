@@ -146,6 +146,7 @@ class NotificacionesController extends Controller
 			$registrado = false;
 		}else{
 			$registrado = true;
+			Yii::app()->shoppingCart->clear();
 		}
 		
 		header('Content-Type: application/json; charset="UTF-8"');
@@ -160,6 +161,35 @@ class NotificacionesController extends Controller
 
 		$model=new Notificaciones('search');
 		$model->unsetAttributes();
+
+		if (isset($_REQUEST['tkn'])) {
+			
+			$token = $_REQUEST['tkn'];
+
+			// if ($token != null && $token != '') {
+				$criteria = new CDbCriteria;
+				$criteria->condition = 'id_usuario='.Yii::app()->user->id.' AND token="'.$token.'" AND consumido=0';
+
+				$consumirSaldo = SaldosUsuariosIps::model()->find($criteria);
+
+				if ($consumirSaldo) {
+
+					$newSaldo = floatval(Yii::app()->user->getState('saldo_ips')) + floatval($consumirSaldo->saldo_ips);
+					Yii::app()->user->setState('saldo_ips', number_format($newSaldo,2,'.',''));
+
+					$update=Yii::app()->db->createCommand()
+					->update('saldos_usuarios_ips', array(
+						'saldo_ips'=>floatval($newSaldo),
+					    'consumido'=>1
+					), 'id_usuario=:id', array(':id'=>Yii::app()->user->id));
+				}
+			// }
+		}
+
+		if (isset($_REQUEST["paymentId"]) && isset($_REQUEST["idCompra"])) {
+			Yii::app()->shoppingCart->clear();
+		}
+
 
 		if(isset($_REQUEST['Notificaciones']))
 			$model->attributes=$_REQUEST['Notificaciones'];
