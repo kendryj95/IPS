@@ -43,7 +43,7 @@
                                     echo "<td style='text-align: center;'>".$item->nombre_producto."</td>";
                                     echo "<td style='text-align: center;'><span class='currency_selected'></span> ".number_format((float)$item->getSumPrice(), 2, '.', '')."</td>";
                                     echo "<td style='text-align: center;'>".CHtml::link('<span class="glyphicon glyphicon-trash"></span>', Yii::app()->createUrl('/cart/removeToCart', array('id_producto' => $item->idproductos_digitales, 'tipo' => '1', 'prodIsSaldo' => $isSaldo)), array('style' => 'color: black'))."</td>";
-                                    $cart_temp[] = array('idproductos_digitales' => $item->idproductos_digitales, 'qty' => $item->getQuantity(), 'descripcion_producto' => $item->nombre_producto, 'precio' => (float)$item->precio, 'tipo_de_contenido' => $item->tipo_contenido, 'id_producto' => $item->id_producto);
+                                    $cart_temp[] = array('idproductos_digitales' => $item->idproductos_digitales.'_'.$item->tipo_contenido, 'qty' => $item->getQuantity(), 'descripcion_producto' => $item->nombre_producto, 'precio' => (float)$item->precio, 'tipo_de_contenido' => $item->tipo_contenido, 'id_producto' => $item->id_producto);
                                     //$cart_temp[] = array();
                             }
                         ?>

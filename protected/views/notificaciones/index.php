@@ -248,7 +248,7 @@ $this->widget('booster.widgets.TbExtendedGridView' , array (
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-		registrarNotificacion();
+		//registrarNotificacion();
 
 		/*$(".idCompra_reg").click(function (e) {
 			var id_compra = $(this).attr('id_registro');
