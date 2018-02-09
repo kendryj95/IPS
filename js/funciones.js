@@ -62,7 +62,7 @@ function process_payment(cart, email, phone){
         });*/
 
         IPS.purchase.pay({
-            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTgwMTcyNjA3MDUsImNsaWVudGUiOnsiaWQiOiJLZW5kcnkgT3J0aXpAMTIzNDU2XzE1MDkzNzcyNjA3MDUiLCJub21icmUiOiJLZW5kcnkgT3J0aXoiLCJvcmlnZW4iOiIxMjM0NTYiLCJzYyI6IjEyMzQ1NiJ9fQ.QSK7h6DjtaToZZfMzu0rn3sHD6Z0gvcHNx09LKEBPPY",
+            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MjY3MzIwMjYwMzksImNsaWVudGUiOnsiaWQiOiJLZW5kcnkgT3J0aXpAMTIzNDU2XzE1MTgwOTIwMjYwNTQiLCJub21icmUiOiJLZW5kcnkgT3J0aXoiLCJvcmlnZW4iOiIxMjM0NTYiLCJzYyI6IjEyMzQ1NiJ9fQ.acDNhLlcv4IgdpEDaVmBG4-Mc8G6E2Z6tBULPcfxlho",
             
             purchase: {
                 client: {

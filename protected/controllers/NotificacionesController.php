@@ -120,6 +120,40 @@ class NotificacionesController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
+
+	public function actionAgregarNotificacion(){
+		$model = new Notificaciones;
+		$purchase_id = $_POST['purchase_id'];
+		$payment_id = $_POST['payment_id'];
+
+		$criteria = new CDbCriteria;
+		$criteria->condition = 'id_compra = "'.$purchase_id.'" AND id_api_call = "'.$payment_id.'" AND estado_compra = "completed" AND estado_pago = "approved"';
+		$compra_realizada = Pagos::model()->findAll($criteria);
+
+		/*echo "<pre>";
+		print_r($compra_realizada);
+		echo "</pre>";*/
+
+		$model->idusuario_ips = 8;
+		$model->id_cliente = 32;
+		$model->asunto = 'Gracias por su compra';
+		$model->mensaje = 'Haga click en el ticket para disfrutar de su contenido';
+		$model->fecha = date("Y-m-d");
+		$model->hora = date("H:i:s");
+		$model->estado = 0;
+		$model->id_compra = $purchase_id;
+
+		if(!$model->save()){
+			$registrado = false;
+		}else{
+			$registrado = true;
+			Yii::app()->shoppingCart->clear();
+		}
+		
+		header('Content-Type: application/json; charset="UTF-8"');
+        echo CJSON::encode(array('registrado' => $registrado, 'error'=>$model->getErrors()));
+	}
+
 	/**
 	 * Lists all models.
 	 */
@@ -129,18 +163,34 @@ class NotificacionesController extends Controller
 		$model->unsetAttributes();
 
 
-		if(isset($_GET['idCompra'])){
-			$purchase_id = $_GET['idCompra'];
-			$payment_id = $_GET['paymentId'];
-
-			$criteria = new CDbCriteria;
-			$criteria->condition = 'id_compra = "'.$purchase_id.'" AND id_api_call = "'.$payment_id.'" AND estado_compra = "completed"';
-			$compra_realizada = Pagos::model()->findAll($criteria);
+		if (isset($_REQUEST['tkn'])) {
 			
-			if(count($compra_realizada) > 0){
-				Yii::app()->shoppingCart->clear();
-			}
+			$token = $_REQUEST['tkn'];
+
+			// if ($token != null && $token != '') {
+				$criteria = new CDbCriteria;
+				$criteria->condition = 'id_usuario='.Yii::app()->user->id.' AND token="'.$token.'" AND consumido=0';
+
+				$consumirSaldo = SaldosUsuariosIps::model()->find($criteria);
+
+				if ($consumirSaldo) {
+
+					$newSaldo = floatval(Yii::app()->user->getState('saldo_ips')) + floatval($consumirSaldo->saldo_ips);
+					Yii::app()->user->setState('saldo_ips', number_format($newSaldo,2,'.',''));
+
+					$update=Yii::app()->db->createCommand()
+					->update('saldos_usuarios_ips', array(
+						'saldo_ips'=>floatval($newSaldo),
+					    'consumido'=>1
+					), 'id_usuario=:id', array(':id'=>Yii::app()->user->id));
+				}
+			// }
 		}
+
+		if (isset($_REQUEST["paymentId"]) && isset($_REQUEST["idCompra"])) {
+			Yii::app()->shoppingCart->clear();
+		}
+
 
 		if(isset($_REQUEST['Notificaciones']))
 			$model->attributes=$_REQUEST['Notificaciones'];

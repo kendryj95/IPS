@@ -34,7 +34,8 @@ ini_set('display_errors', true);*/
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/simple-sidebar.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/sweetalert2.min.css">
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sweetalert2.min.js"></script>
-	<script src="http://72.14.188.47/ips/lib/dist/checkout.js"></script>
+	<!-- <script src="http://72.14.188.47/ips/lib/dist/checkout.js"></script> -->
+	<script src="<?= Yii::app()->request->baseUrl; ?>/js/ips/lib/dist/checkout.js"></script>
 	<script src="https://use.fontawesome.com/e694455cac.js"></script>
 	<!--<script src='https://insigniamobile.net.ve/testVersion/insignia_payments_solutions_IPS/webservice_ips/dist/checkout.js'></script>-->
 
