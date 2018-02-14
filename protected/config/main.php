@@ -91,6 +91,7 @@ return array(
     	),
 
 		// uncomment the following to enable URLs in path-format
+		
 		'urlManager' => array(
             'urlFormat' => 'path',
             'showScriptName' => false,
@@ -117,10 +118,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=192.168.1.117;dbname=insignia_payments_solutions',
+			'connectionString' => 'mysql:host=192.168.1.117;dbname=insignia_payments_solutions_mm',
 			'emulatePrepare' => true,
-			'username' => 'robertocanua',
-			'password' => 'KwZUkeWB',
+			'username' => 'moises.marquina',
+			'password' => 'QzSgay2j',
 			'charset' => 'utf8',
 		),
 

@@ -36,6 +36,7 @@ ini_set('display_errors', true);*/
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/sweetalert2.min.js"></script>
 	<!-- <script src="http://72.14.188.47/ips/lib/dist/checkout.js"></script> -->
 	<script src="<?= Yii::app()->request->baseUrl; ?>/js/ips/lib/dist/checkout.js"></script>
+
 	<script src="https://use.fontawesome.com/e694455cac.js"></script>
 	<!--<script src='https://insigniamobile.net.ve/testVersion/insignia_payments_solutions_IPS/webservice_ips/dist/checkout.js'></script>-->
 
@@ -90,6 +91,12 @@ ini_set('display_errors', true);*/
 </script>
 
 <body>
+<style type="text/css">
+	#yw4>li:hover >a{
+		background-color: #d9534f;
+
+	}
+</style>
 <div class="container-fluid">
 	<?php	
 		Yii::import('application.extensions.shoppingCart.ECartPositionBehaviour');
@@ -135,6 +142,7 @@ ini_set('display_errors', true);*/
 		                        'items' => array(
 		                        	array('label' => 'Perfil', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-cog', 'url' => array('/usuarioips/security')),
 		                        	array('label' => 'Notificaciones'.$cantd_notificaciones, 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-bell', 'url'=>Yii::app()->createUrl('/notificaciones/index')),
+		                        	array('label'=> 'Notifi MercadoPago','icon'=>'glyphicon glyphicon-bell','url'=>Yii::app()->request->baseUrl.'/mpfactura/notificacion/'),
 		                        	array('label' => 'Gestionar Saldo', 'encodeLabel'=> false, 'icon'=>'glyphicon glyphicon-usd', 'url'=>Yii::app()->createUrl('/paquetesSaldos/index')),
 		                        	'---',
 		                            array('label' => 'Salir', 'icon'=>'glyphicon glyphicon-log-out', 'url'=>Yii::app()->createUrl('/site/logout'))

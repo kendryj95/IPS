@@ -66,9 +66,9 @@
 
 			<div style="text-align: center;">
 				<?php 
-					$this->widget('booster.widgets.TbButton', array('buttonType' => 'submit', 'context' => 'success', 'label' => 'Acceder', 'size' => 'medium')); 
+					$this->widget('booster.widgets.TbButton', array('buttonType' => 'submit', 'context' => 'default','label' => 'Acceder', 'size' => 'medium')); 
 					echo "<strong> o </strong>";
-					echo CHtml::link('Registrarme', Yii::app()->createUrl('/site/signUp'), array('class' => 'btn btn-sm btn-primary'));
+					echo CHtml::link('Registrarme', Yii::app()->createUrl('/site/signup'), array('class' => 'btn  btn-primaryIPS'));
 				?>	
 			</div>
 			

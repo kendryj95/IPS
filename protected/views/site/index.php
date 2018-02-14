@@ -1,3 +1,7 @@
+
+<div class="row">
+<div class="col-lg-12 col-md-12 col-xs-12">
+
 <?php
 /* @var $this SiteController */
 $this->pageTitle=Yii::app()->name;
@@ -11,6 +15,10 @@ $this->widget('booster.widgets.TbCarousel', array(
         );
     }, $images_carousel)
 ));
+?>
+</div>
+</div>
+<?php
 
 
 // Asignarle el saldo IPS a la variable session de Yii.

@@ -161,6 +161,8 @@ class NotificacionesController extends Controller
 
 		$model=new Notificaciones('search');
 		$model->unsetAttributes();
+		Yii::app()->shoppingCart->clear();
+
 
 		if (isset($_REQUEST['tkn'])) {
 			
