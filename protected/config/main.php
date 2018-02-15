@@ -118,10 +118,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=192.168.1.117;dbname=insignia_payments_solutions_mm',
+			'connectionString' => 'mysql:host=192.168.1.117;dbname=insignia_payments_solutions',
 			'emulatePrepare' => true,
-			'username' => 'moises.marquina',
-			'password' => 'QzSgay2j',
+			'username' => 'robertocanua',
+			'password' => 'KwZUkeWB',
 			'charset' => 'utf8',
 		),
 
