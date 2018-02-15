@@ -1,5 +1,6 @@
 
 var currencyTemp = '';
+var currTemp='';
 
 $(document).ready(function() {
     $("#table-cart").DataTable({
