@@ -1,3 +1,7 @@
+
+var currencyTemp = '';
+var currTemp='';
+
 $(document).ready(function() {
     $("#table-cart").DataTable({
         "language": {
@@ -35,18 +39,29 @@ function getVariableURL(variable) {
     return false;
 }
 
-function process_payment(cart, email, phone){
+function process_payment(cart, email, phone,dolartoday){ // parametros .. el parametro cart es un Json un array con los datos traidos de la base
+    // de datos.. id_producto, descripcion del producto, precio, tipo de contenido. el parametro email si es un solo dato.. igual phone
     var items_list = [];
     //var currency_code = document.getElementById('tipo_de_moneda');
     //var currency_selected = currency_code.options[currency_code.selectedIndex].value;
     var currency_selected = "USD";
+
+    var cur=document.getElementById("currency_selected_total").innerHTML;// ej: VEF
     
     if(currency_selected != ""){
+        if (cur=="VEF") { // valido si la moneda elegida del select es vef, entonces multiplico los price de cada producto por el valor del dolar today..
+             for (var i = 0; i < cart.length; i++) {
+                var items_in_cart = {id: cart[i].id_producto, name: cart[i].descripcion_producto, description: cart[i].descripcion_producto, price: parseFloat(cart[i].precio)*dolartoday, quantity: cart[i].qty, type: cart[i].id_tipo_de_contenido};
+                items_list[i] = items_in_cart;
+             }
+
+        }else{
+
         for (var i = 0; i < cart.length; i++) {
             var items_in_cart = {id: cart[i].id_producto, name: cart[i].descripcion_producto, description: cart[i].descripcion_producto, price: parseFloat(cart[i].precio), quantity: cart[i].qty, type: cart[i].id_tipo_de_contenido};
             items_list[i] = items_in_cart;
         }
-        
+        }
         //return false;
         /*console.log({
             token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDM4NTY5NDAxMTMsImNsaWVudGUiOnsiaWQiOiJJTUNASVBTXzk4NzMyMV8xNDk1MjE2OTQwMTEzIiwibm9tYnJlIjoiSU1DIiwib3JpZ2VuIjoiSVBTXzk4NzMyMSIsInNjIjoiSVBTXzk4NzMyMSJ9fQ.1LC_3QedkoK0Ud0_woL7POYQK9pZZDRGoO8ms7uDGYQ",
@@ -60,6 +75,7 @@ function process_payment(cart, email, phone){
                 products: items_list,
             }
         });*/
+        
 
         IPS.purchase.pay({
             token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MjY3MzIwMjYwMzksImNsaWVudGUiOnsiaWQiOiJLZW5kcnkgT3J0aXpAMTIzNDU2XzE1MTgwOTIwMjYwNTQiLCJub21icmUiOiJLZW5kcnkgT3J0aXoiLCJvcmlnZW4iOiIxMjM0NTYiLCJzYyI6IjEyMzQ1NiJ9fQ.acDNhLlcv4IgdpEDaVmBG4-Mc8G6E2Z6tBULPcfxlho",
@@ -69,8 +85,9 @@ function process_payment(cart, email, phone){
                     email: email,
                     telephone: phone,
                 },
-                currency: document.getElementById("currency_selected_total").innerHTML,
+                currency:cur,
                 products: items_list,
+                conversion:dolartoday
             }
             
         }, 'http://localhost/IPS/K3KPgBrvwQAAiHdIXsZVMEM5dnF8xj7STUtCbDSa_bI', 'ips-container');
@@ -123,23 +140,50 @@ function process_payment(cart, email, phone){
     }  
 }
 
-function change_currency(){
+function change_currency(dolartoday){
 
     var currency_code = document.getElementById('tipo_de_moneda');
-    if(currency_code != null){
-        var currency_selected = currency_code.options[currency_code.selectedIndex].value;
+      
+      if(currency_code != null){
+          var currency_selected = currency_code.options[currency_code.selectedIndex].value;
 
-        var newCurrency = document.getElementsByClassName('currency_selected');
+          var newCurrency = document.getElementsByClassName('currency_selected');
+          var newPrice = document.getElementsByClassName('pri');
+          var total = document.getElementById('hola').innerText;
+          
 
-        for (var i = 0; i < newCurrency.length; i++) {
-            newCurrency[i].innerHTML = currency_selected;
-        }
-        
-        //newCurrency.innerHTML = currency_selected;
+          for (var i = 0; i < newCurrency.length; i++) {
+              newCurrency[i].innerHTML = currency_selected;
+              if (currency_selected == "VEF") {
+                  currencyTemp = "VEF";
+                  newPrice[i].innerHTML = (parseInt(newPrice[i].innerText) * dolartoday).toFixed(2);
+              } else {
+                  
+                  if (currencyTemp == "VEF") {
+                      newPrice[i].innerHTML = (parseInt(newPrice[i].innerText) / dolartoday).toFixed(2);
+                  }
+              } 
+          }
 
-        //document.getElementsByClassName('currency_selected')[0].innerHTML = currency_selected;
-        //document.getElementById("currency_selected").innerHTML = currency_selected;
-        document.getElementById("currency_selected_total").innerHTML = currency_selected;    
-    }
+          if (currency_selected=="VEF") {
+            totalito=(total*dolartoday).toFixed(2);
+            currTemp = "VEF";
+            document.getElementById("hola").innerHTML=totalito;
+          }else{
+            if (currTemp=="VEF") {
+                totalito=(total/dolartoday).toFixed(2);
+                document.getElementById("hola").innerHTML=totalito;
+            }
+          }
+
+
+          document.getElementById("currency_selected_total").innerHTML = currency_selected;    
+           if (currency_selected=="VEF") {
+             document.getElementById("msj").innerHTML = "<center><label class='alert alert-info'>SU CONVERSIÓN HA SIDO REALIZADA POR EL VALOR DEL DOLAR DICOM</label></center>";
+         }else{
+             document.getElementById("msj").innerHTML = "";
+                   
+         }
+      }
     
 }

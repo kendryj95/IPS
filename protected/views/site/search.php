@@ -31,13 +31,25 @@
 	});
 </script>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+  $(".pr").click(function(){
+      
+  		 document.getElementById("hhh").innerHTML='<h3 class="alert alert-info"><center><span class="glyphicon glyphicon-thumbs-up"></span> Ha sido agregado al carrito exitosamente <span class="glyphicon glyphicon-thumbs-up"></span></center></h3>';
 
+  		 window.setTimeout(function(){
+			window.location.reload();
+		 }, 01000); // dos segundos
+     });
+});
+
+</script>
 <div class="bs-example" data-example-id="thumbnails-with-custom-content">
 	<div class="row">
 		<?php if(count($productos_promo) > 0): ?>
 			<p><b>Se encontraron los siguientes resultados: </b></p>
-		<?php foreach($productos_promo AS $info_producto){ ?>
-			<div class="col-sm-4 col-md-2">
+		<?php foreach($productos_promo as $info_producto){ ?>
+			<div class="col-sm-6 col-md-2">
 				<div class="thumbnail">
 					<div class="caption">
 					<p style="text-align: right; font-size: 20px;"><span class="label label-primaryIPS"><strong>$ <?= number_format((float)$info_producto['precio'], 2, '.', ''); ?></strong></span></p>
@@ -62,11 +74,11 @@
 								        'icon' => 'fa fa-money',
 								        'buttonType' => 'link',
 								        'url' => Yii::app()->createUrl('/cart/addToCart', array('id_producto' => $info_producto['idproductos_digitales'], 'categoria' => $categoria)),
-								        'htmlOptions' => array('class' => 'btn btn-primaryIPS')
+								        'htmlOptions' => array('class' => 'pr btn btn-primaryIPS')
 								        
 								    )
 								);
-								echo "&nbsp;";	
+								echo "<br>";	
 								$this->widget('booster.widgets.TbButton',
 								    array(
 								        'label' => 'Detalles',
@@ -85,10 +97,12 @@
 							?>
 							
 						<!--</p>-->
+
 					</div>
 				</div>
 			</div>
 		<?php } ?>
+		
 		<?php else: ?>
 			<div class="container">
                     <div class="row">
@@ -102,6 +116,14 @@
                     </div>
                 </div>
         <?php endif; ?>
+	</div>
+	<div class="row">
+		<div class="container-fluid">
+		<div class="col-lg-9">
+		<div id="hhh"></div>
+			
+		</div>
+		</div>
 	</div>
 </div>
 

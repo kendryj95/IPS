@@ -1,3 +1,18 @@
+<?php
+$url= "https://s3.amazonaws.com/dolartoday/data.json";
+$hola=utf8_encode($json =file_get_contents($url));
+if ($hola!=500) {
+    # code...
+
+$json=json_decode($hola);
+//var_dump($json = json_decode($json));
+
+$promedio= $json->USD->promedio_real;
+}else{
+    $promedio=123;
+}
+ ?>
+
 <script>
     /*$(document).ready(function(){
         $('.paginate_button.active > a').css({'backgroundColor':'#C30B13','borderColor':'#C30B13'});
@@ -41,19 +56,21 @@
                                     echo "<td style='text-align: center;' hidden='hidden'>".$item->idproductos_digitales."</td>";
                                     echo "<td style='text-align: center;'>".$item->getQuantity()."</td>";
                                     echo "<td style='text-align: center;'>".$item->nombre_producto."</td>";
-                                    echo "<td style='text-align: center;'><span class='currency_selected'></span> ".number_format((float)$item->getSumPrice(), 2, '.', '')."</td>";
+                                    echo "<td style='text-align: center;' ><span class='currency_selected'></span><span class='pri'>".number_format((float)$item->getSumPrice(), 2, '.', '')."</span></td>";
                                     echo "<td style='text-align: center;'>".CHtml::link('<span class="glyphicon glyphicon-trash"></span>', Yii::app()->createUrl('/cart/removeToCart', array('id_producto' => $item->idproductos_digitales, 'tipo' => '1', 'prodIsSaldo' => $isSaldo)), array('style' => 'color: black'))."</td>";
                                     $cart_temp[] = array('idproductos_digitales' => $item->idproductos_digitales.'_'.$item->tipo_contenido, 'qty' => $item->getQuantity(), 'descripcion_producto' => $item->nombre_producto, 'precio' => (float)$item->precio, 'tipo_de_contenido' => $item->tipo_contenido, 'id_producto' => $item->id_producto);
                                     //$cart_temp[] = array();
                             }
+
                         ?>
                     </tbody>
                     <tfoot>
                         <tr>
                             <td colspan="2" style="text-align: right;"><strong>MONTO TOTAL</strong></td>
-                            <td style='text-align: center;'><span id='currency_selected_total'></span> <?php echo number_format((float)$cart->getCost(), 2, '.', ''); ?> <span id='currency_selected'></span></td>
+                            <td style='text-align: center;'><span id='currency_selected_total'></span><span id="hola"><?php echo number_format((float)$cart->getCost(), 2, '.', ''); ?> </span><span id='currency_selected'></span></td>
                             <td></td>
                         </tr>
+                        <span id='msj'></span>
                     </tfoot>
                 </table>
                 </div>
@@ -68,11 +85,13 @@
                     }
                 ?>
 
-                 <div class="col col-xs-6 col-md-4 col-lg-6">
-                    <?php
-                        #echo CHtml::dropDownList('tipo_de_moneda', 'USD', $currencies, array('empty' => 'Seleccione la moneda de pago', 'class' => 'form-control input-sm',  'onChange' => 'javascript:change_currency()', 'type' => 'hidden' ));
-                        echo CHtml::dropDownList('tipo_de_moneda', 'USD', array("USD"=>"Dólar estadounidense"), array('empty' => 'Seleccione la moneda de pago', 'class' => 'form-control input-sm',  'onChange' => 'javascript:change_currency()', 'type' => 'hidden' ));
-                    ?> 
+                 <div class="col col-xs-4 col-md-4 col-lg-4">
+                   <select class="form-control input-sm" onChange='change_currency(<?php echo $promedio;?>)' type="hidden" name="tipo_de_moneda" id="tipo_de_moneda"/>
+                        <option value="" selected disabled >Seleccione la moneda de pago</option>
+                        <option value="VEF">Bolivares Fuertes</option>
+                        <option value="USD" selected="selected">Dólar estadounidense</option>
+                    </select> 
+
                 </div> 
                 <div class="col col-xs-2 col-md-8 col-lg-6" style="text-align: center;">
                     <div class="text-center">
@@ -119,9 +138,11 @@
                     <button type="button" class="btn btn-sm btn-primary" id="" onclick='process_payment(<?= json_encode(@$cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>");'> <strong>PAGA CON TU SALDO</strong>  <i class="fa fa-money fa-2x" aria-hidden="true" style="font-size: 1.5em; color: brown"></i>
                     </button>
                 <?php endif; ?>
-                    <button type="button" class="btn btn-sm btn-warning" id="btn_pay_ips" onclick='process_payment(<?= json_encode(@$cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>");'>   <strong>PAGA CON INSIGNIA</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?>
+                    <button type="button" class="btn btn-sm btn-warning" id="btn_pay_ips" onclick='process_payment(<?= json_encode(@$cart_temp); ?>, "<?= Yii::app()->user->getInfoUserIps()->email; ?>", "<?= Yii::app()->user->getInfoUserIps()->telefono; ?>",<?php echo json_encode($promedio);?>);'>   <strong>PAGA CON INSIGNIA</strong> <?php echo CHtml::image(Yii::app()->getBaseUrl().'/images/logo_ips.png',  '', array('style' => 'width:15px; height: 25px;')); ?>
                     </button>
             <?php endif; ?>
+
+           
             </div>
         </div>
     </div>
